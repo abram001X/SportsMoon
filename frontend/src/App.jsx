@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { AsideLeft } from './components/AsideLeft';
 import { AsideRigth } from './components/AsideRigth';
 import { Home } from './components/Home';
-
+import { MenuGames } from './components/MenuGames';
 function App() {
   const [apiLeague, setApiLeague] = useState([]);
   const [apiCopaAmerica, setApiCopaAmerica] = useState([]);
@@ -17,13 +17,13 @@ function App() {
         setApiLeague(data.response);
       });
 
-    fetch('http://localhost:3000/api/copaAmerica')
+    fetch('http://localhost:3000/api/calendario/copaamerica')
       .then((res) => res.json())
       .then((data) => {
         setApiCopaAmerica(data.response);
       });
 
-    fetch('http://localhost:3000/api/eurocopa')
+    fetch('http://localhost:3000/api/calendario/eurocopa')
       .then((res) => res.json())
       .then((data) => {
         setApiEuroCopa(data.response);
@@ -37,7 +37,8 @@ function App() {
         apiCopaAmerica={apiCopaAmerica}
         apiEuroCopa={apiEuroCopa}
       ></Header>
-      <section className="cont_interface">
+      <MenuGames apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa}></MenuGames>
+      <article className="cont_interface">
         <AsideLeft
           apiLeague={apiLeague}
           apiCopaAmerica={apiCopaAmerica}
@@ -49,7 +50,7 @@ function App() {
           apiCopaAmerica={apiCopaAmerica}
           apiEuroCopa={apiEuroCopa}
         ></AsideRigth>
-      </section>
+      </article>
     </>
   );
 }

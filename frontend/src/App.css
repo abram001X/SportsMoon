@@ -1,66 +1,130 @@
-
-body{
+body {
   font-size: 18px;
   text-align: center;
 }
 /*interface*/
-.cont_interface{
+.cont_interface {
   display: flex;
   flex-wrap: wrap;
   padding: 15px;
   width: 100%;
   height: 90vh;
 }
+/*MenuGames*/
+.cont_menugames-padre{  
+    display: flex;
+    font-size: 15px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 90px;
+    background-color: #000;
+}
+.league-child-menugames{
+  height: 100%;
+}
+.league-child-menugames select{
+  height: 100%;
+  background-color: #000;
+  border: none;
+}
+.cont_games-child-menugames{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  border-right: 1px solid #666;
+
+}
+.img-child-menugames{
+  width: 15px;
+  height: 15px;
+  transform: translateX(10px);
+}
+b{
+  font-size: 13px;
+}
+.div-child-menugames{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+}
+.winner-child-menugames{
+  color: #ff0;
+} 
+.loser-child-menugames{
+  color: #888;
+}
 
 /*Header*/
-.cont_header_padre{
+.cont_header_padre {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: #111;
+  border-bottom: 1px solid #777;
   padding: 15px;
 }
 
-.input-header_padre{
+.input-header_padre {
   outline: none;
   border: none;
   width: 500px;
   font-size: 16px;
   padding: 7px;
   border-radius: 5px;
-  border: 1px solid #fff;
+  
 }
 
 /*asideRigth*/
-.cont_asiderigth_padre{
+.cont_asiderigth_padre {
   width: 22%;
   background-color: #222;
   height: 100%;
   margin-left: 15px;
+  border-radius: 10px;
 }
 
 /*home*/
-.cont_home_padre{
+.cont_home_padre {
   width: 50%;
   height: 100%;
   background-color: #222;
+  border-radius: 10px;
 }
 
 /*AsideLeft*/
-.cont_asideleft_padre{
+.cont_asideleft_padre {
+  padding: 10px;
   width: 25%;
   background-color: #222;
   height: 100%;
   margin-right: 15px;
+  border-radius: 10px;
 }
 
-.cont_leagues-child-asideleft img{
-  width: 20px;
-  height: 20px;
-}
-.cont_leagues-child-asideleft{
+.child-asideleft {
   font-size: 15px;
   color: #fff;
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
 }
 
+.eurocopa {
+  margin-top: 10px;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #555;
+}
 
+.league-child-cont_leagues {
+  padding: 10px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.league-child-cont_leagues img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}

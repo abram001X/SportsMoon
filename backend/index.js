@@ -3,7 +3,6 @@ const express = require('express')
 const fs = require('node:fs')
 const path = require('node:path')
 const cors = require('cors')
-const axios = require('axios')
 // constantes
 const app = express()
 const port = process.env.PORT || 3000
