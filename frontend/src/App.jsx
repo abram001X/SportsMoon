@@ -1,34 +1,55 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { Header } from './components/Header';
+import { AsideLeft } from './components/AsideLeft';
+import { AsideRigth } from './components/AsideRigth';
+import { Home } from './components/Home';
 
 function App() {
-  const [api, setApi] = useState([]);
+  const [apiLeague, setApiLeague] = useState([]);
+  const [apiCopaAmerica, setApiCopaAmerica] = useState([]);
+  const [apiEuroCopa, setApiEuroCopa] = useState([]);
 
   useEffect(() => {
-    fetch('https://v1.baseball.api-sports.io/leagues', {
-      method: 'GET',
-      headers: {
-        'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
-        'x-rapidapi-host': 'v3.football.api-sports.io'
-      }
-    })
-      .then((response) => response.json())
+    fetch('http://localhost:3000/api/league')
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data.response);
-        setApi(data.response);
-      })
-      .catch((error) => console.error(error));
+        setApiLeague(data.response);
+      });
+
+    fetch('http://localhost:3000/api/copaAmerica')
+      .then((res) => res.json())
+      .then((data) => {
+        setApiCopaAmerica(data.response);
+      });
+
+    fetch('http://localhost:3000/api/eurocopa')
+      .then((res) => res.json())
+      .then((data) => {
+        setApiEuroCopa(data.response);
+      });
   }, []);
+
   return (
     <>
-      {api.map((elements, j) => {
-        return (
-          <>
-            <img src={elements.logo} alt="" />
-            <p key={j}>{elements.name}</p>
-          </>
-        );
-      })}
+      <Header
+        apiLeague={apiLeague}
+        apiCopaAmerica={apiCopaAmerica}
+        apiEuroCopa={apiEuroCopa}
+      ></Header>
+      <section className="cont_interface">
+        <AsideLeft
+          apiLeague={apiLeague}
+          apiCopaAmerica={apiCopaAmerica}
+          apiEuroCopa={apiEuroCopa}
+        ></AsideLeft>
+        <Home></Home>
+        <AsideRigth
+          apiLeague={apiLeague}
+          apiCopaAmerica={apiCopaAmerica}
+          apiEuroCopa={apiEuroCopa}
+        ></AsideRigth>
+      </section>
     </>
   );
 }
