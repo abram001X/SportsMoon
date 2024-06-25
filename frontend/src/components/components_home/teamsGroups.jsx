@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export function Teams() {
+export function TeamsGroups() {
   const [apiTeamsCopaAmerica, setApiTeamsCopaAmerica] = useState([]);
   const [apiTeamsEuroCopa, setApiTeamsEuroCopa] = useState([]);
 

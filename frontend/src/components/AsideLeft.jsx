@@ -1,6 +1,15 @@
 /* eslint-disable react/prop-types */
+import { useState } from 'react';
+import {Link, Outlet} from 'react-router-dom'
 
-export function AsideLeft({ apiCopaAmerica, apiEuroCopa }) {
+export function AsideLeft() {
+
+  const [press, setPress]  = useState('nopress')
+  const ubicate = (id)=>{
+      const arrayId = ['a','b','c','d']
+      return arrayId.map()
+  }
+
   return (
     <>
       <aside className="cont_asideleft_padre">
@@ -23,13 +32,13 @@ export function AsideLeft({ apiCopaAmerica, apiEuroCopa }) {
         </section>
         <section className="cont_information-child-asideleft child-asideleft">
           <h2>About</h2>
-          <a href="#">Icon:Teams</a>
+          <Link to='/teams' className={press} onClick={()=> ubicate('a')}>Icon:Teams</Link>
 
-          <a href="#">Icon:Groups</a>
+          <Link to='/groups' className={press} onClick={()=> ubicate('b')}>Icon:Groups</Link>
 
-          <a href="#">Icon:players</a>
+          <Link to='/players' className={press} onClick={()=> ubicate('c')}>Icon:players</Link>
 
-          <a href="">Icon:Results</a>
+          <Link to='/results' className={press} onClick={()=> ubicate('d')}>Icon:Results</Link>
         </section>
         <section className="teams_favorite-child-asideleft child-asideleft">
           <h3>Favorite Teams</h3>
@@ -41,6 +50,7 @@ export function AsideLeft({ apiCopaAmerica, apiEuroCopa }) {
           <a href="#">Uruguay</a>
           <a href="">Portugal</a>
         </section>
+        <Outlet/>
       </aside>
     </>
   );

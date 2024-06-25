@@ -141,7 +141,9 @@ b{
   margin-right: 15px;
   border-radius: 10px;
 }
-
+.press{
+  background-color: #777;
+}
 .child-asideleft {
  font-size: 15px;  
   color: #fff;

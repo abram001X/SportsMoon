@@ -27,6 +27,8 @@ function App() {
 
   return (
     <>
+      
+     
       <Header
         apiCopaAmerica={apiCopaAmerica}
         apiEuroCopa={apiEuroCopa}
@@ -42,6 +44,7 @@ function App() {
         ></AsideLeft>
         <Home></Home>
       </article>
+      
     </>
   );
 }
