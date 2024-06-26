@@ -2,6 +2,7 @@
 export function Teams({ apiTeamsCopa }) {
   return (
     <article className="cont_teams-padre black">
+        <h2>Equipos</h2>
       <div className="info_groups-child-teamsgroup table-teams">
                     <div className="p-child-table-groups">
                       <p>EQUIPOS</p>

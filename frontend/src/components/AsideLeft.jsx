@@ -4,11 +4,7 @@ import {Link, Outlet} from 'react-router-dom'
 
 export function AsideLeft() {
   const [ruta, setRuta] = useState('eurocopa')
-  
-  const ubicate = ()=>{
-      const arrayId = ['a','b','c','d']
-      return arrayId.map()
-  }
+  const [rutaMenu, setRutaMenu] = useState('')
 
   return (
     <>
@@ -20,26 +16,26 @@ export function AsideLeft() {
               src="https://media.api-sports.io/football/leagues/4.png"
               alt=""
             />
-            <Link to='/eurocopa/groups' onClick={()=>setRuta('eurocopa')}>Eurocopa</Link>
+            <Link to={`/eurocopa/${rutaMenu}`} onClick={()=>setRuta('eurocopa')}>Eurocopa</Link>
           </section>
           <section className="league-child-cont_leagues copaamerica">
             <img
               src="https://media.api-sports.io/football/leagues/9.png"
               alt=""
             />
-            <Link to='/copaamerica/groups' onClick={()=>setRuta('copaamerica')}  >Copa América</Link>
+            <Link to={`/copaamerica/${rutaMenu}`} onClick={()=>setRuta('copaamerica')}  >Copa América</Link>
           </section>
         </section>
         <section className="cont_information-child-asideleft child-asideleft">
           <h2>About</h2>
 
-          <Link to={`/${ruta}/teams`}  onClick={()=> ubicate()}>Icon:Teams</Link>
+          <Link to={`/${ruta}/teams`}  onClick={()=> setRutaMenu('teams')}>Icon:Teams</Link>
 
-          <Link to={`/${ruta}/groups`}  onClick={()=> ubicate()}>Icon:Groups</Link>
+          <Link to={`/${ruta}/groups`}  onClick={()=> setRutaMenu('groups')}>Icon:Groups</Link>
 
-          <Link to={`/${ruta}/players`}   onClick={()=> ubicate()}>Icon:players</Link>
+          <Link to={`/${ruta}/players`}   onClick={()=> setRutaMenu('players')}>Icon:players</Link>
 
-          <Link to={`/${ruta}/results`}   onClick={()=> ubicate()}>Icon:Results</Link>
+          <Link to={`/${ruta}/results`}   onClick={()=> setRutaMenu('results')}>Icon:Results</Link>
 
         </section>
         <section className="teams_favorite-child-asideleft child-asideleft">
