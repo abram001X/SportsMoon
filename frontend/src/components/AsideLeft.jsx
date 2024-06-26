@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState } from 'react'
 import {Link, Outlet} from 'react-router-dom'
 
 export function AsideLeft() {
-
-  const [press, setPress]  = useState('nopress')
-  const ubicate = (id)=>{
+  const [ruta, setRuta] = useState('eurocopa')
+  
+  const ubicate = ()=>{
       const arrayId = ['a','b','c','d']
       return arrayId.map()
   }
+  
+
 
   return (
     <>
@@ -20,25 +22,27 @@ export function AsideLeft() {
               src="https://media.api-sports.io/football/leagues/4.png"
               alt=""
             />
-            <p>Eurocopa</p>
+            <Link to='/eurocopa/groups' onClick={()=>setRuta('eurocopa')}>Eurocopa</Link>
           </section>
           <section className="league-child-cont_leagues copaamerica">
             <img
               src="https://media.api-sports.io/football/leagues/9.png"
               alt=""
             />
-            <p>Copa América</p>
+            <Link to='/copaamerica/groups' onClick={()=>setRuta('copaamerica')}  >Copa América</Link>
           </section>
         </section>
         <section className="cont_information-child-asideleft child-asideleft">
           <h2>About</h2>
-          <Link to='/teams' className={press} onClick={()=> ubicate('a')}>Icon:Teams</Link>
 
-          <Link to='/groups' className={press} onClick={()=> ubicate('b')}>Icon:Groups</Link>
+          <Link to={`/${ruta}/teams`}  onClick={()=> ubicate()}>Icon:Teams</Link>
 
-          <Link to='/players' className={press} onClick={()=> ubicate('c')}>Icon:players</Link>
+          <Link to={`/${ruta}/groups`}  onClick={()=> ubicate()}>Icon:Groups</Link>
 
-          <Link to='/results' className={press} onClick={()=> ubicate('d')}>Icon:Results</Link>
+          <Link to={`/${ruta}/players`}   onClick={()=> ubicate()}>Icon:players</Link>
+
+          <Link to={`/${ruta}/results`}   onClick={()=> ubicate()}>Icon:Results</Link>
+
         </section>
         <section className="teams_favorite-child-asideleft child-asideleft">
           <h3>Favorite Teams</h3>

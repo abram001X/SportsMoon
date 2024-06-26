@@ -7,9 +7,9 @@ export function Home() {
     
       <article className="cont_home_padre">
         <Routes>
-          <Route path="/groups" element={<TeamsGroups/>}>
-          
+          <Route path="eurocopa/groups" element={<TeamsGroups copa={'eurocopa'}/>}>
           </Route>
+          <Route path="copaamerica/groups" element={<TeamsGroups copa={'copaamerica'}/>}/>
         </Routes>
         
       </article>
