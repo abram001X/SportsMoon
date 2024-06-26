@@ -9,8 +9,6 @@ export function AsideLeft() {
       const arrayId = ['a','b','c','d']
       return arrayId.map()
   }
-  
-
 
   return (
     <>
