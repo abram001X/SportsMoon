@@ -25,10 +25,10 @@ function App() {
 
   }, []);
 
+  console.log(apiCopaAmerica)
+  console.log(apiEuroCopa)
   return (
     <>
-      
-     
       <Header
         apiCopaAmerica={apiCopaAmerica}
         apiEuroCopa={apiEuroCopa}
@@ -42,7 +42,7 @@ function App() {
           apiCopaAmerica={apiCopaAmerica}
           apiEuroCopa={apiEuroCopa}
         ></AsideLeft>
-        <Home></Home>
+        <Home apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa}></Home>
       </article>
       
     </>

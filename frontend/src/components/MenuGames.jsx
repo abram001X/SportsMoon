@@ -18,8 +18,6 @@ export function MenuGames({ apiCopaAmerica, apiEuroCopa }) {
     } else setCopaSelect(apiEuroCopa);
   };
 
-  console.log(gamesPast);
-
   return (
     <menu className="cont_menugames-padre">
       <section className="league-child-menugames">

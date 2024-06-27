@@ -12,6 +12,7 @@ export function TeamsGroups({apiTeamsCopa}) {
       'Group E',
       'Group F'
     ];
+    console.log(apiTeamsCopa)
     return (
       <>
         {apiTeamsCopa.map((standings) => {
@@ -51,7 +52,6 @@ export function TeamsGroups({apiTeamsCopa}) {
                               </p>
                             </div>
                             <div className="b-child-table-groups">
-                              <b>{element.points}</b>
                               <b>{element.all.played}</b>
                               <b>{element.all.win}</b>
                               <b>{element.all.draw}</b>
@@ -59,6 +59,7 @@ export function TeamsGroups({apiTeamsCopa}) {
                               <b>{element.all.goals.for}</b>
                               <b>{element.all.goals.against}</b>
                               <b>{element.goalsDiff}</b>
+                              <b className="points">{element.points}</b>
                             </div>
                           </div>
                         </div>

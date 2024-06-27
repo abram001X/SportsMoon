@@ -33,8 +33,6 @@ export function AsideLeft() {
 
           <Link to={`/${ruta}/groups`}  onClick={()=> setRutaMenu('groups')}>Icon:Groups</Link>
 
-          <Link to={`/${ruta}/players`}   onClick={()=> setRutaMenu('players')}>Icon:players</Link>
-
           <Link to={`/${ruta}/results`}   onClick={()=> setRutaMenu('results')}>Icon:Results</Link>
 
         </section>

@@ -2,7 +2,10 @@ import { TeamsGroups } from './components_home/Groups.jsx';
 import { Routes, Route } from 'react-router-dom';
 import { Teams } from './components_home/Teams.jsx';
 import { useEffect, useState } from 'react';
-export function Home() {
+import { Results } from './components_home/Results.jsx';
+
+// eslint-disable-next-line react/prop-types
+export function Home({ apiEuroCopa, apiCopaAmerica}) {
   const [apiTeamsCopaAmerica, setApiTeamsCopaAmerica] = useState([]);
   const [apiTeamsEuroCopa, setApiTeamsEuroCopa] = useState([]);
 
@@ -28,8 +31,8 @@ export function Home() {
       );
   }, []);
 
-  console.log('CopaAmerica: ', apiTeamsCopaAmerica);
-  console.log('EuroCopa : ', apiTeamsEuroCopa);
+  //console.log('CopaAmerica: ', apiTeamsCopaAmerica);
+  //console.log('EuroCopa : ', apiTeamsEuroCopa);
 
   return (
     <>
@@ -43,8 +46,8 @@ export function Home() {
               />
             }
           ></Route>
-          <Route path="eurocopa/Teams" element={<Teams apiTeamsCopa={apiTeamsEuroCopa}/>} />
-
+          <Route path="eurocopa/teams" element={<Teams apiTeamsCopa={apiTeamsEuroCopa}/>} />
+          <Route path='eurocopa/results' element={<Results apiResults={apiEuroCopa}/>}/>
 
           <Route
             path="copaamerica/groups"
@@ -56,6 +59,7 @@ export function Home() {
             }
           />
           <Route path='copaamerica/teams' element={<Teams apiTeamsCopa={apiTeamsCopaAmerica}/>}/>
+            <Route path='copaamerica/results' element={<Results apiResults={apiCopaAmerica}/>}/>
         </Routes>
         
       </article>
