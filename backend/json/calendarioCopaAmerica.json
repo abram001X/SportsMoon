@@ -3,16 +3,12 @@
     {
       "fixture": {
         "id": 1146301,
-        "referee": "Wilton Pereira Sampaio",
+        "referee": "Wilton Pereira Sampaio, Brazil",
         "timezone": "UTC",
         "date": "2024-06-22T00:00:00+00:00",
         "timestamp": 1719014400,
         "periods": { "first": 1719014400, "second": 1719018000 },
-        "venue": {
-          "id": null,
-          "name": "AT&T Stadium",
-          "city": "Arlington, Texas"
-        },
+        "venue": { "id": null, "name": "AT&T Stadium", "city": "Arlington" },
         "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
@@ -137,17 +133,13 @@
     {
       "fixture": {
         "id": 1146304,
-        "referee": "M. Mariani",
+        "referee": "Maurizio Mariani, Italy",
         "timezone": "UTC",
         "date": "2024-06-23T22:00:00+00:00",
         "timestamp": 1719180000,
-        "periods": { "first": null, "second": null },
-        "venue": {
-          "id": null,
-          "name": "AT&T Stadium",
-          "city": "Arlington, Texas"
-        },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "periods": { "first": 1719180000, "second": 1719183600 },
+        "venue": { "id": null, "name": "AT&T Stadium", "city": "Arlington" },
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -163,19 +155,19 @@
           "id": 2384,
           "name": "USA",
           "logo": "https://media.api-sports.io/football/teams/2384.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2381,
           "name": "Bolivia",
           "logo": "https://media.api-sports.io/football/teams/2381.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 2, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 2, "away": 0 },
+        "fulltime": { "home": 2, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -183,17 +175,17 @@
     {
       "fixture": {
         "id": 1146305,
-        "referee": "P. Maza",
+        "referee": "Piero Maza, Chile",
         "timezone": "UTC",
         "date": "2024-06-24T01:00:00+00:00",
         "timestamp": 1719190800,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719190800, "second": 1719194400 },
         "venue": {
           "id": null,
           "name": "Hard Rock Stadium",
-          "city": "Miami Gardens, Florida"
+          "city": "Miami Garden"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -209,19 +201,19 @@
           "id": 7,
           "name": "Uruguay",
           "logo": "https://media.api-sports.io/football/teams/7.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 11,
           "name": "Panama",
           "logo": "https://media.api-sports.io/football/teams/11.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 3, "away": 1 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 1, "away": 0 },
+        "fulltime": { "home": 3, "away": 1 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -229,17 +221,13 @@
     {
       "fixture": {
         "id": 1146306,
-        "referee": "D. Herrera",
+        "referee": "Dario Herrera, Argentina",
         "timezone": "UTC",
         "date": "2024-06-24T22:00:00+00:00",
         "timestamp": 1719266400,
-        "periods": { "first": null, "second": null },
-        "venue": {
-          "id": null,
-          "name": "NRG Stadium",
-          "city": "Houston, Texas"
-        },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "periods": { "first": 1719266400, "second": 1719270000 },
+        "venue": { "id": null, "name": "NRG Stadium", "city": "Houston" },
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -255,19 +243,19 @@
           "id": 8,
           "name": "Colombia",
           "logo": "https://media.api-sports.io/football/teams/8.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2380,
           "name": "Paraguay",
           "logo": "https://media.api-sports.io/football/teams/2380.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 2, "away": 1 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 2, "away": 0 },
+        "fulltime": { "home": 2, "away": 1 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -275,17 +263,17 @@
     {
       "fixture": {
         "id": 1146307,
-        "referee": null,
+        "referee": "A. Matonte",
         "timezone": "UTC",
         "date": "2024-06-26T01:00:00+00:00",
         "timestamp": 1719363600,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719363600, "second": 1719367200 },
         "venue": {
           "id": null,
           "name": "MetLife Stadium",
           "city": "East Rutherford, New Jersey"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -301,19 +289,19 @@
           "id": 2383,
           "name": "Chile",
           "logo": "https://media.api-sports.io/football/teams/2383.png",
-          "winner": null
+          "winner": false
         },
         "away": {
           "id": 26,
           "name": "Argentina",
           "logo": "https://media.api-sports.io/football/teams/26.png",
-          "winner": null
+          "winner": true
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 0, "away": 1 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 0 },
+        "fulltime": { "home": 0, "away": 1 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -321,17 +309,17 @@
     {
       "fixture": {
         "id": 1146308,
-        "referee": null,
+        "referee": "Cristian Garay, Chile",
         "timezone": "UTC",
         "date": "2024-06-26T22:00:00+00:00",
         "timestamp": 1719439200,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719439200, "second": 1719442800 },
         "venue": {
           "id": null,
           "name": "Allegiant Stadium",
-          "city": "Las Vegas, Nevada"
+          "city": "Las Vegas"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -347,19 +335,19 @@
           "id": 2382,
           "name": "Ecuador",
           "logo": "https://media.api-sports.io/football/teams/2382.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2385,
           "name": "Jamaica",
           "logo": "https://media.api-sports.io/football/teams/2385.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 3, "away": 1 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 2, "away": 0 },
+        "fulltime": { "home": 3, "away": 1 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -367,17 +355,17 @@
     {
       "fixture": {
         "id": 1146309,
-        "referee": null,
+        "referee": "Raphael Claus",
         "timezone": "UTC",
         "date": "2024-06-27T01:00:00+00:00",
         "timestamp": 1719450000,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719450000, "second": 1719453600 },
         "venue": {
           "id": null,
           "name": "SoFi Stadium",
           "city": "Inglewood, California"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -393,19 +381,19 @@
           "id": 2379,
           "name": "Venezuela",
           "logo": "https://media.api-sports.io/football/teams/2379.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 16,
           "name": "Mexico",
           "logo": "https://media.api-sports.io/football/teams/16.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 1, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 0 },
+        "fulltime": { "home": 1, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -413,17 +401,17 @@
     {
       "fixture": {
         "id": 1146310,
-        "referee": null,
+        "referee": "Iván Barton, El Salvador",
         "timezone": "UTC",
         "date": "2024-06-27T22:00:00+00:00",
         "timestamp": 1719525600,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719525600, "second": 1719529200 },
         "venue": {
           "id": 1898,
           "name": "Mercedes-Benz Stadium",
           "city": "Atlanta, Georgia"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -439,19 +427,19 @@
           "id": 11,
           "name": "Panama",
           "logo": "https://media.api-sports.io/football/teams/11.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2384,
           "name": "USA",
           "logo": "https://media.api-sports.io/football/teams/2384.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 2, "away": 1 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 1, "away": 1 },
+        "fulltime": { "home": 2, "away": 1 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -459,17 +447,17 @@
     {
       "fixture": {
         "id": 1146311,
-        "referee": null,
+        "referee": "J. Benítez",
         "timezone": "UTC",
         "date": "2024-06-28T01:00:00+00:00",
         "timestamp": 1719536400,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719536400, "second": 1719540000 },
         "venue": {
           "id": null,
           "name": "MetLife Stadium",
           "city": "East Rutherford, New Jersey"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -485,19 +473,19 @@
           "id": 7,
           "name": "Uruguay",
           "logo": "https://media.api-sports.io/football/teams/7.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 2381,
           "name": "Bolivia",
           "logo": "https://media.api-sports.io/football/teams/2381.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 5, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 2, "away": 0 },
+        "fulltime": { "home": 5, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -505,17 +493,17 @@
     {
       "fixture": {
         "id": 1146312,
-        "referee": null,
+        "referee": "Piero Maza, Chile",
         "timezone": "UTC",
         "date": "2024-06-29T01:00:00+00:00",
         "timestamp": 1719622800,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719622800, "second": 1719626400 },
         "venue": {
           "id": null,
           "name": "Allegiant Stadium",
-          "city": "Las Vegas, Nevada"
+          "city": "Las Vegas"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -531,19 +519,19 @@
           "id": 2380,
           "name": "Paraguay",
           "logo": "https://media.api-sports.io/football/teams/2380.png",
-          "winner": null
+          "winner": false
         },
         "away": {
           "id": 6,
           "name": "Brazil",
           "logo": "https://media.api-sports.io/football/teams/6.png",
-          "winner": null
+          "winner": true
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 1, "away": 4 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 3 },
+        "fulltime": { "home": 1, "away": 4 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -551,17 +539,17 @@
     {
       "fixture": {
         "id": 1146313,
-        "referee": null,
+        "referee": "César Ramos Palazuelos, Mexico",
         "timezone": "UTC",
         "date": "2024-06-30T00:00:00+00:00",
         "timestamp": 1719705600,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719705600, "second": 1719709200 },
         "venue": {
           "id": null,
           "name": "Hard Rock Stadium",
-          "city": "Miami Gardens, Florida"
+          "city": "Miami Garden"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -577,19 +565,19 @@
           "id": 26,
           "name": "Argentina",
           "logo": "https://media.api-sports.io/football/teams/26.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 30,
           "name": "Peru",
           "logo": "https://media.api-sports.io/football/teams/30.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 2, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 0 },
+        "fulltime": { "home": 2, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -597,7 +585,7 @@
     {
       "fixture": {
         "id": 1146314,
-        "referee": null,
+        "referee": "M. Mariani",
         "timezone": "UTC",
         "date": "2024-07-01T00:00:00+00:00",
         "timestamp": 1719792000,
@@ -639,7 +627,7 @@
     {
       "fixture": {
         "id": 1146315,
-        "referee": null,
+        "referee": "M. Escobar",
         "timezone": "UTC",
         "date": "2024-07-01T00:00:00+00:00",
         "timestamp": 1719792000,
@@ -869,17 +857,13 @@
     {
       "fixture": {
         "id": 1189121,
-        "referee": "C. Ramos",
+        "referee": "César Ramos Palazuelos, Mexico",
         "timezone": "UTC",
         "date": "2024-06-25T01:00:00+00:00",
         "timestamp": 1719277200,
-        "periods": { "first": null, "second": null },
-        "venue": {
-          "id": null,
-          "name": "SoFi Stadium",
-          "city": "Inglewood, California"
-        },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "periods": { "first": 1719277200, "second": 1719280800 },
+        "venue": { "id": null, "name": "SoFi Stadium", "city": "Inglewood" },
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -904,10 +888,10 @@
           "winner": null
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 0, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 0 },
+        "fulltime": { "home": 0, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -915,17 +899,17 @@
     {
       "fixture": {
         "id": 1189122,
-        "referee": null,
+        "referee": "Mario Escobar, Guatemala",
         "timezone": "UTC",
         "date": "2024-06-25T22:00:00+00:00",
         "timestamp": 1719352800,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719352800, "second": 1719356400 },
         "venue": {
           "id": 1615,
           "name": "Children's Mercy Park",
           "city": "Kansas City, Kansas"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -941,19 +925,19 @@
           "id": 30,
           "name": "Peru",
           "logo": "https://media.api-sports.io/football/teams/30.png",
-          "winner": null
+          "winner": false
         },
         "away": {
           "id": 5529,
           "name": "Canada",
           "logo": "https://media.api-sports.io/football/teams/5529.png",
-          "winner": null
+          "winner": true
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 0, "away": 1 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 0 },
+        "fulltime": { "home": 0, "away": 1 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -961,17 +945,17 @@
     {
       "fixture": {
         "id": 1189123,
-        "referee": null,
+        "referee": "Gustavo Tejera, Uruguay",
         "timezone": "UTC",
         "date": "2024-06-28T22:00:00+00:00",
         "timestamp": 1719612000,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719612000, "second": 1719615600 },
         "venue": {
           "id": null,
-          "name": "State Farm Stadium",
-          "city": "Glendale, Arizona"
+          "name": "University of Phoenix Stadium",
+          "city": "Glendale"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -987,19 +971,19 @@
           "id": 8,
           "name": "Colombia",
           "logo": "https://media.api-sports.io/football/teams/8.png",
-          "winner": null
+          "winner": true
         },
         "away": {
           "id": 29,
           "name": "Costa Rica",
           "logo": "https://media.api-sports.io/football/teams/29.png",
-          "winner": null
+          "winner": false
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 3, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 1, "away": 0 },
+        "fulltime": { "home": 3, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }
@@ -1007,17 +991,17 @@
     {
       "fixture": {
         "id": 1189124,
-        "referee": null,
+        "referee": "Wilmar Roldan, Colombia",
         "timezone": "UTC",
         "date": "2024-06-30T00:00:00+00:00",
         "timestamp": 1719705600,
-        "periods": { "first": null, "second": null },
+        "periods": { "first": 1719705600, "second": 1719709200 },
         "venue": {
           "id": 20500,
           "name": "Inter&Co Stadium",
           "city": "Orlando, Florida"
         },
-        "status": { "long": "Not Started", "short": "NS", "elapsed": null }
+        "status": { "long": "Match Finished", "short": "FT", "elapsed": 90 }
       },
       "league": {
         "id": 9,
@@ -1042,10 +1026,10 @@
           "winner": null
         }
       },
-      "goals": { "home": null, "away": null },
+      "goals": { "home": 0, "away": 0 },
       "score": {
-        "halftime": { "home": null, "away": null },
-        "fulltime": { "home": null, "away": null },
+        "halftime": { "home": 0, "away": 0 },
+        "fulltime": { "home": 0, "away": 0 },
         "extratime": { "home": null, "away": null },
         "penalty": { "home": null, "away": null }
       }

@@ -3,7 +3,12 @@ body {
   text-align: center;
 }
 .black{
-  background-color: #000;
+  background-color: #33f;
+  border-radius: 10px;
+  padding: 10px;
+}
+.blue{
+  background-color: #33f;
   border-radius: 10px;
   padding: 10px;
 }
@@ -98,8 +103,9 @@ b {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
-  width: 30%;
+  width: 34%;
   margin: 10px;
+  border-bottom: 1px solid #333;
 }
 .teams_results-child{
   display: flex;
@@ -111,7 +117,8 @@ b {
 .fecha_results-child{
   width: 60px;
   display: flex;
-  
+  margin-bottom: 10px;
+  border-bottom:1px solid #333;
   align-items: center;
   transform: translateX(-10px);
 }
@@ -122,6 +129,7 @@ b {
 }
 .results-p-img p{
   transform: translateX(20px);
+  text-align: left;
 }
 .teams_results-child img{
   width:50px;
@@ -195,9 +203,7 @@ b {
 .cont_asideleft_padre {
   padding: 10px;
   width: 25%;
-  background-color: #222;
   margin-right: 15px;
-  border-radius: 10px;
 }
 .press {
   background-color: #777;

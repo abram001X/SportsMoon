@@ -22,7 +22,7 @@
               "group": "Group A",
               "form": "DWW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
                 "played": 3,
                 "win": 2,
@@ -44,7 +44,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 2,
@@ -58,7 +58,7 @@
               "group": "Group A",
               "form": "DDW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
                 "played": 3,
                 "win": 1,
@@ -80,7 +80,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 3,
@@ -116,7 +116,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 4,
@@ -152,7 +152,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ],
           [
@@ -163,18 +163,18 @@
                 "name": "Spain",
                 "logo": "https://media.api-sports.io/football/teams/9.png"
               },
-              "points": 6,
-              "goalsDiff": 4,
+              "points": 9,
+              "goalsDiff": 5,
               "group": "Group B",
-              "form": "WW",
+              "form": "WWW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
-                "win": 2,
+                "played": 3,
+                "win": 3,
                 "draw": 0,
                 "lose": 0,
-                "goals": { "for": 4, "against": 0 }
+                "goals": { "for": 5, "against": 0 }
               },
               "home": {
                 "played": null,
@@ -190,7 +190,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 2,
@@ -199,18 +199,18 @@
                 "name": "Italy",
                 "logo": "https://media.api-sports.io/football/teams/768.png"
               },
-              "points": 3,
+              "points": 4,
               "goalsDiff": 0,
               "group": "Group B",
-              "form": "LW",
+              "form": "DLW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
-                "goals": { "for": 2, "against": 2 }
+                "goals": { "for": 3, "against": 3 }
               },
               "home": {
                 "played": null,
@@ -226,63 +226,63 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 3,
+              "team": {
+                "id": 3,
+                "name": "Croatia",
+                "logo": "https://media.api-sports.io/football/teams/3.png"
+              },
+              "points": 2,
+              "goalsDiff": -3,
+              "group": "Group B",
+              "form": "DDL",
+              "status": "same",
+              "description": "Ranking of third-placed teams",
+              "all": {
+                "played": 3,
+                "win": 0,
+                "draw": 2,
+                "lose": 1,
+                "goals": { "for": 3, "against": 6 }
+              },
+              "home": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "away": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "update": "2024-06-30T00:00:00+00:00"
+            },
+            {
+              "rank": 4,
               "team": {
                 "id": 778,
                 "name": "Albania",
                 "logo": "https://media.api-sports.io/football/teams/778.png"
               },
               "points": 1,
-              "goalsDiff": -1,
+              "goalsDiff": -2,
               "group": "Group B",
-              "form": "DL",
-              "status": "same",
-              "description": "Ranking of third-placed teams",
-              "all": {
-                "played": 2,
-                "win": 0,
-                "draw": 1,
-                "lose": 1,
-                "goals": { "for": 3, "against": 4 }
-              },
-              "home": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "away": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "update": "2024-06-24T00:00:00+00:00"
-            },
-            {
-              "rank": 4,
-              "team": {
-                "id": 3,
-                "name": "Croatia",
-                "logo": "https://media.api-sports.io/football/teams/3.png"
-              },
-              "points": 1,
-              "goalsDiff": -3,
-              "group": "Group B",
-              "form": "DL",
+              "form": "LDL",
               "status": "same",
               "description": null,
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
                 "draw": 1,
-                "lose": 1,
-                "goals": { "for": 2, "against": 5 }
+                "lose": 2,
+                "goals": { "for": 3, "against": 5 }
               },
               "home": {
                 "played": null,
@@ -298,7 +298,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ],
           [
@@ -309,16 +309,16 @@
                 "name": "England",
                 "logo": "https://media.api-sports.io/football/teams/10.png"
               },
-              "points": 4,
+              "points": 5,
               "goalsDiff": 1,
               "group": "Group C",
-              "form": "DW",
+              "form": "DDW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 1,
+                "draw": 2,
                 "lose": 0,
                 "goals": { "for": 2, "against": 1 }
               },
@@ -336,7 +336,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 2,
@@ -345,16 +345,16 @@
                 "name": "Denmark",
                 "logo": "https://media.api-sports.io/football/teams/21.png"
               },
-              "points": 2,
+              "points": 3,
               "goalsDiff": 0,
               "group": "Group C",
-              "form": "DD",
+              "form": "DDD",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
-                "draw": 2,
+                "draw": 3,
                 "lose": 0,
                 "goals": { "for": 2, "against": 2 }
               },
@@ -372,7 +372,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 3,
@@ -381,16 +381,16 @@
                 "name": "Slovenia",
                 "logo": "https://media.api-sports.io/football/teams/1091.png"
               },
-              "points": 2,
+              "points": 3,
               "goalsDiff": 0,
               "group": "Group C",
-              "form": "DD",
+              "form": "DDD",
               "status": "same",
               "description": "Ranking of third-placed teams",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
-                "draw": 2,
+                "draw": 3,
                 "lose": 0,
                 "goals": { "for": 2, "against": 2 }
               },
@@ -408,7 +408,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 4,
@@ -417,16 +417,16 @@
                 "name": "Serbia",
                 "logo": "https://media.api-sports.io/football/teams/14.png"
               },
-              "points": 1,
+              "points": 2,
               "goalsDiff": -1,
               "group": "Group C",
-              "form": "DL",
+              "form": "DDL",
               "status": "same",
               "description": null,
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
-                "draw": 1,
+                "draw": 2,
                 "lose": 1,
                 "goals": { "for": 1, "against": 2 }
               },
@@ -444,27 +444,63 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ],
           [
             {
               "rank": 1,
               "team": {
-                "id": 1118,
-                "name": "Netherlands",
-                "logo": "https://media.api-sports.io/football/teams/1118.png"
+                "id": 775,
+                "name": "Austria",
+                "logo": "https://media.api-sports.io/football/teams/775.png"
               },
-              "points": 4,
+              "points": 6,
+              "goalsDiff": 2,
+              "group": "Group D",
+              "form": "WWL",
+              "status": "same",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
+              "all": {
+                "played": 3,
+                "win": 2,
+                "draw": 0,
+                "lose": 1,
+                "goals": { "for": 6, "against": 4 }
+              },
+              "home": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "away": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "update": "2024-06-30T00:00:00+00:00"
+            },
+            {
+              "rank": 2,
+              "team": {
+                "id": 2,
+                "name": "France",
+                "logo": "https://media.api-sports.io/football/teams/2.png"
+              },
+              "points": 5,
               "goalsDiff": 1,
               "group": "Group D",
-              "form": "DW",
+              "form": "DDW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 1,
+                "draw": 2,
                 "lose": 0,
                 "goals": { "for": 2, "against": 1 }
               },
@@ -482,63 +518,27 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
-            },
-            {
-              "rank": 2,
-              "team": {
-                "id": 2,
-                "name": "France",
-                "logo": "https://media.api-sports.io/football/teams/2.png"
-              },
-              "points": 4,
-              "goalsDiff": 1,
-              "group": "Group D",
-              "form": "DW",
-              "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
-              "all": {
-                "played": 2,
-                "win": 1,
-                "draw": 1,
-                "lose": 0,
-                "goals": { "for": 1, "against": 0 }
-              },
-              "home": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "away": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 3,
               "team": {
-                "id": 775,
-                "name": "Austria",
-                "logo": "https://media.api-sports.io/football/teams/775.png"
+                "id": 1118,
+                "name": "Netherlands",
+                "logo": "https://media.api-sports.io/football/teams/1118.png"
               },
-              "points": 3,
-              "goalsDiff": 1,
+              "points": 4,
+              "goalsDiff": 0,
               "group": "Group D",
-              "form": "WL",
+              "form": "LDW",
               "status": "same",
               "description": "Ranking of third-placed teams",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
-                "goals": { "for": 3, "against": 2 }
+                "goals": { "for": 4, "against": 4 }
               },
               "home": {
                 "played": null,
@@ -554,7 +554,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 4,
@@ -563,18 +563,18 @@
                 "name": "Poland",
                 "logo": "https://media.api-sports.io/football/teams/24.png"
               },
-              "points": 0,
+              "points": 1,
               "goalsDiff": -3,
               "group": "Group D",
-              "form": "LL",
+              "form": "DLL",
               "status": "same",
               "description": null,
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
-                "draw": 0,
+                "draw": 1,
                 "lose": 2,
-                "goals": { "for": 2, "against": 5 }
+                "goals": { "for": 3, "against": 6 }
               },
               "home": {
                 "played": null,
@@ -590,7 +590,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ],
           [
@@ -601,18 +601,18 @@
                 "name": "Romania",
                 "logo": "https://media.api-sports.io/football/teams/774.png"
               },
-              "points": 3,
+              "points": 4,
               "goalsDiff": 1,
               "group": "Group E",
-              "form": "LW",
+              "form": "DLW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
-                "goals": { "for": 3, "against": 2 }
+                "goals": { "for": 4, "against": 3 }
               },
               "home": {
                 "played": null,
@@ -628,7 +628,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 2,
@@ -637,16 +637,16 @@
                 "name": "Belgium",
                 "logo": "https://media.api-sports.io/football/teams/1.png"
               },
-              "points": 3,
+              "points": 4,
               "goalsDiff": 1,
               "group": "Group E",
-              "form": "WL",
+              "form": "DWL",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
                 "goals": { "for": 2, "against": 1 }
               },
@@ -664,7 +664,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 3,
@@ -673,18 +673,18 @@
                 "name": "Slovakia",
                 "logo": "https://media.api-sports.io/football/teams/773.png"
               },
-              "points": 3,
+              "points": 4,
               "goalsDiff": 0,
               "group": "Group E",
-              "form": "LW",
+              "form": "DLW",
               "status": "same",
               "description": "Ranking of third-placed teams",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
-                "goals": { "for": 2, "against": 2 }
+                "goals": { "for": 3, "against": 3 }
               },
               "home": {
                 "played": null,
@@ -700,7 +700,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 4,
@@ -709,16 +709,16 @@
                 "name": "Ukraine",
                 "logo": "https://media.api-sports.io/football/teams/772.png"
               },
-              "points": 3,
+              "points": 4,
               "goalsDiff": -2,
               "group": "Group E",
-              "form": "WL",
+              "form": "DWL",
               "status": "same",
               "description": null,
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
                 "goals": { "for": 2, "against": 4 }
               },
@@ -736,7 +736,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ],
           [
@@ -748,17 +748,17 @@
                 "logo": "https://media.api-sports.io/football/teams/27.png"
               },
               "points": 6,
-              "goalsDiff": 4,
+              "goalsDiff": 2,
               "group": "Group F",
-              "form": "WW",
+              "form": "LWW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 2,
                 "draw": 0,
-                "lose": 0,
-                "goals": { "for": 5, "against": 1 }
+                "lose": 1,
+                "goals": { "for": 5, "against": 3 }
               },
               "home": {
                 "played": null,
@@ -774,7 +774,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 2,
@@ -783,18 +783,18 @@
                 "name": "Türkiye",
                 "logo": "https://media.api-sports.io/football/teams/777.png"
               },
-              "points": 3,
-              "goalsDiff": -1,
+              "points": 6,
+              "goalsDiff": 0,
               "group": "Group F",
-              "form": "LW",
+              "form": "WLW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
-                "win": 1,
+                "played": 3,
+                "win": 2,
                 "draw": 0,
                 "lose": 1,
-                "goals": { "for": 3, "against": 4 }
+                "goals": { "for": 5, "against": 5 }
               },
               "home": {
                 "played": null,
@@ -810,63 +810,63 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 3,
+              "team": {
+                "id": 1104,
+                "name": "Georgia",
+                "logo": "https://media.api-sports.io/football/teams/1104.png"
+              },
+              "points": 4,
+              "goalsDiff": 0,
+              "group": "Group F",
+              "form": "WDL",
+              "status": "same",
+              "description": "Ranking of third-placed teams",
+              "all": {
+                "played": 3,
+                "win": 1,
+                "draw": 1,
+                "lose": 1,
+                "goals": { "for": 4, "against": 4 }
+              },
+              "home": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "away": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "update": "2024-06-30T00:00:00+00:00"
+            },
+            {
+              "rank": 4,
               "team": {
                 "id": 770,
                 "name": "Czech Republic",
                 "logo": "https://media.api-sports.io/football/teams/770.png"
               },
               "points": 1,
-              "goalsDiff": -1,
-              "group": "Group F",
-              "form": "DL",
-              "status": "same",
-              "description": "Ranking of third-placed teams",
-              "all": {
-                "played": 2,
-                "win": 0,
-                "draw": 1,
-                "lose": 1,
-                "goals": { "for": 2, "against": 3 }
-              },
-              "home": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "away": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "update": "2024-06-24T00:00:00+00:00"
-            },
-            {
-              "rank": 4,
-              "team": {
-                "id": 1104,
-                "name": "Georgia",
-                "logo": "https://media.api-sports.io/football/teams/1104.png"
-              },
-              "points": 1,
               "goalsDiff": -2,
               "group": "Group F",
-              "form": "DL",
+              "form": "LDL",
               "status": "same",
               "description": null,
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
                 "draw": 1,
-                "lose": 1,
-                "goals": { "for": 2, "against": 4 }
+                "lose": 2,
+                "goals": { "for": 3, "against": 5 }
               },
               "home": {
                 "played": null,
@@ -882,29 +882,29 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ],
           [
             {
               "rank": 1,
               "team": {
-                "id": 775,
-                "name": "Austria",
-                "logo": "https://media.api-sports.io/football/teams/775.png"
+                "id": 1118,
+                "name": "Netherlands",
+                "logo": "https://media.api-sports.io/football/teams/1118.png"
               },
-              "points": 3,
-              "goalsDiff": 1,
+              "points": 4,
+              "goalsDiff": 0,
               "group": "Ranking of third-placed teams",
-              "form": "WL",
+              "form": "LDW",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 1,
-                "draw": 0,
+                "draw": 1,
                 "lose": 1,
-                "goals": { "for": 3, "against": 2 }
+                "goals": { "for": 4, "against": 4 }
               },
               "home": {
                 "played": null,
@@ -920,26 +920,98 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 2,
+              "team": {
+                "id": 1104,
+                "name": "Georgia",
+                "logo": "https://media.api-sports.io/football/teams/1104.png"
+              },
+              "points": 4,
+              "goalsDiff": 0,
+              "group": "Ranking of third-placed teams",
+              "form": "WDL",
+              "status": "same",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
+              "all": {
+                "played": 3,
+                "win": 1,
+                "draw": 1,
+                "lose": 1,
+                "goals": { "for": 4, "against": 4 }
+              },
+              "home": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "away": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "update": "2024-06-30T00:00:00+00:00"
+            },
+            {
+              "rank": 3,
               "team": {
                 "id": 773,
                 "name": "Slovakia",
                 "logo": "https://media.api-sports.io/football/teams/773.png"
               },
+              "points": 4,
+              "goalsDiff": 0,
+              "group": "Ranking of third-placed teams",
+              "form": "DLW",
+              "status": "same",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
+              "all": {
+                "played": 3,
+                "win": 1,
+                "draw": 1,
+                "lose": 1,
+                "goals": { "for": 3, "against": 3 }
+              },
+              "home": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "away": {
+                "played": null,
+                "win": null,
+                "draw": null,
+                "lose": null,
+                "goals": { "for": null, "against": null }
+              },
+              "update": "2024-06-30T00:00:00+00:00"
+            },
+            {
+              "rank": 4,
+              "team": {
+                "id": 1091,
+                "name": "Slovenia",
+                "logo": "https://media.api-sports.io/football/teams/1091.png"
+              },
               "points": 3,
               "goalsDiff": 0,
               "group": "Ranking of third-placed teams",
-              "form": "LW",
+              "form": "DDD",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": "Promotion - Euro (Play Offs: 1/8-finals)",
               "all": {
-                "played": 2,
-                "win": 1,
-                "draw": 0,
-                "lose": 1,
+                "played": 3,
+                "win": 0,
+                "draw": 3,
+                "lose": 0,
                 "goals": { "for": 2, "against": 2 }
               },
               "home": {
@@ -956,10 +1028,10 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
-              "rank": 3,
+              "rank": 5,
               "team": {
                 "id": 769,
                 "name": "Hungary",
@@ -970,7 +1042,7 @@
               "group": "Ranking of third-placed teams",
               "form": "WLL",
               "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
+              "description": null,
               "all": {
                 "played": 3,
                 "win": 1,
@@ -992,99 +1064,27 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
-            },
-            {
-              "rank": 4,
-              "team": {
-                "id": 1091,
-                "name": "Slovenia",
-                "logo": "https://media.api-sports.io/football/teams/1091.png"
-              },
-              "points": 2,
-              "goalsDiff": 0,
-              "group": "Ranking of third-placed teams",
-              "form": "DD",
-              "status": "same",
-              "description": "Promotion - Euro (Play Offs: )",
-              "all": {
-                "played": 2,
-                "win": 0,
-                "draw": 2,
-                "lose": 0,
-                "goals": { "for": 2, "against": 2 }
-              },
-              "home": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "away": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "update": "2024-06-24T00:00:00+00:00"
-            },
-            {
-              "rank": 5,
-              "team": {
-                "id": 778,
-                "name": "Albania",
-                "logo": "https://media.api-sports.io/football/teams/778.png"
-              },
-              "points": 1,
-              "goalsDiff": -1,
-              "group": "Ranking of third-placed teams",
-              "form": "DL",
-              "status": "same",
-              "description": null,
-              "all": {
-                "played": 2,
-                "win": 0,
-                "draw": 1,
-                "lose": 1,
-                "goals": { "for": 3, "against": 4 }
-              },
-              "home": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "away": {
-                "played": null,
-                "win": null,
-                "draw": null,
-                "lose": null,
-                "goals": { "for": null, "against": null }
-              },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             },
             {
               "rank": 6,
               "team": {
-                "id": 770,
-                "name": "Czech Republic",
-                "logo": "https://media.api-sports.io/football/teams/770.png"
+                "id": 3,
+                "name": "Croatia",
+                "logo": "https://media.api-sports.io/football/teams/3.png"
               },
-              "points": 1,
-              "goalsDiff": -1,
+              "points": 2,
+              "goalsDiff": -3,
               "group": "Ranking of third-placed teams",
-              "form": "DL",
+              "form": "DDL",
               "status": "same",
               "description": null,
               "all": {
-                "played": 2,
+                "played": 3,
                 "win": 0,
-                "draw": 1,
+                "draw": 2,
                 "lose": 1,
-                "goals": { "for": 2, "against": 3 }
+                "goals": { "for": 3, "against": 6 }
               },
               "home": {
                 "played": null,
@@ -1100,7 +1100,7 @@
                 "lose": null,
                 "goals": { "for": null, "against": null }
               },
-              "update": "2024-06-24T00:00:00+00:00"
+              "update": "2024-06-30T00:00:00+00:00"
             }
           ]
         ]

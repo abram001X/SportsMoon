@@ -43,14 +43,14 @@ apiCopa  = apiCopa.filter(element =>{
               </p>
             </div>
             <div className="b-child-table-groups">
-              <b style={{'color' : '#ff0'}}>{element.points}</b>
               <b>{element.all.played}</b>
               <b>{element.all.win}</b>
               <b>{element.all.draw}</b>
               <b>{element.all.lose}</b>
+              <b>{element.goalsDiff}</b>
               <b>{element.all.goals.for}</b>
               <b>{element.all.goals.against}</b>
-              <b>{element.goalsDiff}</b>
+              <b className="points">{element.points}</b>
               <b>{element.group}</b>
             </div>
           </div>

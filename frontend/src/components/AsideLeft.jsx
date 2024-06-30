@@ -8,7 +8,7 @@ export function AsideLeft() {
 
   return (
     <>
-      <aside className="cont_asideleft_padre">
+      <aside className="cont_asideleft_padre blue">
         <section className="cont_leagues-child-asideleft child-asideleft">
           <h2>Leagues</h2>
           <section className="league-child-cont_leagues eurocopa">
@@ -35,6 +35,7 @@ export function AsideLeft() {
 
           <Link to={`/${ruta}/results`}   onClick={()=> setRutaMenu('results')}>Icon:Results</Link>
 
+          <Link to={`/${ruta}/calendario`}  onClick={()=>setRutaMenu('calendario')}>Calendario</Link>
         </section>
         <section className="teams_favorite-child-asideleft child-asideleft">
           <h3>Favorite Teams</h3>
