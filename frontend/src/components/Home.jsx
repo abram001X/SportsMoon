@@ -35,7 +35,7 @@ export function Home({ apiEuroCopa, apiCopaAmerica}) {
 
   return (
     <>
-      <article className="cont_home_padre">
+      <article className="cont_home_padre white">
         <Routes>
           <Route
             path="eurocopa/groups"

@@ -10,16 +10,18 @@ export function TeamsGroups({apiTeamsCopa}) {
       'Group C',
       'Group D',
       'Group E',
-      'Group F'
+      'Group F',
+      'Ranking of third-placed teams'
     ];
     console.log(apiTeamsCopa)
     return (
       <>
+        <h2 className="h2back">Groups</h2>
         {apiTeamsCopa.map((standings) => {
           return standings.map((elements, k) => {
             return (
-              <section key={k} className="cont_groups-child-teamsgroups">
-                <h3>{groupsArray[k]}</h3>
+              <section key={k} className="cont_groups-child-teamsgroups plate">
+                <h3 style={{'margin-bottom': '20px'}}>{groupsArray[k]}</h3>
                 {k !== 6 ? (
                   <div className="info_groups-child-teamsgroup ">
                     <div className="p-child-table-groups">
@@ -37,7 +39,7 @@ export function TeamsGroups({apiTeamsCopa}) {
                     </div>
                   </div>
                 ) : (
-                  <p hidden>s</p>
+                  <p hidden></p>
                 )}
                 {elements.map((element, j) => {
                   for (let index = 0; index < groupsArray.length; index++) {

@@ -29,14 +29,17 @@ function App() {
   console.log(apiEuroCopa)
   return (
     <>
+    <MenuGames
+        apiCopaAmerica={apiCopaAmerica}
+        apiEuroCopa={apiEuroCopa}
+      ></MenuGames>
       <Header
         apiCopaAmerica={apiCopaAmerica}
         apiEuroCopa={apiEuroCopa}
       ></Header>
-      <MenuGames
-        apiCopaAmerica={apiCopaAmerica}
-        apiEuroCopa={apiEuroCopa}
-      ></MenuGames>
+      <section className='poster'>
+        <img src="https://ideogram.ai/assets/image/lossless/response/VKDwGTrlToKRpSqChp59kA" alt="" />
+      </section>
       <article className="cont_interface">
         <AsideLeft
           apiCopaAmerica={apiCopaAmerica}

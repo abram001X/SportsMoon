@@ -1,3 +1,6 @@
+import { FaHouse } from "react-icons/fa6";
+
+
 
 export function Header(){
     return (
@@ -5,9 +8,10 @@ export function Header(){
         <header className="cont_header_padre">
                 <h2>SportsMoon</h2>
                 <form action="">
-                <input type="text" className="input-header_padre"/>
+                <input type="text" className="input-header_padre" placeholder='🔍'/>
                 </form>    
-                <section>Incio</section>
+                <p className="p_icon-header"><FaHouse />
+                </p>
         </header> 
         </>
     )

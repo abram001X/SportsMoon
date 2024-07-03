@@ -20,8 +20,8 @@ export function Results({ apiResults, resultCalendario }) {
     
 return (
 <>
-<section className="cont_teamsresults-padre">
-{resultCalendario ? <h2  style={{'width': '100%'}}>Results</h2> : <h2  style={{'width': '100%'}}>Calendario</h2>}
+<section className="cont_teamsresults-padre white">
+{resultCalendario ? <h2 className="black h2back" style={{'width': '100%'}}>Results</h2> : <h2 className="black h2back"  style={{'width': '100%'},{'margin-bottom': '20px'}}>Calendario</h2>}
 <br /><br />
     {arrayCopa.map((elements, j) => {
         let fecha = new Date(elements.fixture.date)
@@ -30,7 +30,7 @@ return (
             if (elements.fixture.status.long !== 'Not Started'){
                 return (
                     <>
-                    <article key={j} className="cont_teams_results-child  results">
+                    <article key={j} className="cont_teams_results-child plate results white">
                     <div className="teams_results-child">
                         <div className="results-p-img">
                         <img src={elements.teams.home.logo} alt="" />
@@ -46,7 +46,7 @@ return (
                         <b className={elements.teams.away.winner ? 'points' : ''}>{elements.goals.away}</b>
                     </div>
                     </article>
-                    <section className="fecha_results-child"><p style={{'fontSize': '15px'}}>{elements.fixture.date.slice(5,7)}/{elements.fixture.date.slice(8,10)}</p></section>
+                    <section style={{'margin-bottom':'10px'}} className="fecha_results-child plate"><p style={{'fontSize': '15px'}}>{elements.fixture.date.slice(5,7)}/{elements.fixture.date.slice(8,10)}</p></section>
             
                     </>
                 );
@@ -55,7 +55,7 @@ return (
             if (elements.fixture.status.long === 'Not Started'){
                 return (
                     <>
-                    <article key={j} className="cont_teams_results-child  results">
+                    <article key={j} className="cont_teams_results-child  plate results  resultsmargin">
                     <div className="teams_results-child">
                         <div className="results-p-img">
                         <img src={elements.teams.home.logo} alt="" />
@@ -71,7 +71,7 @@ return (
                         <b className={elements.teams.away.winner ? 'points' : ''}>{elements.goals.away}</b>
                     </div>
                     </article>
-                    <section className="fecha_results-child"><p style={{'fontSize': '15px'}}>{fecha.slice(0,8)}{fecha.slice(15,fecha.indexOf(':00 G'))}</p></section>
+                    <section className="fecha_results-child plate"><p style={{'fontSize': '15px'}}>{fecha.slice(0,8)}{fecha.slice(15,fecha.indexOf(':00 G'))}</p></section>
             
                     </>
                 );

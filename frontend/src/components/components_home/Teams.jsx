@@ -14,8 +14,9 @@ apiCopa  = apiCopa.filter(element =>{
   return element.group !== 'Ranking of third-placed teams'
 })
   return (
-    <article className="cont_teams-padre black">
-        <h2>Equipos</h2>
+    <>
+    <h2 className="h2back">Teams</h2>
+    <article className="cont_teams-padre black plate">
       <div className="info_groups-child-teamsgroup table-teams">
                     <div className="p-child-table-groups">
                       <p>EQUIPOS</p>
@@ -58,5 +59,6 @@ apiCopa  = apiCopa.filter(element =>{
       );
       })}
     </article>
+    </>
   );
 }
