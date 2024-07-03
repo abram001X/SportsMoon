@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { AsideLeft } from './components/AsideLeft';
 import { Home } from './components/Home';
 import { MenuGames } from './components/MenuGames';
+import { AsideRight } from './components/components_home/AsideRight';
 function App() {
 
   const [apiCopaAmerica, setApiCopaAmerica] = useState([]);
@@ -46,6 +47,7 @@ function App() {
           apiEuroCopa={apiEuroCopa}
         ></AsideLeft>
         <Home apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa}></Home>
+        <AsideRight/>      
       </article>
       
     </>

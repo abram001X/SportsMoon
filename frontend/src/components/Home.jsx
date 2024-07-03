@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Teams } from './components_home/Teams.jsx';
 import { useEffect, useState } from 'react';
 import { Results } from './components_home/Results.jsx';
+import { Inicio } from './components_home/Inicio.jsx';
+
 // eslint-disable-next-line react/prop-types
 export function Home({ apiEuroCopa, apiCopaAmerica}) {
   const [apiTeamsCopaAmerica, setApiTeamsCopaAmerica] = useState([]);
@@ -37,6 +39,7 @@ export function Home({ apiEuroCopa, apiCopaAmerica}) {
     <>
       <article className="cont_home_padre white">
         <Routes>
+          <Route path='/' element={<Inicio/>}/>
           <Route
             path="eurocopa/groups"
             element={

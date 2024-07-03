@@ -1,5 +1,5 @@
 import { FaHouse } from "react-icons/fa6";
-
+import { Link} from 'react-router-dom';
 
 
 export function Header(){
@@ -10,8 +10,8 @@ export function Header(){
                 <form action="">
                 <input type="text" className="input-header_padre" placeholder='🔍'/>
                 </form>    
-                <p className="p_icon-header"><FaHouse />
-                </p>
+                <Link className="p_icon-header" to={`/`}><FaHouse />
+                </Link>
         </header> 
         </>
     )
