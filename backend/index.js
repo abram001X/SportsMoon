@@ -27,9 +27,23 @@ const rutaJsonStandingsCopaAmerica = path.join(
   'json',
   'standingsCopaAmerica.json'
 )
-
+const news = path.join(
+  __dirname,
+  'json',
+  'noticias.json'
+)
 // app
 app.use(cors())
+
+app.get('/api/news', (req, res) => {
+  fs.readFile(news, 'utf-8', (err, data) => {
+    if (err) {
+      console.error(err)
+    }
+    const apiData = JSON.parse(data)
+    res.send(apiData)
+  })
+})
 
 app.get('/api/standings/copaamerica', (req, res) => {
   fs.readFile(rutaJsonStandingsCopaAmerica, 'utf-8', (err, data) => {
