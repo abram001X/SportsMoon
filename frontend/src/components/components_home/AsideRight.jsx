@@ -1,11 +1,21 @@
-import { useEffect, useState } from "react"
+/* eslint-disable react/prop-types */
+import { TiThLarge } from "react-icons/ti";
 
-export function AsideRight(){
+export function AsideRight({homeApi}){
+    console.log(homeApi)
+
     return(
         <article className="cont_asideright-padre">
-                <section className="articles-child white">
-                    asdsd
-                </section>
+            <h3 className="h2back"><TiThLarge className="icon"/> Titulares</h3>
+            <section className="cont-articles-child white" >
+                
+                    {homeApi.map((element,j) =>{
+                        return(
+                        <section className="articles-child" key={j}>
+                            <p>{element.title}</p>
+                        </section>)
+                    })}     
+            </section>
         </article>
     )
 }   

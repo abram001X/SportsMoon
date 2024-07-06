@@ -6,10 +6,9 @@ import { Results } from './components_home/Results.jsx';
 import { Inicio } from './components_home/Inicio.jsx';
 
 // eslint-disable-next-line react/prop-types
-export function Home({ apiEuroCopa, apiCopaAmerica}) {
+export function Home({ apiEuroCopa, apiCopaAmerica,homeApi}) {
   const [apiTeamsCopaAmerica, setApiTeamsCopaAmerica] = useState([]);
   const [apiTeamsEuroCopa, setApiTeamsEuroCopa] = useState([]);
-
   useEffect(() => {
     fetch('http://localhost:3000/api/standings/copaamerica')
       .then((res) => res.json())
@@ -39,7 +38,7 @@ export function Home({ apiEuroCopa, apiCopaAmerica}) {
     <>
       <article className="cont_home_padre white">
         <Routes>
-          <Route path='/' element={<Inicio/>}/>
+          <Route path='/' element={<Inicio homeApi={homeApi}/>}/>
           <Route
             path="eurocopa/groups"
             element={

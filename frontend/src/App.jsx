@@ -9,8 +9,12 @@ function App() {
 
   const [apiCopaAmerica, setApiCopaAmerica] = useState([]);
   const [apiEuroCopa, setApiEuroCopa] = useState([]);
+  const [homeApi, setHomeApi] = useState([])
 
   useEffect(() => {
+    fetch('http://localhost:3000/api/news')
+      .then((res) => res.json())
+      .then((data) =>{setHomeApi(data)})
 
     fetch('http://localhost:3000/api/calendario/copaamerica')
       .then((res) => res.json())
@@ -46,8 +50,8 @@ function App() {
           apiCopaAmerica={apiCopaAmerica}
           apiEuroCopa={apiEuroCopa}
         ></AsideLeft>
-        <Home apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa}></Home>
-        <AsideRight/>      
+        <Home apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa} homeApi={homeApi}></Home>
+        <AsideRight homeApi={homeApi}/>      
       </article>
       
     </>

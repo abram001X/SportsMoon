@@ -6,7 +6,7 @@ export function Header(){
     return (
         <>
         <header className="cont_header_padre">
-                <h2>SportsMoon</h2>
+                <Link className="title-inicio" to={'/'}><h2>SportsMoon</h2></Link>
                 <form action="">
                 <input type="text" className="input-header_padre" placeholder='🔍'/>
                 </form>    

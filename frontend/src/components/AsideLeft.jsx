@@ -17,9 +17,9 @@ export function AsideLeft() {
     <>
       <aside className="cont_asideleft_padre">
         <section className="cont_leagues-child-asideleft white">
-          <h2 className="black h2back">
+          <h3 className="black h2back">
             <GiSoccerBall className='icon' /> Leagues
-          </h2>
+          </h3>
           <section className="child-asideleft">
             <section className="league-child-cont_leagues eurocopa ">
               <img
@@ -47,9 +47,9 @@ export function AsideLeft() {
           </section>
         </section>
         <section className="cont_information-child-asideleft white">
-          <h2 className="black h2back">
+          <h3 className="black h2back">
             <FiMenu className='icon' /> About
-          </h2>
+          </h3>
           <section className="child-asideleft about">
             <Link to={`/${ruta}/teams`} onClick={() => setRutaMenu('teams')}>
               <FaListOl className='icon' /> Teams
@@ -75,10 +75,10 @@ export function AsideLeft() {
           </section>
         </section>
         <section className="teams_favorite-child-asideleft white">
-          <h3 className='black h2back'>
+          <h4 className='black h2back'>
           <FaStar className='icon'/>
           Favorite Teams
-          </h3>
+          </h4>
           <section className="child-asideleft about">
             <a href="#">Venezuela</a>
             <a href="#">Argentina</a>

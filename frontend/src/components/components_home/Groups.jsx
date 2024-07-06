@@ -25,7 +25,7 @@ export function TeamsGroups({apiTeamsCopa}) {
                 {k !== 6 ? (
                   <div className="info_groups-child-teamsgroup ">
                     <div className="p-child-table-groups">
-                      <p>EQUIPOS</p>
+                      <b>EQUIPOS</b>
                     </div>
                     <div className="b-child-table-groups">
                       <b>PJ</b>

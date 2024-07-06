@@ -1,15 +1,7 @@
-import { useEffect, useState } from "react"
+/* eslint-disable react/prop-types */
 
-export function Inicio(){
-    const [homeApi, setHomeApi] = useState([])
+export function Inicio({homeApi}){
 
-useEffect(()=>{
-    fetch('http://localhost:3000/api/news')
-    .then((res) => res.json())
-    .then((data) =>{setHomeApi(data)})
-},[])
-
-console.log('home',homeApi)
 return(
     <section className="cont_news-padre">
     {homeApi.map((element,j)=>{
