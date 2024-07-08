@@ -27,16 +27,16 @@ export function TeamsGroups({apiTeamsCopa}) {
                     <div className="p-child-table-groups">
                       <b>EQUIPOS</b>
                     </div>
-                    <div className="b-child-table-groups">
-                      <b>PJ</b>
-                      <b>G</b>
-                      <b>E</b>
-                      <b>P</b>
-                      <b>GF</b>
-                      <b>GC</b>
-                      <b>DG</b>
-                      <b>PTS</b>
-                    </div>
+                    <ul className="ul-child-table-groups">
+                      <li>PJ</li>
+                      <li>G</li>
+                      <li>E</li>
+                      <li>P</li>
+                      <li>GF</li>
+                      <li>GC</li>
+                      <li>DG</li>
+                      <li>PTS</li>
+                    </ul>
                   </div>
                 ) : (
                   <p hidden></p>
@@ -53,16 +53,16 @@ export function TeamsGroups({apiTeamsCopa}) {
                                 {element.team.name}
                               </p>
                             </div>
-                            <div className="b-child-table-groups">
-                              <b>{element.all.played}</b>
-                              <b>{element.all.win}</b>
-                              <b>{element.all.draw}</b>
-                              <b>{element.all.lose}</b>
-                              <b>{element.all.goals.for}</b>
-                              <b>{element.all.goals.against}</b>
-                              <b>{element.goalsDiff}</b>
-                              <b className="points">{element.points}</b>
-                            </div>
+                            <ul className="ul-child-table-groups">
+                              <li>{element.all.played}</li>
+                              <li>{element.all.win}</li>
+                              <li>{element.all.draw}</li>
+                              <li>{element.all.lose}</li>
+                              <li>{element.all.goals.for}</li>
+                              <li>{element.all.goals.against}</li>
+                              <li>{element.goalsDiff}</li>
+                              <li className="points">{element.points}</li>
+                            </ul>
                           </div>
                         </div>
                       );

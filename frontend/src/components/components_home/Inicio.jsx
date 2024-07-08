@@ -11,13 +11,13 @@ return(
                     <img className="img_icon_news" src={element.source_icon} alt="" />
                     <p>{element.keywords[0].toUpperCase()}</p>
                 </section>
-                <section className="news-child">
+                <a href={element.source_url} className="news-child">
                 <img className='img-news-child' src={element.image_url} alt="" />
                 <section className="hp-news-child">
-                    <h3 className="">{element.title}</h3><br />
-                    <p className="child-news">{element.description.slice(0,element.description.lastIndexOf('appeared'))}</p>
+                    <h3 >{element.title}</h3><br />
+                    <p className="child-news-p">{element.description.slice(0,element.description.lastIndexOf('appeared'))}...</p>
                 </section>
-                </section>
+                </a>
                 
             </section>
         )

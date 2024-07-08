@@ -51,9 +51,13 @@ function App() {
           apiEuroCopa={apiEuroCopa}
         ></AsideLeft>
         <Home apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa} homeApi={homeApi}></Home>
-        <AsideRight homeApi={homeApi}/>      
+        <AsideRight homeApi={homeApi}/>    
+        
       </article>
-      
+      <footer className='cont_footer-padre'>
+          <p>© 2024 AbrahamAlfonzo</p>
+          <p>abrahamalfonzo11@gmail.com</p>
+        </footer>
     </>
   );
 }

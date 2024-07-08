@@ -12,7 +12,7 @@ export function AsideRight({homeApi}){
                     {homeApi.map((element,j) =>{
                         return(
                         <section className="articles-child" key={j}>
-                            <p>{element.title}</p>
+                            <a className="titulares-a" href={element.source_url}>{element.title}</a>
                         </section>)
                     })}     
             </section>

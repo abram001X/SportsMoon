@@ -16,23 +16,23 @@ apiCopa  = apiCopa.filter(element =>{
   return (
     <>
     <h2 className="h2back">Teams</h2>
-    <article className="cont_teams-padre black plate">
+    <article className="cont_teams-padre plate">
       <div className="info_groups-child-teamsgroup table-teams">
                     <div className="p-child-table-groups">
                       <p>EQUIPOS</p>
                     </div>
-                    <div className="b-child-table-groups">
-                      <b>PJ</b>
-                      <b>G</b>
-                      <b>E</b>
-                      <b>P</b>
-                      <b>GF</b>
-                      <b>GC</b>
-                      <b>DG</b>
-                      <b>PTS</b>
-                      <b>Group</b>
-                    </div>
-                  </div>
+                    <ul className="ul-child-table-groups">
+                      <li>PJ</li>
+                      <li>G</li>
+                      <li>E</li>
+                      <li>P</li>
+                      <li>GF</li>
+                      <li>GC</li>
+                      <li>DG</li>
+                      <li>PTS</li>
+                      <li>Group</li>
+                    </ul>
+      </div>
       {apiCopa.map((element,j)=>{
         return (
           <div className="standings-child-cont-groups table-teams" key={j}>
@@ -43,17 +43,17 @@ apiCopa  = apiCopa.filter(element =>{
                 {element.team.name}
               </p>
             </div>
-            <div className="b-child-table-groups">
-              <b>{element.all.played}</b>
-              <b>{element.all.win}</b>
-              <b>{element.all.draw}</b>
-              <b>{element.all.lose}</b>
-              <b>{element.goalsDiff}</b>
-              <b>{element.all.goals.for}</b>
-              <b>{element.all.goals.against}</b>
-              <b className="points">{element.points}</b>
-              <b>{element.group}</b>
-            </div>
+            <ul className="ul-child-table-groups">
+              <li>{element.all.played}</li>
+              <li>{element.all.win}</li>
+              <li>{element.all.draw}</li>
+              <li>{element.all.lose}</li>
+              <li>{element.goalsDiff}</li>
+              <li>{element.all.goals.for}</li>
+              <li>{element.all.goals.against}</li>
+              <li>{element.points}</li>
+              <li>{element.group}</li>
+            </ul>
           </div>
         </div>
       );
