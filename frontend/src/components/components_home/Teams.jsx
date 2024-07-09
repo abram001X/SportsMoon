@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-export function Teams({ apiTeamsCopa }) {
+export function Teams({ apiStandings }) {
   let apiCopa = [];
 
-  apiTeamsCopa.map(standings =>{
+  console.log(apiCopa)
+
+  apiStandings.map(standings =>{
     return standings.map(elements =>{
         return elements.map(element => {
           apiCopa.push(element)

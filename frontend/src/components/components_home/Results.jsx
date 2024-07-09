@@ -17,7 +17,7 @@ export function Results({ apiResults, resultCalendario }) {
         apiResults.sort(ordenDate)
     }
     const arrayCopa = apiResults
-    
+    console.log(apiResults)
 return (
 <>
 <section className="cont_teamsresults-padre white">

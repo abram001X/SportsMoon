@@ -1,57 +1,42 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Header } from './components/Header';
 import { AsideLeft } from './components/AsideLeft';
 import { Home } from './components/Home';
 import { MenuGames } from './components/MenuGames';
-import { AsideRight } from './components/components_home/AsideRight';
+import { Inicio } from './components/components_home/Inicio';
+import { Leagues } from './components/Leagues';
 function App() {
-
-  const [apiCopaAmerica, setApiCopaAmerica] = useState([]);
-  const [apiEuroCopa, setApiEuroCopa] = useState([]);
   const [homeApi, setHomeApi] = useState([])
-
+  const [leagues, setLeagues] = useState([]);
   useEffect(() => {
     fetch('http://localhost:3000/api/news')
       .then((res) => res.json())
       .then((data) =>{setHomeApi(data)})
-
-    fetch('http://localhost:3000/api/calendario/copaamerica')
+    
+      fetch('http://localhost:3000/api/leagues')
       .then((res) => res.json())
       .then((data) => {
-        setApiCopaAmerica(data.response);
+        setLeagues(data.response);
       });
-
-    fetch('http://localhost:3000/api/calendario/eurocopa')
-      .then((res) => res.json())
-      .then((data) => {
-        setApiEuroCopa(data.response);
-      });
-
   }, []);
 
-  console.log(apiCopaAmerica)
-  console.log(apiEuroCopa)
   return (
     <>
-    <MenuGames
-        apiCopaAmerica={apiCopaAmerica}
-        apiEuroCopa={apiEuroCopa}
-      ></MenuGames>
+      <MenuGames/>
       <Header
-        apiCopaAmerica={apiCopaAmerica}
-        apiEuroCopa={apiEuroCopa}
       ></Header>
       <section className='poster'>
         <img src="https://ideogram.ai/assets/image/lossless/response/VKDwGTrlToKRpSqChp59kA" alt="" />
       </section>
       <article className="cont_interface">
-        <AsideLeft
-          apiCopaAmerica={apiCopaAmerica}
-          apiEuroCopa={apiEuroCopa}
-        ></AsideLeft>
-        <Home apiCopaAmerica={apiCopaAmerica} apiEuroCopa={apiEuroCopa} homeApi={homeApi}></Home>
-        <AsideRight homeApi={homeApi}/>    
+        <AsideLeft leagues={leagues}/>
+        <Routes>
+          <Route path='/' element={<Inicio homeApi={homeApi}/>}></Route>
+          <Route path='/info/:etiqueta/:leagueId' element={<Home/>}></Route>
+          <Route path='/leagues/:country' element={<Leagues leagues={leagues}/>}></Route>
+        </Routes>
         
       </article>
       <footer className='cont_footer-padre'>

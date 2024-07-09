@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
+import { AsideRight } from "./AsideRight"
 
 export function Inicio({homeApi}){
-
 return(
+    <>
+    <article className="cont_inicio_padre white">
     <section className="cont_news-padre">
     {homeApi.map((element,j)=>{
         return(
@@ -24,5 +26,9 @@ return(
     })
     }
     </section>
+    
+    </article>
+    <AsideRight homeApi={homeApi}/> 
+    </>
 )    
 }

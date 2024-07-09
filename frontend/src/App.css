@@ -76,7 +76,11 @@ body {
   padding: 15px;
 
 }
-
+.cont_inicio_padre {
+  width:50.5%; /*agrandar después*/
+  border-radius: 10px;
+  margin-right: 15px;
+}
 .cont_details-child{
   display: flex;
   align-items: end;
@@ -143,7 +147,7 @@ body {
   width: 100%;
   color: #000;
   padding: 10px 0px;
-  font-size: 13px;
+  font-size: 12px;
   border-bottom: 1px solid #eee;
 }
 .titulares-a{
@@ -158,6 +162,7 @@ body {
   flex-direction: column;
   width: 27%; 
   border-radius: 10px;
+
 }
 
 /*MenuGames*/
@@ -240,6 +245,7 @@ b {
   display: flex;
   padding: 11px;
   align-items: center;
+  justify-content: space-around;
   position: sticky;
   top: 0;
   z-index: 90;
@@ -247,17 +253,26 @@ b {
 .cont_header_padre h2:hover{
   cursor: pointer;
 }
-.p_icon-header{
-  transform: translateX(450px);
-  font-size: 25px;
-  text-align: center;
+.cont-child-header{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-decoration: none;
+  margin-top: 2px;
   color: #fff;
+  font-weight: 500;
+}
+.cont-child-header p{
+  width: 100%;
+  font-size: 13px;
+}
+.icon-header{
+  font-size: 25px;
 }
 .p_icon-header:hover{
   cursor: pointer;
 }
 .input-header_padre {
-  transform: translateX(100px);
   outline: none;
   border: none;
   width: 700px;
@@ -270,10 +285,39 @@ b {
   color: #fff;
 }
 /*home*/
-.cont_home_padre {
-  width:50.5%; /*agrandar después*/
+.cont_information-child-home{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+.league_title{
+  display: flex;
+
+  background-color: #03a;
+  color: #fff;
+  padding: 3px 5px;
+}
+.league_title select{
+  transform: translateX(20px);
+}
+.cont_home_padre{
+  width: 70%;
+  transform: translateX(50px);
   border-radius: 10px;
-  margin-right: 15px;
+}
+.cont_information-child-home a{
+  width: 25%;
+  color: #aaa; 
+  border-left:1px solid #333;
+  border-right:1px solid #333;
+  text-decoration: none;
+  font-weight: 700;
+}
+.cont_information-child-home a:hover{
+  color: #07f;
 }
 /*Results-home*/
 .cont_teamsresults-padre{
@@ -400,6 +444,10 @@ b {
   color: #000;
   font-weight: 700;
 }
+.a-asideleft{
+  text-decoration: none;
+  color: #fff;
+}
 .press {
   background-color: #777;
 }
@@ -407,38 +455,29 @@ b {
   border-radius: 10px;
 }
 .child-asideleft {
-  font-size: 15px;
+  font-size: 13px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  padding: 10px 15px;
+  padding: 0px 5px;
+  list-style-type: none;
 }
 .child-asideleft a {
-  margin-top: 10px;
-  font-size: 15px;
   text-decoration: none;
-  padding: 6px 0px;
+  padding: 5px 0px; 
   color: #000;
-  padding: 10px 0px;
 }
-.about a{
-  border-bottom: 1px solid #ccc;
-}
-.cont_information-child-asideleft {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  
+.favorite-teams li{
+  color: #03a;
 }
 .eurocopa {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
 }
 .league-child-cont_leagues {
   padding: 10px 0px;
   display: flex;
   justify-content: start;
-  align-items: center;
+  align-items: end;
   width: 100%;
 }
 .teams_favorite-child-asideleft {
@@ -451,4 +490,78 @@ b {
   width: 30px;
   height: 30px;
   margin-right: 15px;
+}
+/*Leagues*/
+.ul-leagues-child{
+  list-style-type: none;
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ul-leagues-child h3{
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  color: #999;
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+}
+
+.ul-leagues-child img{
+  margin: 5px;
+  width: 40px;
+  height:45px;
+}
+.cont_league_padre{
+  width: 70%;
+  transform: translateX(50px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.cont_links-leagues{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #000;
+  border-radius: 10px 10px 0px 0px;
+}
+.a-child-leagues{
+  text-decoration: none;
+  font-weight: 600;
+  color: #aaa;  
+  padding: 10px;
+}
+.a-child-leagues:hover{
+  color: #07f;
+}
+.li-child-leagues{
+  width: 50%;
+  height: 60px;
+}
+.links-child-leagues{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+}
+
+.p-link p:hover{
+  color: #07f;
+}
+.cont_links-info{
+  text-align: left;
+  text-decoration: none;
+}
+.a-child-info{
+  margin-right: 5px;
+  font-size: 13px;
+  color: #07f;
+}
+.p-link{
+  color: #000;
+  text-decoration: none;
 }

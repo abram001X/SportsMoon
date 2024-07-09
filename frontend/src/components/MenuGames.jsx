@@ -1,42 +1,44 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GoChevronRight } from 'react-icons/go';
 import { GoChevronLeft } from 'react-icons/go';
 /* eslint-disable react/prop-types */
-export function MenuGames({ apiCopaAmerica, apiEuroCopa }) {
-  const [copaSelect, setCopaSelect] = useState(apiEuroCopa);
+export function MenuGames() {
+  const [copa, setCopa] = useState([]);
+  const [season, setSeason] = useState(2024)
+  const [league, setLeague] = useState(4)
   const winner = 'winner-child-menugames';
   const loser = 'loser-child-menugames';
+
   const contenedorMenu = document.querySelector(
-    '.cont_menugames-scroll-child'
-  );
-  
-  const gamesPast = (
-    copaSelect === apiCopaAmerica ? copaSelect : apiEuroCopa
-  ).filter((elements) => {
+    '.cont_menugames-scroll-child');
+
+  useEffect(()=>{
+    fetch(`http://localhost:3000/api/${league}/${season}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setCopa(data.response)
+    })   
+  },[season,league])
+
+  console.log(copa)
+  const gamesPast = copa.filter((elements) => {
     return elements.fixture.status.long === 'Match Finished';
   });
 
   const handleLeague = (copa) => {
-    if (copa == 'america') {
-      setCopaSelect(apiCopaAmerica);
-    } else setCopaSelect(apiEuroCopa);
+    if (copa === 'america') {
+      setSeason(2024)
+      setLeague(4)
+    } else{ 
+      setSeason(2024)
+      setLeague(9)
+    }
     contenedorMenu.style.transform = `translateX(-${0}px)`;
   };
 
-  let transEuro = 0;
   let transAme = 0;
   const handleTrans = (direction) => {
     contenedorMenu.style.transition = '.8s'
-    if ((copaSelect === apiEuroCopa)) {
-      if ((direction === 'right') & (transEuro < 2200)) {
-        transEuro += 868
-        contenedorMenu.style.transform = `translateX(-${transEuro}px)`;
-      }
-      if (direction === 'left') {
-        transEuro === 0 ? transEuro = 0 : transEuro -= 868;
-        contenedorMenu.style.transform = `translateX(-${transEuro}px)`;
-      }
-    } else {
       if ((direction === 'right') & (transAme < 600)) {
         transAme += 600;
         contenedorMenu.style.transform = `translateX(-${transAme}px)`;
@@ -45,8 +47,6 @@ export function MenuGames({ apiCopaAmerica, apiEuroCopa }) {
         transAme === 0 ? transAme = 0 : transAme -= 600;
         contenedorMenu.style.transform = `translateX(-${transAme}px)`;
       }
-    }
-    
   };
   return (
     <>
@@ -60,6 +60,12 @@ export function MenuGames({ apiCopaAmerica, apiEuroCopa }) {
           >
             <option value="eurocopa">Eurocopa</option>
             <option value="america">Copa América</option>
+            <option value="america">UEFA Champions League</option>
+            <option value="america">Premier League</option>
+            <option value="america">Bundesliga</option>
+            <option value="america">UEFA Europa League</option>
+            <option value="america">La Liga</option>
+            <option value="america">Serie A</option>
           </select>
         </section>
         <button
