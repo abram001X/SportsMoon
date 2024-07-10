@@ -17,7 +17,7 @@ apiCopa  = apiCopa.filter(element =>{
 })
   return (
     <>
-    <h2 className="h2back">Teams</h2>
+    <h2  className="h3-style-global">Teams</h2>
     <article className="cont_teams-padre plate">
       <div className="info_groups-child-teamsgroup table-teams">
                     <div className="p-child-table-groups">

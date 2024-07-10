@@ -21,7 +21,7 @@ export function Results({ apiResults, resultCalendario }) {
 return (
 <>
 <section className="cont_teamsresults-padre white">
-{resultCalendario ? <h2 className="black h2back" style={{'width': '100%'}}>Results</h2> : <h2 className="black h2back" >Calendario</h2>}
+{resultCalendario ? <h2  className="h3-style-global" style={{'width': '100%'}}>Results</h2> : <h2  className="h3-style-global" >Calendario</h2>}
 <br /><br />
     {arrayCopa.map((elements, j) => {
         let fecha = new Date(elements.fixture.date)

@@ -14,7 +14,7 @@ export function TeamsGroups({apiTeamsCopa}) {
     console.log(apiTeamsCopa)
     return (
       <>
-        <h2 className="h2back">Groups</h2>
+        <h2  className="h3-style-global">Groups</h2>
         {apiTeamsCopa.map((standings) => {
           return standings.map((elements, k) => {
             return (

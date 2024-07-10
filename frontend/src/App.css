@@ -499,7 +499,7 @@ b {
   display: flex;
   flex-wrap: wrap;
 }
-.ul-leagues-child h3{
+.h3-style-global{
   width: 100%;
   text-align: left;
   margin-bottom: 20px;

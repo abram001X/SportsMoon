@@ -31,7 +31,7 @@ app.get('/api/leagues', (req, res) => {
   })
 })
 
-/* app.get('/api/calendario/:league/:season', (req, res) => {
+app.get('/api/calendario/:league/:season', (req, res) => {
   const axios = require('axios')
 
   const config = {
@@ -56,7 +56,7 @@ app.get('/api/standings/:league/:season', (req, res) => {
 
   const config = {
     method: 'get',
-    url: 'https://v3.football.api-sports.io/leagues',
+    url: `https://v3.football.api-sports.io/standings?league=${req.params.league}&season=${req.params.season}`,
     headers: {
       'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
       'x-rapidapi-host': 'v3.football.api-sports.io'
@@ -65,12 +65,12 @@ app.get('/api/standings/:league/:season', (req, res) => {
 
   axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data))
+      res.json(response.data)
     })
     .catch(function (error) {
       console.log(error)
     })
-}) */
+})
 
 console.log('http://localhost:3000/api/league')
 app.listen(port)

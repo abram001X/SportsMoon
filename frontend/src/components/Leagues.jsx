@@ -32,20 +32,20 @@ return (
             })}
         </section>
         <ul className="ul-leagues-child ul_league">
-            <h3>Leagues</h3>
+            <h3  className="h3-style-global">Leagues</h3>
             {arrayLeagues.map((element, j) => {
             if (element.country.name ===  country & element.league.type === 'League'){
             return (
                 <li key={j} className="li-child-leagues">
                     <section className="links-child-leagues">
-                        <Link>
+                        <Link to={`/info/${element.league.type}/${element.league.id}`}>
                         <img src={element.league.logo} alt="" />
                         </Link>
                         <div className="cont_links-info">
-                            <Link className="p-link"><p >{element.league.name}</p></Link>
-                            <Link className="a-child-info" to={`/info/teams/${element.league.id}`}>Teams</Link>
-                            <Link className="a-child-info" to={`/info/groups/${element.league.id}`}>Position</Link>
-                            <Link className="a-child-info" to={`/info/results/${element.league.id}`}>partidos</Link>
+                            <Link className="p-link" to={`/info/${element.league.type}/${element.league.id}`}><p >{element.league.name}</p></Link>
+                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Teams</Link>
+                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Position</Link>
+                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>partidos</Link>
                         </div>
                     </section>
                 </li>
@@ -53,18 +53,18 @@ return (
             })}
         </ul>
         <ul className="ul-leagues-child">
-        <h3>Cups</h3>
+        <h3 className="h3-style-global">Cups</h3>
             {arrayLeagues.map((element,j)=>{
                 if (element.country.name === country & element.league.type === 'Cup'){
                     return (
                         <li key={j} className="li-child-leagues">
-                            <Link to={`/info/teams/${element.league.id}`} className="links-child-leagues">
+                            <Link to={`/info/${element.league.type}/${element.league.id}`} className="links-child-leagues">
                                 <img src={element.league.logo} alt="" />
                                 <div className="cont_links-info">
                                     <p>{element.league.name}</p>
-                                    <Link className="a-child-info" to={`/info/teams/${element.league.id}`}>Teams</Link>
-                                    <Link className="a-child-info" to={`/info/groups/${element.league.id}`}>Position</Link>
-                                    <Link className="a-child-info" to={`/info/results/${element.league.id}`}>partidos</Link>
+                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Teams</Link>
+                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Position</Link>
+                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>partidos</Link>
                                 </div>
                             </Link>
                         
