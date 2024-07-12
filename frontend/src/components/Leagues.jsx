@@ -2,7 +2,7 @@
 import { Link, useParams} from "react-router-dom";
 
 /* eslint-disable react/prop-types */
-export function Leagues({ leagues }) {
+export function Leagues({ leagues,handleScroll }) {
 const {country} = useParams()
 console.log(country)
 const arrayBestLeagues = [
@@ -38,14 +38,14 @@ return (
             return (
                 <li key={j} className="li-child-leagues">
                     <section className="links-child-leagues">
-                        <Link to={`/info/${element.league.type}/${element.league.id}`}>
+                        <Link to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`}>
                         <img src={element.league.logo} alt="" />
                         </Link>
                         <div className="cont_links-info">
-                            <Link className="p-link" to={`/info/${element.league.type}/${element.league.id}`}><p >{element.league.name}</p></Link>
-                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Teams</Link>
-                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Position</Link>
-                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>partidos</Link>
+                            <Link className="p-link" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`}><p >{element.league.name}</p></Link>
+                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} >Clasification</Link>
+                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} >Results</Link>
+                            <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} >Calendario</Link>
                         </div>
                     </section>
                 </li>
@@ -58,13 +58,13 @@ return (
                 if (element.country.name === country & element.league.type === 'Cup'){
                     return (
                         <li key={j} className="li-child-leagues">
-                            <Link to={`/info/${element.league.type}/${element.league.id}`} className="links-child-leagues">
+                            <Link to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} className="links-child-leagues">
                                 <img src={element.league.logo} alt="" />
                                 <div className="cont_links-info">
-                                    <p>{element.league.name}</p>
-                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Teams</Link>
-                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>Position</Link>
-                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.id}`}>partidos</Link>
+                                <Link className="p-link" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`}><p >{element.league.name}</p></Link>
+                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} onClick={()=>{handleScroll('.cont_teams-padre')}}>Clasification</Link>
+                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} onClick={()=>{handleScroll('.cont_teamsresults-padre')}}>Results</Link>
+                                    <Link className="a-child-info" to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`} onClick={()=>{handleScroll('.cont_teamsresults-padre')}}>Calendario</Link>
                                 </div>
                             </Link>
                         

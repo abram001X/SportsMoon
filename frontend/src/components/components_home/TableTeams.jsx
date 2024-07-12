@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export function Teams({ apiStandings }) {
+export function TableTeams({ apiStandings }) {
   let apiCopa = [];
 
   console.log(apiCopa)
@@ -12,12 +12,9 @@ export function Teams({ apiStandings }) {
     })
   })
 apiCopa.sort((a,b)=> b.points - a.points)
-apiCopa  = apiCopa.filter(element =>{
-  return element.group !== 'Ranking of third-placed teams'
-})
+
   return (
     <>
-    <h2  className="h3-style-global">Teams</h2>
     <article className="cont_teams-padre plate">
       <div className="info_groups-child-teamsgroup table-teams">
                     <div className="p-child-table-groups">
@@ -32,7 +29,6 @@ apiCopa  = apiCopa.filter(element =>{
                       <li>GC</li>
                       <li>DG</li>
                       <li>PTS</li>
-                      <li>Group</li>
                     </ul>
       </div>
       {apiCopa.map((element,j)=>{
@@ -54,7 +50,6 @@ apiCopa  = apiCopa.filter(element =>{
               <li>{element.all.goals.for}</li>
               <li>{element.all.goals.against}</li>
               <li>{element.points}</li>
-              <li>{element.group}</li>
             </ul>
           </div>
         </div>

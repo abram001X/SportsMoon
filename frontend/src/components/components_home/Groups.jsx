@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-export function TeamsGroups({apiTeamsCopa}) {
-  const groupsEuroCopa = () => {
+export function Groups({apiTeamsCopa}) {
     const groupsArray = [
       'Group A',
       'Group B',
@@ -14,11 +13,11 @@ export function TeamsGroups({apiTeamsCopa}) {
     console.log(apiTeamsCopa)
     return (
       <>
-        <h2  className="h3-style-global">Groups</h2>
+      <article className="cont_teamsgroups-padre">
         {apiTeamsCopa.map((standings) => {
           return standings.map((elements, k) => {
             return (
-              <section key={k} className="cont_groups-child-teamsgroups plate">
+              <section key={k} className="cont_groups-child-teamsgroups plate" >
                 <h3 style={{'margin-bottom': '20px'}}>{groupsArray[k]}</h3>
                 {k !== 6 ? (
                   <div className="info_groups-child-teamsgroup ">
@@ -71,14 +70,7 @@ export function TeamsGroups({apiTeamsCopa}) {
             );
           });
         })}
+        </article>
       </>
     );
-  };
-
-  
-  return (
-    <article className="cont_teamsgroups-padre">
-      {groupsEuroCopa()}
-    </article>
-  );
 }

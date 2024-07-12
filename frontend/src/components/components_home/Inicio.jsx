@@ -11,7 +11,7 @@ return(
             <section className="news-child-cont_news white" key={j}>
                 <section className="cont_details-child">
                     <img className="img_icon_news" src={element.source_icon} alt="" />
-                    <p>{element.keywords[0].toUpperCase()}</p>
+                    <a href={element.source_url} className="a-news">{element.source_id.toUpperCase()}.COM</a>
                 </section>
                 <a href={element.source_url} className="news-child">
                 <img className='img-news-child' src={element.image_url} alt="" />

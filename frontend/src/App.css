@@ -76,6 +76,14 @@ body {
   padding: 15px;
 
 }
+.a-news{
+  color: #03a;
+  margin-left: 6px;
+  font-size: 14px;
+}
+.a-news:hover{
+  color: #909;
+}
 .cont_inicio_padre {
   width:50.5%; /*agrandar después*/
   border-radius: 10px;
@@ -293,6 +301,12 @@ b {
   padding: 10px;
   border-radius: 10px 10px 0px 0px;
 }
+.select_home{
+  font-size: 17px;
+  border: none;
+  outline: none;
+  padding: 0px 5px;
+}
 .league_title{
   display: flex;
 
@@ -308,38 +322,50 @@ b {
   transform: translateX(50px);
   border-radius: 10px;
 }
-.cont_information-child-home a{
+.cont_information-child-home p{
   width: 25%;
   color: #aaa; 
   border-left:1px solid #333;
   border-right:1px solid #333;
-  text-decoration: none;
   font-weight: 700;
 }
-.cont_information-child-home a:hover{
+.cont_information-child-home p:hover{
   color: #07f;
+  cursor: pointer;
 }
 /*Results-home*/
 .cont_teamsresults-padre{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   border-radius: 10px;
+  padding: 10px;
 }
-
+.scroll-results{
+  height: 650px;
+  overflow-y:scroll;
+}
+.calendario-child{
+  width: 60%;
+}
 .cont_teams_results-child{
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
-  margin: 10px;
+  width: 45%;
   padding: 5px;
   border-bottom: 1px solid #05a;
+  margin: 20px;
 }
 .cont_teams-child{
   width: 80%;
 }
+.b-results-child{
+  font-size: 17px;
+  width: 50px;
+}
 .teams_results-child{
   display: flex;
+  justify-content: space-between;
   width: 100%;
   align-items: center;
   height: 50%;
@@ -368,17 +394,14 @@ b {
   height: 50px;
   border-radius: 50%;
 }
-.results b{
-  width: 50%;
-  border: 1px solid #000;
-  font-size: 18px;
-}
+
 /*Teams-Home*/
 .cont_teams-padre{
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
-  margin: 10px;
+  margin: 10px 50px;
+  border: 1px solid #000;
 }
 .table-teams{
   border-bottom:1px solid #ddd;
@@ -393,10 +416,10 @@ b {
   justify-content: center;
 }
 .cont_groups-child-teamsgroups {
-  margin: 10px 10px;
+  margin: 10px;
   border-radius: 10px;
   padding: 10px;
-  width: 80%;
+  width: 45%;
   border: 1px solid #03a;
 }
 .standings-child-cont-groups img {
@@ -443,6 +466,25 @@ b {
   margin-right: 15px;
   color: #000;
   font-weight: 700;
+  
+}
+.h4_leagues-asideleft{
+  text-align: left;
+  margin: 10px 5px;
+  font-weight: 400;
+  border-bottom: 1px solid #000;
+}
+.icon-league{
+  margin-left: 20px;
+  font-size: 17px;
+}
+.links_leagues-asideleft{
+  display: flex;
+  align-items: center;
+  color: #05d;
+}
+.links_leagues-asideleft:hover{
+  color: #909;
 }
 .a-asideleft{
   text-decoration: none;
@@ -453,6 +495,8 @@ b {
 }
 .cont_leagues-child-asideleft{
   border-radius: 10px;
+  position: sticky;
+  top: 70px;
 }
 .child-asideleft {
   font-size: 13px;
@@ -470,9 +514,7 @@ b {
 .favorite-teams li{
   color: #03a;
 }
-.eurocopa {
-  border-bottom: 1px solid #eee;
-}
+
 .league-child-cont_leagues {
   padding: 10px 0px;
   display: flex;
@@ -502,12 +544,9 @@ b {
 .h3-style-global{
   width: 100%;
   text-align: left;
-  margin-bottom: 20px;
   color: #999;
-  border-bottom: 1px solid #ddd;
   padding: 5px;
 }
-
 .ul-leagues-child img{
   margin: 5px;
   width: 40px;
@@ -564,4 +603,55 @@ b {
 .p-link{
   color: #000;
   text-decoration: none;
+}
+/*Estadistica*/
+
+.cont_estadisticas-padre{
+  display: flex;
+  justify-content: center;
+  position:fixed;
+  width: 1400px;
+  top: 350px;
+  background-color: rgba(255, 255, 255, 0.5); 
+  transform: translate(-350px,-600px);
+  height: 113%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 9999;
+}
+.estadistica-child{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border: 1px  solid  #000;
+  position:sticky;
+  top:800px;
+  padding: 50px;
+  background-color: #fff;
+}
+.portada{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid #000;
+}
+.puntos-child img{
+  width: 100px;
+  height: 100px;
+}
+.porcentajes{
+  display: flex;
+  flex-direction: column;
+}
+.cont_estadistica{
+  display: flex;
+  width: 100%;
+}
+.estadistica{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
+.ocultar-cont{
+  width: 100%;
 }

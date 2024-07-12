@@ -8,7 +8,7 @@ export function Header(){
         <header className="cont_header_padre black">
                 <Link className="title-inicio" to={'/'}><h2>SportsMoon</h2></Link>
                 <form action="">
-                <input type="text" className="input-header_padre" placeholder='🔍'/>
+                <input type="text" className="input-header_padre" placeholder='🔍 Buscar Equipos o Partidos...'/>
                 </form>    
                 <Link to={`/leagues/World`} className="cont-child-header">
                     <RiTableFill className="icon-header"/>

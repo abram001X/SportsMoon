@@ -13,7 +13,7 @@ export function MenuGames() {
     '.cont_menugames-scroll-child');
 
   useEffect(()=>{
-    fetch(`http://localhost:3000/api/${league}/${season}`)
+    fetch(`http://localhost:3000/api/calendario/${league}/${season}`)
     .then((res) => res.json())
     .then((data) => {
       setCopa(data.response)
@@ -26,13 +26,6 @@ export function MenuGames() {
   });
 
   const handleLeague = (copa) => {
-    if (copa === 'america') {
-      setSeason(2024)
-      setLeague(4)
-    } else{ 
-      setSeason(2024)
-      setLeague(9)
-    }
     contenedorMenu.style.transform = `translateX(-${0}px)`;
   };
 
@@ -58,14 +51,12 @@ export function MenuGames() {
             id=""
             onChange={(e) => handleLeague(e.target.value)}
           >
-            <option value="eurocopa">Eurocopa</option>
-            <option value="america">Copa América</option>
-            <option value="america">UEFA Champions League</option>
-            <option value="america">Premier League</option>
-            <option value="america">Bundesliga</option>
-            <option value="america">UEFA Europa League</option>
-            <option value="america">La Liga</option>
-            <option value="america">Serie A</option>
+            <option value="2">UEFA Champions League</option>
+            <option value="39">Premier League</option>
+            <option value="78">Bundesliga</option>
+            <option value="3">UEFA Europa League</option>
+            <option value="140">La Liga</option>
+            <option value="135">Serie A</option>
           </select>
         </section>
         <button
