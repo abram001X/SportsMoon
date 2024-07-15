@@ -11,6 +11,7 @@ export function Groups({apiTeamsCopa}) {
       'Ranking of third-placed teams'
     ];
     console.log(apiTeamsCopa)
+    
     return (
       <>
       <article className="cont_teamsgroups-padre">

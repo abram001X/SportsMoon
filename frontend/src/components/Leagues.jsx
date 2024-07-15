@@ -4,7 +4,6 @@ import { Link, useParams} from "react-router-dom";
 /* eslint-disable react/prop-types */
 export function Leagues({ leagues,handleScroll }) {
 const {country} = useParams()
-console.log(country)
 const arrayBestLeagues = [
     'England',
     'World',
@@ -32,7 +31,7 @@ return (
             })}
         </section>
         <ul className="ul-leagues-child ul_league">
-            <h3  className="h3-style-global">Leagues</h3>
+            <h3  className="h3-style-global">Ligas</h3>
             {arrayLeagues.map((element, j) => {
             if (element.country.name ===  country & element.league.type === 'League'){
             return (
@@ -53,7 +52,7 @@ return (
             })}
         </ul>
         <ul className="ul-leagues-child">
-        <h3 className="h3-style-global">Cups</h3>
+        <h3 className="h3-style-global">Copas</h3>
             {arrayLeagues.map((element,j)=>{
                 if (element.country.name === country & element.league.type === 'Cup'){
                     return (

@@ -6,13 +6,13 @@ export function Header(){
     return (
         <>
         <header className="cont_header_padre black">
-                <Link className="title-inicio" to={'/'}><h2>SportsMoon</h2></Link>
+                <Link className="title-inicio" to={'/'}> <h2 className="h2-header-sport"><img src="https://ideogram.ai/assets/image/lossless/response/FyTvcZ2OSZGUf3BS8ZOoBQ"/> SportsMoon</h2></Link>
                 <form action="">
                 <input type="text" className="input-header_padre" placeholder='🔍 Buscar Equipos o Partidos...'/>
                 </form>    
                 <Link to={`/leagues/World`} className="cont-child-header">
                     <RiTableFill className="icon-header"/>
-                    <p>Leagues</p>
+                    <p>Ligas</p>
                 </Link>
                 <Link to={`/`} className="cont-child-header">
                     <FaHouse  className="icon-header"/>

@@ -21,13 +21,16 @@ export function Home({leagues}) {
   const [season, setSeason] = useState(2023);
   const [active, setActive] = useState(false);
   const [estadistica, setEstadistica] = useState([])
-
+  const [goalHome, setGoalHome] = useState()
+  const [goalAway, setGoalAway] = useState()
   const [fixture, setFixture] = useState()
-  const handleActive = (bolean,fixtureId = null)=>{
+  const handleActive = (bolean,fixtureId = null,homeGoal=null,awayGoal=null)=>{
     if (bolean) {
         setFixture(fixtureId)
     }
     setActive(bolean)
+    setGoalHome(homeGoal)
+    setGoalAway(awayGoal)
   }
   const {leagueId, type, league} = useParams()
   useEffect(() => {
@@ -77,17 +80,19 @@ export function Home({leagues}) {
       <article className="cont_home_padre white">
         
       <section className="cont_information-child-home white">
-            <a  href='#clasification'>
-            <FaListOl className="icon" /> Clasification
+            <a  href='#clasification' className='etiquetas-info'>
+            <FaListOl className="icon" /> Clasifiación
             </a>
-            <a href="#results"><PiSoccerBallBold className='icon'/> Results</a>
-            <a href='#calendario'>
+            <a href="#results" className='etiquetas-info'><PiSoccerBallBold className='icon'/> Resultados</a>
+            <a href='#calendario' className='etiquetas-info'>
             <BsCalendar2DateFill className="icon" /> calendario
           </a>
         </section> 
         <section className='league_title'>
           <h3><GiSoccerBall className='icon'/> {league}</h3>
-          <select name="seasons" id="" className='select_home' onChange={(e)=>{setSeason(e.target.value)}}>
+          <div className='cont_select-label'>
+          <label htmlFor="seasons">Año :</label>
+          <select name="seasons" value={season} className='select_home' onChange={(e)=>{setSeason(e.target.value)}}>
             {leaguesDate.map((elements,j)=>{
               if(elements.league.id == leagueId){
                 return elements.seasons.reverse().map((element)=>{
@@ -96,17 +101,18 @@ export function Home({leagues}) {
               }
             })}
           </select>
+          </div>
+          
         </section>
         
-        <Estadisticas active={active} handleActive={handleActive} estadistica={estadistica}/>
+        <Estadisticas active={active} handleActive={handleActive} estadistica={estadistica} goalAway={goalAway} goalHome={goalHome}/>
         <hr id='clasification' />
-        <h2  className="h3-style-global"  >Clasification</h2>
+        <h2  className="h3-style-global"  >Clasificación</h2>
         {type == 'Cup' ? <Groups apiTeamsCopa={apiStandings}/> : <TableTeams apiStandings={apiStandings}/>}
-        <hr id='results' />
-        <h2  className="h3-style-global">Results</h2>
+        <hr  />
+        <h2  className="h3-style-global">Resultados</h2>
         <Results apiResults={apiCalendario} handleActive={handleActive}/>
-        <hr id='calendario' />
-        <h2 className='h3-style-global'>Calendario</h2>
+        <h2 className='h3-style-global' id='results'>Calendario</h2>
         <Calendario apiResults={apiCalendario} season={season} handleActive={handleActive}/>
       </article>
     </>

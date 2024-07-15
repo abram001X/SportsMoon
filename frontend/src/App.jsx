@@ -31,7 +31,7 @@ function App() {
     <>
       <Header/>
       <section className='poster'>
-        <img src="https://ideogram.ai/assets/image/lossless/response/VKDwGTrlToKRpSqChp59kA" alt="" />
+        <img src="https://ideogram.ai/assets/image/lossless/response/2E65kClATs2uQn7HFDjUzA" alt="" />
       </section>
       <article className="cont_interface">
       

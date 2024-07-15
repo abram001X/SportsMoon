@@ -263,24 +263,33 @@ b {
 }
 .cont-child-header{
   display: flex;
+  padding: 2px 8px;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   text-decoration: none;
-  margin-top: 2px;
   color: #fff;
   font-weight: 500;
+  width: 100px;
+  
+  border-radius: 20px;
 }
 .cont-child-header p{
   width: 100%;
   font-size: 13px;
 }
-.icon-header{
-  font-size: 25px;
+.cont-child-header:hover{
+  background-color: #444;
 }
+
+.icon-header{
+  font-size: 30px;
+}
+
 .p_icon-header:hover{
   cursor: pointer;
 }
 .input-header_padre {
+  background-color: #333;
   outline: none;
   border: none;
   width: 700px;
@@ -292,6 +301,17 @@ b {
   text-decoration: none;
   color: #fff;
 }
+.title-inicio img{
+  width: 40px;
+  border-radius: 13px;
+  height: 30px;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+.h2-header-sport{
+  display: flex;
+  align-items: center;
+}
 /*home*/
 .cont_information-child-home{
   display: flex;
@@ -302,14 +322,27 @@ b {
   border-radius: 10px 10px 0px 0px;
 }
 .select_home{
-  font-size: 17px;
+  font-size: 15px;
+  width: 100px;
+  height: 23px;
   border: none;
   outline: none;
-  padding: 0px 5px;
+  background-color: #fff;
+  color: #000;
+ margin-right: 50px;
+}
+
+.etiquetas-info{
+  text-decoration: none;
+  color: #ddd;
+}
+.etiquetas-info:hover{
+  color: #07f;
 }
 .league_title{
   display: flex;
-
+  align-items: center;
+  justify-content: space-between;
   background-color: #03a;
   color: #fff;
   padding: 3px 5px;
@@ -345,8 +378,15 @@ b {
   height: 650px;
   overflow-y:scroll;
 }
+.scroll-results::-webkit-scrollbar-track{
+  background-color: #ddd;
+  background: #ccc;
+  border-radius: 4px;
+}
 .calendario-child{
-  width: 60%;
+  width: 150px;
+  float: left;
+  margin: 10px 5px;
 }
 .cont_teams_results-child{
   display: flex;
@@ -376,7 +416,7 @@ b {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3px;
+  padding: 10px;
   height: 100%;
   border-left: 1px solid #05a;
 }
@@ -418,7 +458,7 @@ b {
 .cont_groups-child-teamsgroups {
   margin: 10px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   width: 45%;
   border: 1px solid #03a;
 }
@@ -466,7 +506,6 @@ b {
   margin-right: 15px;
   color: #000;
   font-weight: 700;
-  
 }
 .h4_leagues-asideleft{
   text-align: left;
@@ -496,7 +535,7 @@ b {
 .cont_leagues-child-asideleft{
   border-radius: 10px;
   position: sticky;
-  top: 70px;
+  top: 64px;
 }
 .child-asideleft {
   font-size: 13px;
@@ -617,7 +656,7 @@ b {
   height: 113%;
   padding: 20px;
   border: 1px solid #ccc;
-  z-index: 9999;
+  z-index: 90;
 }
 .estadistica-child{
   display: flex;
@@ -625,19 +664,28 @@ b {
   width: 90%;
   border: 1px  solid  #000;
   position:sticky;
-  top:800px;
-  padding: 50px;
+  height: 670px;
+  top:680px;
+  z-index: 200;
   background-color: #fff;
 }
 .portada{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   border: 1px solid #000;
 }
 .puntos-child img{
-  width: 100px;
+  width: 150px;
   height: 100px;
+}
+.puntos-child{
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eee;
 }
 .porcentajes{
   display: flex;
@@ -645,13 +693,43 @@ b {
 }
 .cont_estadistica{
   display: flex;
+  flex-wrap:wrap;
   width: 100%;
+  height: 100%;
 }
 .estadistica{
   display: flex;
-  width: 50%;
+  list-style: none;
   flex-direction: column;
+  width: 50%;
 }
 .ocultar-cont{
   width: 100%;
+}
+.li-child-estadistica{
+  padding: 1px 0px;
+}
+.lista-estadisticas{
+  list-style: none;
+  width: 100%;
+  font-size: 17px;
+}
+.lista-estadisticas li {
+  border-bottom: 1px solid #ddd;
+}
+.top-bloques-estadisticas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 31%;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+.b-stats{
+  flex-direction: row;
+  justify-content: space-around;
+}
+.b-stats b{
+  font-size: 50px;
 }

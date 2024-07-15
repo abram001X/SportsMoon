@@ -34,10 +34,10 @@ export function AsideLeft({leagues}) {
       <aside className="cont_asideleft_padre">
         <section className="cont_leagues-child-asideleft white">
           <h3 className="black h2back">
-          <GiSoccerBall className="icon" /> Best Leagues
+          <GiSoccerBall className="icon" />Mejores Ligas
           </h3>
           <h4  className='h4_leagues-asideleft'> 
-            <Link to={`/leagues/World`} className='links_leagues-asideleft'>Leagues <GoLinkExternal className='icon icon-league'/>
+            <Link to={`/leagues/World`} className='links_leagues-asideleft'>Ligas <GoLinkExternal className='icon icon-league'/>
             </Link>
           </h4>
           <section className="child-asideleft">

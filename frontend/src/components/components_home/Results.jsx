@@ -3,7 +3,7 @@ export function Results({ apiResults,handleActive}) {
         const ordenDate = (a,b)=>{
             let dateA = new Date(a.fixture.date.slice(0,10))
             let dateB = new Date(b.fixture.date.slice(0,10))
-            return dateA.getTime() - dateB.getTime()
+            return dateB.getTime() - dateA.getTime()
         }
         apiResults.sort(ordenDate)
     
@@ -15,9 +15,11 @@ return (
 <br /><br />
     {arrayCopa.map((elements, j) => {
             if (elements.fixture.status.long == 'Match Finished'){
+                let fecha = new Date(elements.fixture.date)
+                fecha = fecha + ""
                 return (
                     <>
-                    <article key={j} className="cont_teams_results-child results plate" onClick={()=> handleActive(true,elements.fixture.id)}>
+                    <article key={j} className="cont_teams_results-child results plate" onClick={()=> handleActive(true,elements.fixture.id,elements.goals.home,elements.goals.away)}>
                     <section className="cont_teams-child results">
                     <div className="teams_results-child">
                         <div className="results-p-img">
@@ -34,7 +36,11 @@ return (
                         <b className="b-results-child">{elements.goals.away}</b>
                     </div>
                     </section>
-                    <div className="fecha_results-child"><p style={{'fontSize': '15px'}}>{elements.fixture.date.slice(5,7)}/{elements.fixture.date.slice(8,10)}</p></div>
+                    <div className="fecha_results-child"><p style={{'fontSize': '15px'}}>
+                        {fecha.slice(0, 8)}
+                        {fecha.slice(10, 15)}
+                    </p>
+                    </div>
                     </article>
             
                     </>
