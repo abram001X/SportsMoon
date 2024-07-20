@@ -10,7 +10,6 @@ export function Groups({apiTeamsCopa}) {
       'Group F',
       'Ranking of third-placed teams'
     ];
-    console.log(apiTeamsCopa)
     
     return (
       <>

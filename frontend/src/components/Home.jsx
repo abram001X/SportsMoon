@@ -62,8 +62,6 @@ export function Home({leagues}) {
 
 
   }, [leagueId,season,fixture]);
-  console.log(apiStandings)
-  console.log(season)
 
   const orderLeague = (a,b)=>{
       let dateA = a.seasons.year
@@ -110,9 +108,9 @@ export function Home({leagues}) {
         <h2  className="h3-style-global"  >Clasificación</h2>
         {type == 'Cup' ? <Groups apiTeamsCopa={apiStandings}/> : <TableTeams apiStandings={apiStandings}/>}
         <hr  />
-        <h2  className="h3-style-global">Resultados</h2>
+        <h2  className="h3-style-global" id='results'>Resultados</h2>
         <Results apiResults={apiCalendario} handleActive={handleActive}/>
-        <h2 className='h3-style-global' id='results'>Calendario</h2>
+        <h2 className='h3-style-global' id='calendario'>Calendario</h2>
         <Calendario apiResults={apiCalendario} season={season} handleActive={handleActive}/>
       </article>
     </>

@@ -41,7 +41,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   background-color: #ccc;
-  padding: 20px 10px ;
+  padding: 20px 5px ;
 }
 .poster{
   width: 100%;
@@ -351,8 +351,7 @@ b {
   transform: translateX(20px);
 }
 .cont_home_padre{
-  width: 70%;
-  transform: translateX(50px);
+  width: 78.6%;
   border-radius: 10px;
 }
 .cont_information-child-home p{
@@ -460,7 +459,6 @@ b {
   border-radius: 10px;
   padding: 5px;
   width: 45%;
-  border: 1px solid #03a;
 }
 .standings-child-cont-groups img {
   display: flex;

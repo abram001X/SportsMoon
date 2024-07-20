@@ -4,7 +4,7 @@ import './App.css';
 import { Header } from './components/Header';
 import { AsideLeft } from './components/AsideLeft';
 import { Home } from './components/Home';
-import { MenuGames } from './components/MenuGames';
+//import { MenuGames } from './components/MenuGames';
 import { Inicio } from './components/components_home/Inicio';
 import { Leagues } from './components/Leagues';
 

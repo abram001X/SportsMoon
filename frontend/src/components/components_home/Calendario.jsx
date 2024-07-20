@@ -1,7 +1,7 @@
 import {  useState } from "react"
 
 /* eslint-disable react/prop-types */
-export function Calendario({ apiResults,season,handleActive }) {
+export function Calendario({ apiResults,handleActive }) {
     const [dateToday, setDateToday] = useState('2024-11-07')
     let today = new Date(dateToday)
     today = today +""
