@@ -31,7 +31,7 @@ function App() {
     <>
       <Header/>
       <section className='poster'>
-        <img src="https://ideogram.ai/assets/image/lossless/response/2E65kClATs2uQn7HFDjUzA" alt="" />
+        <img src="https://ideogram.ai/assets/image/lossless/response/QmH1pTvDSxqgqgPD1HxULg" alt="" />
       </section>
       <article className="cont_interface">
       
@@ -39,7 +39,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Inicio homeApi={homeApi}/>}/>
           <Route path='/leagues/:country' element={<Leagues leagues={leagues} />}/>
-          <Route path='/info/:type/:league/:leagueId' element={<Home leagues={leagues} />}/>
+          <Route path='/info/:type/:league/:seccion/:leagueId/' element={<Home leagues={leagues} />}/>
         </Routes>
       </article>
       <footer className='cont_footer-padre'>

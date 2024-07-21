@@ -11,6 +11,8 @@ export function Results({ apiResults,handleActive}) {
     console.log(apiResults)
 return (
 <>
+
+<h2  className="h3-style-global" id='results'>Resultados</h2>
 <section className="cont_teamsresults-padre white scroll-results">
 <br /><br />
     {arrayCopa.map((elements, j) => {

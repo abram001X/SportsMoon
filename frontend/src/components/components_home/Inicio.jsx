@@ -15,7 +15,9 @@ return(
                 </section>
                 <a href={element.source_url} className="news-child">
                 <img className='img-news-child' src={element.image_url} alt="" />
+                <span>{element.keywords[0].toUpperCase()}</span>
                 <section className="hp-news-child">
+
                     <h3 >{element.title}</h3><br />
                     <p className="child-news-p">{element.description.slice(0,element.description.lastIndexOf('appeared'))}...</p>
                 </section>

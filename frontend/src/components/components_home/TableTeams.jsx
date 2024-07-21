@@ -15,6 +15,7 @@ apiCopa.sort((a,b)=> b.points - a.points)
 
   return (
     <>
+    <h2  className="h3-style-global"  >Clasificación</h2>
     <article className="cont_teams-padre plate">
       <div className="info_groups-child-teamsgroup table-teams">
                     <div className="p-child-table-groups">

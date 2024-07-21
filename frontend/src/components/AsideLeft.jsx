@@ -33,7 +33,7 @@ export function AsideLeft({leagues}) {
     <>
       <aside className="cont_asideleft_padre">
         <section className="cont_leagues-child-asideleft white">
-          <h3 className="black h2back">
+          <h3 className=" h2back">
           <GiSoccerBall className="icon" />Mejores Ligas
           </h3>
           <h4  className='h4_leagues-asideleft'> 
@@ -45,7 +45,7 @@ export function AsideLeft({leagues}) {
               return (
                 <Link
                   key={j}
-                  to={`/info/${element.league.type}/${element.league.name}/${element.league.id}`}
+                  to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
                   className="league-child-cont_leagues eurocopa"
                 >
                   <img src={element.league.logo} />

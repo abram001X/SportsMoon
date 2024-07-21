@@ -20,6 +20,7 @@ console.log(apiResults)
 
 return (
     <>
+    <h2 className='h3-style-global' id='calendario'>Calendario</h2>
     <input className="calendario-child" type="date"  min="1924-01-01" max="2025-01-01" onChange={(e)=>{setDateToday(e.target.value)}}/>
     <section className="cont_teamsresults-padre white">
     {arrayCopa.map((elements, j) => {

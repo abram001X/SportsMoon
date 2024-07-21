@@ -13,6 +13,7 @@ export function Groups({apiTeamsCopa}) {
     
     return (
       <>
+      <h2  className="h3-style-global">Clasificación</h2>
       <article className="cont_teamsgroups-padre">
         {apiTeamsCopa.map((standings) => {
           return standings.map((elements, k) => {
