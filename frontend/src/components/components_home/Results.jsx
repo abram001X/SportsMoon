@@ -58,7 +58,7 @@ export function Results({ apiResults, handleActive }) {
                   <section className="cont_teams-child results">
                     <div className="teams_results-child">
                       <div className="results-p-img">
-                        <img src={elements.teams.home.logo} alt="" onLoad={()=> j == num - 2 ? setElementos(document.querySelectorAll('.cont_teams-child')): ''}/>
+                        <img src={elements.teams.home.logo} alt="" />
                         <p>{elements.teams.home.name}</p>
                       </div>
                       <b className="b-results-child">{elements.goals.home}</b>

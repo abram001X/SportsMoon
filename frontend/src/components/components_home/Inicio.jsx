@@ -7,7 +7,8 @@ return(
     <article className="cont_inicio_padre white">
     <section className="cont_news-padre">
     {homeApi.map((element,j)=>{
-        if(element.description != null){
+        if(element.description != null & element.image_url != null){
+
         return(
             <section className="news-child-cont_news white" key={j}>
                 <section className="cont_details-child">

@@ -19,10 +19,17 @@ export function Header(){
                     <input type="search" className="input-header_padre" placeholder='Buscar'/><button className="search-button" alt="Buscar" type="submit"><GoSearch />
                     </button>
                     </form>  
-                    <Link to={`/info/League/Premier%20League/clasificacion/39`} className="cont-child-header">
+                    <div className="cont-child-header  no-padding">
+                    <Link to={`/info/League/Premier%20League/clasificacion/39`} className="cont-child-header row" >
                     <FaFutbol className="icon-header" /> <p>Fútbol</p>
                     </Link >
-                    <Link to={`/`} className="cont-child-header">
+                    <div className="bloque-links">
+                        <Link to={`/info/League/Premier%20League/clasificacion/39`}>Clasificacion</Link>
+                        <Link to={`/info/League/Premier%20League/resultados/39`}>Resultados</Link>
+                        <Link to={`/info/League/Premier%20League/calendario/39`}>Calendario</Link>
+                    </div>
+                    </div>
+                    <Link to={`/`} className="cont-child-header row">
                         <FaHouse  className="icon-header"/> <p>Inicio</p>
                     </Link>
 

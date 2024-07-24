@@ -19,13 +19,13 @@ export function Groups({ apiTeamsCopa }) {
           return standings.map((elements, k) => {
             return (
               <section key={k} className="cont_groups-child-teamsgroups plate">
-                <h3 style={{ marginBottom: '20px' }}>{groupsArray[k]}</h3>
+                <h3 style={{ marginBottom: '20px' ,'color':'#fff'}}>{groupsArray[k]}</h3>
                 {k !== 6 ? (
                   <div className="info_groups-child-teamsgroup ">
                     <div className="p-child-table-groups">
                       <b>EQUIPOS</b>
                     </div>
-                    <ul className="ul-child-table-groups">
+                    <ul className="ul-child-table-groups ">
                       <li>PJ</li>
                       <li>G</li>
                       <li>E</li>
@@ -52,7 +52,7 @@ export function Groups({ apiTeamsCopa }) {
                                 {element.team.name}
                               </p>
                             </div>
-                            <ul className="ul-child-table-groups">
+                            <ul className="ul-child-table-groups yellow">
                               <li>{element.all.played}</li>
                               <li>{element.all.win}</li>
                               <li>{element.all.draw}</li>
