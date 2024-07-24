@@ -9,8 +9,7 @@ export function MenuGames() {
   const winner = 'winner-child-menugames';
   const loser = 'loser-child-menugames';
 
-  const contenedorMenu = document.querySelector(
-    '.cont_menugames-scroll-child');
+  const contenedorMenu = document.querySelector('.cont_menugames-scroll-child');
 
   useEffect(()=>{
     fetch(`http://localhost:3000/api/calendario/${league}/${season}`)

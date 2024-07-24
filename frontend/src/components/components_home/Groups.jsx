@@ -1,25 +1,25 @@
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
-export function Groups({apiTeamsCopa}) {
-    const groupsArray = [
-      'Group A',
-      'Group B',
-      'Group C',
-      'Group D',
-      'Group E',
-      'Group F',
-      'Ranking of third-placed teams'
-    ];
-    
-    return (
-      <>
-      <h2  className="h3-style-global">Clasificación</h2>
+export function Groups({ apiTeamsCopa }) {
+  const groupsArray = [];
+  apiTeamsCopa.map((element) => {
+    element.map((elements) => {
+      elements.map((standings) => {
+        return groupsArray.includes(standings.group)
+          ? null
+          : groupsArray.push(standings.group);
+      });
+    });
+  });
+  return (
+    <>
+      <h2 className="h3-style-global">Clasificación</h2>
       <article className="cont_teamsgroups-padre">
         {apiTeamsCopa.map((standings) => {
           return standings.map((elements, k) => {
             return (
-              <section key={k} className="cont_groups-child-teamsgroups plate" >
-                <h3 style={{'margin-bottom': '20px'}}>{groupsArray[k]}</h3>
+              <section key={k} className="cont_groups-child-teamsgroups plate">
+                <h3 style={{ marginBottom: '20px' }}>{groupsArray[k]}</h3>
                 {k !== 6 ? (
                   <div className="info_groups-child-teamsgroup ">
                     <div className="p-child-table-groups">
@@ -36,14 +36,15 @@ export function Groups({apiTeamsCopa}) {
                       <li>PTS</li>
                     </ul>
                   </div>
-                ) : (
-                  <p hidden></p>
-                )}
-                {elements.map((element, j) => {
+                ) : null}
+                {elements.map((element) => {
                   for (let index = 0; index < groupsArray.length; index++) {
                     if (groupsArray[index] === element.group) {
                       return (
-                        <div className="standings-child-cont-groups " key={j}>
+                        <div
+                          className="standings-child-cont-groups "
+                          key={index}
+                        >
                           <div className="table-groups">
                             <div className="p-child-table-groups">
                               <img src={element.team.logo} alt="" />
@@ -71,7 +72,7 @@ export function Groups({apiTeamsCopa}) {
             );
           });
         })}
-        </article>
-      </>
-    );
+      </article>
+    </>
+  );
 }

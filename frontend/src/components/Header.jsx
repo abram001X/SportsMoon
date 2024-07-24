@@ -1,3 +1,4 @@
+
 import { FaHouse } from "react-icons/fa6";
 import { Link} from 'react-router-dom';
 import { GoSearch } from "react-icons/go";
@@ -16,15 +17,15 @@ export function Header(){
                 <section className="buscador-header">
                 <form action="">
                     <input type="search" className="input-header_padre" placeholder='Buscar'/><button className="search-button" alt="Buscar" type="submit"><GoSearch />
-        </button>
+                    </button>
                     </form>  
                     <Link to={`/info/League/Premier%20League/clasificacion/39`} className="cont-child-header">
-                    <FaFutbol className="icon-header" /> Fútbol
+                    <FaFutbol className="icon-header" /> <p>Fútbol</p>
                     </Link >
                     <Link to={`/`} className="cont-child-header">
-                        <FaHouse  className="icon-header"/> Inicio
+                        <FaHouse  className="icon-header"/> <p>Inicio</p>
                     </Link>
-                    
+
                 </section>
                     
         </header> 

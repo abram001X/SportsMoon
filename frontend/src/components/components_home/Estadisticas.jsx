@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
+import { CiCircleRemove } from "react-icons/ci";
 
 export function Estadisticas({active,handleActive,estadistica,goalAway, goalHome}){
     console.log(estadistica)
     return (
-        <section className="cont_estadisticas-padre" style={active ? {'display' : 'flex' }: {'display' : 'none'}} onClick={()=> handleActive(false)}>
+        <section className="cont_estadisticas-padre" style={active ? {'display' : 'flex' }: {'display' : 'none'}}>
             <section className="estadistica-child">
+                <div className="icon-statics" onClick={()=> handleActive(false)}>
+                <CiCircleRemove />
+                </div>
                 <section className="cont_estadistica">
                     {estadistica.map((element,j)=>{
                         console.log(element);
@@ -29,7 +33,7 @@ export function Estadisticas({active,handleActive,estadistica,goalAway, goalHome
                                     <b>-</b>
                                     <b>{goalAway}</b>
                                 </div>
-                                <ul className="lista-estadisticas"> 
+                                <ul className=" element-type"> 
                                 {element.statistics.map((elements,k)=>{
                                     return(
                                         <li key={k}>{elements.type}</li>
@@ -45,7 +49,7 @@ export function Estadisticas({active,handleActive,estadistica,goalAway, goalHome
                             <section className="puntos-child" key={j}>
                             <div  className="top-bloques-estadisticas">
                                 <img src={element.team.logo} alt="" />
-                                <p >{element.team.name}</p>
+                                <p className="ey">{element.team.name}</p>
                             </div>
                             <ul key={j} className="lista-estadisticas"> 
                                 {element.statistics.map((elements,k)=>{

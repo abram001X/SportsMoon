@@ -7,15 +7,17 @@ import { Results } from './components_home/Results.jsx';
 import { Calendario } from './components_home/Calendario.jsx';
 import { Estadisticas } from './components_home/Estadisticas.jsx';
 
-export function Home({ leagues }) {
+export function Home() {
   const [apiStandings, setapiStandings] = useState([]);
   const [apiCalendario, setApiCalendario] = useState([]);
-  const [season, setSeason] = useState(2023);
+  const [season, setSeason] = useState(2024);
   const [active, setActive] = useState(false);
   const [estadistica, setEstadistica] = useState([]);
   const [goalHome, setGoalHome] = useState();
   const [goalAway, setGoalAway] = useState();
   const [fixture, setFixture] = useState();
+  const [leagues, setLeagues] = useState([]);
+  const [bool, setBool] = useState(false)
   const handleActive = (
     bolean,
     fixtureId = null,
@@ -55,6 +57,14 @@ export function Home({ leagues }) {
       .then((data) => {
         setApiCalendario(data.response);
       });
+
+    //leagues
+    fetch('http://localhost:3000/api/leagues')
+      .then((res) => res.json())
+      .then((data) => {
+        setLeagues(data.response);
+      });
+
   }, [leagueId, season, fixture]);
 
   const orderLeague = (a, b) => {
@@ -64,61 +74,68 @@ export function Home({ leagues }) {
   };
   const leaguesDate = leagues;
   leaguesDate.sort(orderLeague);
-
+  const dates = []
+  leaguesDate.map((elements) => {
+    if (elements.league.id == leagueId) {
+      return elements.seasons.map(element=>{
+        dates.push(element.year)
+      })
+    }
+  });
   return (
     <>
-      <article className="cont_home_padre white ">
+      <article className="cont_home_padre white">
         <section className="league_title h2back">
-          <div className='secciones-home'>
-          <h3  style={{'color': '#000', 'border-right': '1px solid #777', 'padding': '0px 10px'}}>
-          {league}
-          </h3>
-          <Link
-            to={`/info/${type}/${league}/clasificacion/${leagueId}`}
-            className="cont_secciones-home"
-          >
-            <p className={seccion == 'clasificacion' ? 'press': null}>Clasificación</p>
-            
-          </Link>
-          <Link
-            href="#results"
-            to={`/info/${type}/${league}/resultados/${leagueId}`}
-            className="cont_secciones-home"
-            
-          >
-            <p className={seccion == 'resultados' ? 'press': null}>Resultados</p>
-            
-          </Link>
-          <Link
-            to={`/info/${type}/${league}/calendario/${leagueId}`}
-            className="cont_secciones-home"
-          >
-            <p className={seccion == 'calendario' ? 'press': null}>Calendario</p>
-            
-          </Link>
-          
+          <div className="secciones-home">
+            <h3
+              className="h3-home"
+              style={{ borderRight: '1px solid #777', padding: '0px 10px' }}
+            >
+              {league}
+            </h3>
+            <Link
+              to={`/info/${type}/${league}/clasificacion/${leagueId}`}
+              className="cont_secciones-home"
+            >
+              <p className={seccion == 'clasificacion' ? 'press' : null}>
+                Clasificación
+              </p>
+            </Link>
+            <Link
+              href="#results"
+              to={`/info/${type}/${league}/resultados/${leagueId}`}
+              className="cont_secciones-home"
+            >
+              <p className={seccion == 'resultados' ? 'press' : null}>
+                Resultados
+              </p>
+            </Link>
+            <Link
+              to={`/info/${type}/${league}/calendario/${leagueId}`}
+              className="cont_secciones-home"
+            >
+              <p className={seccion == 'calendario' ? 'press' : null}>
+                Calendario
+              </p>
+            </Link>
           </div>
           <div className="cont_select-label">
-          
             <label htmlFor="seasons">Año :</label>
             <select
               name="seasons"
-              value={season}
+              value={bool ? season : dates[dates.length-1]}
               className="select_home"
               onChange={(e) => {
+                setBool(true);
                 setSeason(e.target.value);
               }}
             >
-              {leaguesDate.map((elements, j) => {
-                if (elements.league.id == leagueId) {
-                  return elements.seasons.reverse().map((element) => {
-                    return (
-                      <option key={j} value={element.year}>
-                        {element.year}
-                      </option>
-                    );
-                  });
-                }
+              {dates.reverse().map((element,j) => {
+                return (
+                  <option key={j} value={element}>
+                    {element}
+                  </option>
+                );
               })}
             </select>
           </div>

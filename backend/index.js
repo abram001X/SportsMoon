@@ -26,7 +26,7 @@ app.get('/api/leagues', (req, res) => {
   })
 })
 
-/*app.get('/api/calendario/:league/:season', (req, res) => {
+app.get('/api/calendario/:league/:season', (req, res) => {
   const axios = require('axios')
 
   const config = {
@@ -85,6 +85,6 @@ app.get('/api/estadistica/:fixture', (req, res) => {
     .catch(function (error) {
       console.log(error)
     })
-})*/
+})
 console.log('http://localhost:3000/api/league')
 app.listen(port)

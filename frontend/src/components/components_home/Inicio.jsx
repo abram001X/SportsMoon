@@ -7,6 +7,7 @@ return(
     <article className="cont_inicio_padre white">
     <section className="cont_news-padre">
     {homeApi.map((element,j)=>{
+        if(element.description != null){
         return(
             <section className="news-child-cont_news white" key={j}>
                 <section className="cont_details-child">
@@ -24,7 +25,7 @@ return(
                 </a>
                 
             </section>
-        )
+        )}
     })
     }
     </section>
