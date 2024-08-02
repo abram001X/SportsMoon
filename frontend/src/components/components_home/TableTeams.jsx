@@ -2,7 +2,6 @@
 export function TableTeams({ apiStandings }) {
   let apiCopa = [];
 
-  console.log(apiCopa)
 
   apiStandings.map(standings =>{
     return standings.map(elements =>{

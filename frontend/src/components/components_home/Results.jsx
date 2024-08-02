@@ -29,7 +29,6 @@ export function Results({ apiResults, handleActive }) {
 
  
   const arrayCopa = apiResults;
-  console.log(apiResults);
 
   return (
     <>

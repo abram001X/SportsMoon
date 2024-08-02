@@ -2,7 +2,6 @@
 import { CiCircleRemove } from "react-icons/ci";
 
 export function Estadisticas({active,handleActive,estadistica,goalAway, goalHome}){
-    console.log(estadistica)
     return (
         <section className="cont_estadisticas-padre " style={active ? {'display' : 'flex' }: {'display' : 'none'}}>
             <section className="estadistica-child ">

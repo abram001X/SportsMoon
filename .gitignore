@@ -1,2 +1,4 @@
-/Notas
-/backend/json
+Notas
+backend/json
+node_modules
+.env

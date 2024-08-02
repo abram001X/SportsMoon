@@ -2,7 +2,6 @@
 import { TiThLarge } from "react-icons/ti";
 
 export function AsideRight({homeApi}){
-    console.log(homeApi)
 
     return(
         <article className="cont_asideright-padre">

@@ -7,19 +7,19 @@ import { Home } from './components/Home';
 //import { MenuGames } from './components/MenuGames';
 import { Inicio } from './components/components_home/Inicio';
 import { Leagues } from './components/Leagues';
-
+const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 function App() {
   const [homeApi, setHomeApi] = useState([]);
   const [leagues, setLeagues] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/news')
+    fetch(`${URL}/api/news`)
       .then((res) => res.json())
       .then((data) => {
         setHomeApi(data.results);
       });
 
-    fetch('http://localhost:3000/api/leagues')
+    fetch(`${URL}/api/leagues`)
       .then((res) => res.json())
       .then((data) => {
         setLeagues(data.response);
@@ -45,7 +45,7 @@ function App() {
             element={<Leagues leagues={leagues} />}
           />
           <Route
-            path="/info/:type/:league/:seccion/:leagueId/"
+            path="/info/:type/:league/:seccion/:leagueId"
             element={<Home />}
           />
         </Routes>

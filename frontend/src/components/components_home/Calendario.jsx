@@ -6,7 +6,6 @@ export function Calendario({ apiResults,handleActive }) {
     let today = new Date(dateToday)
     today = today +""
     today = today.slice(0,15)
-    console.log(today)
 
     const ordenDate = (a,b)=>{
         let dateA = new Date(a.fixture.date)
@@ -16,12 +15,11 @@ export function Calendario({ apiResults,handleActive }) {
     apiResults.sort(ordenDate)
 
 const arrayCopa = apiResults
-console.log(apiResults)
 
 return (
     <>
     <h2 className='h3-style-global' id='calendario'>Calendario</h2>
-    <input className="calendario-child" type="date"  min="1924-01-01" max="2025-01-01" onChange={(e)=>{setDateToday(e.target.value)}}/>
+    <input className="calendario-child" type="date"  min="1924-01-01" max="2025-01-01"  onChange={(e)=>{setDateToday(e.target.value); console.log(e.target.value);}}/>
     <section className="cont_teamsresults-padre white">
     {arrayCopa.map((elements, j) => {
         let fecha = new Date(elements.fixture.date)

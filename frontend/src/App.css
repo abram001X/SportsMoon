@@ -493,6 +493,9 @@ b {
   height: 650px;
   overflow-y:scroll;
 }
+.scroll-results::-webkit-scrollbar-thumb{
+  background-color: #000;
+}
 .scroll-results::-webkit-scrollbar-track{
   background-color: #000;
   border-radius: 4px;
@@ -598,6 +601,7 @@ b {
 }
 .p-groupsteams {
   margin-left: 10px;
+  text-align: start;
 }
 .ul-child-table-groups {
   width: 70%;

@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Results } from './components_home/Results.jsx';
 import { Calendario } from './components_home/Calendario.jsx';
 import { Estadisticas } from './components_home/Estadisticas.jsx';
+const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
 export function Home() {
   const [apiStandings, setapiStandings] = useState([]);
@@ -34,14 +35,14 @@ export function Home() {
   const { leagueId, type, league, seccion } = useParams();
   useEffect(() => {
     /*Estadisitica*/
-    fetch(`http://localhost:3000/api/estadistica/${fixture}`)
+    fetch(`${URL}/api/estadistica/${fixture}`)
       .then((res) => res.json())
       .then((data) => {
         setEstadistica(data.response);
       });
 
     //standings
-    fetch(`http://localhost:3000/api/standings/${leagueId}/${season}`)
+    fetch(`${URL}/api/standings/${leagueId}/${season}`)
       .then((res) => res.json())
       .then((data) =>
         setapiStandings(
@@ -52,14 +53,14 @@ export function Home() {
       );
 
     // calendario
-    fetch(`http://localhost:3000/api/calendario/${leagueId}/${season}`)
+    fetch(`${URL}/api/calendario/${leagueId}/${season}`)
       .then((res) => res.json())
       .then((data) => {
         setApiCalendario(data.response);
       });
 
     //leagues
-    fetch('http://localhost:3000/api/leagues')
+    fetch(`${URL}/api/leagues`)
       .then((res) => res.json())
       .then((data) => {
         setLeagues(data.response);

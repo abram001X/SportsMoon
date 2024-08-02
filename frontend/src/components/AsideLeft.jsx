@@ -23,8 +23,6 @@ export function AsideLeft({leagues}) {
     4
   ];
 
-
-  console.log(leagues);
   const betterLeagues = leagues.filter((element) => {
     return bestFootballCups.includes(element.league.id);
   });
