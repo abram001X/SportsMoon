@@ -1,9 +1,8 @@
 // importando independencias y modulos
-const express = require('express')
-const cors = require('cors')
-const FRONTEND_URL = require('./config')
-const PORT = require('./config')
-const axios = require('axios')
+import express from 'express'
+import cors from 'cors'
+import axios from 'axios'
+import { FRONTEND_URL, PORT } from './config.js'
 // constantes
 const app = express()
 
