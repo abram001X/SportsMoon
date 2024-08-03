@@ -3,15 +3,18 @@ const express = require('express')
 const fs = require('node:fs')
 const path = require('node:path')
 const cors = require('cors')
-const { FRONTEND_URL } = require('./config')
+const FRONTEND_URL = require('./config')
+const PORT = require('./config')
 // constantes
 const app = express()
-const port = process.env.PORT || 3000
 const leagues = path.join(__dirname, 'json', 'leagues.json')
 // app
-app.use(cors({
-  origin: FRONTEND_URL
-}))
+
+app.use(
+  cors({
+    origin: FRONTEND_URL
+  })
+)
 
 app.get('/api/news', (req, res) => {
   fetch('https://newsdata.io/api/1/latest?country=ve&category=sports&apikey=pub_4787349d17bdef1a8a8f2e332f0dd038c6ce0')
@@ -90,4 +93,4 @@ app.get('/api/estadistica/:fixture', (req, res) => {
     })
 })
 console.log('http://localhost:3000/api/league')
-app.listen(port)
+app.listen(PORT)
