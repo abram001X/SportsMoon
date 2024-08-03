@@ -1,13 +1,11 @@
 // importando independencias y modulos
 const express = require('express')
-const fs = require('node:fs')
-const path = require('node:path')
 const cors = require('cors')
 const FRONTEND_URL = require('./config')
 const PORT = require('./config')
+const axios = require('axios')
 // constantes
 const app = express()
-const leagues = path.join(__dirname, 'json', 'leagues.json')
 // app
 
 app.use(
@@ -23,18 +21,24 @@ app.get('/api/news', (req, res) => {
 })
 
 app.get('/api/leagues', (req, res) => {
-  fs.readFile(leagues, 'utf-8', (err, data) => {
-    if (err) {
-      console.error(err)
+  const config = {
+    method: 'get',
+    url: 'https://v3.football.api-sports.io/leagues',
+    headers: {
+      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
+      'x-rapidapi-host': 'v3.football.api-sports.io'
     }
-    const apiData = JSON.parse(data)
-    res.send(apiData)
-  })
+  }
+  axios(config)
+    .then(function (response) {
+      res.json(response.data)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
 })
 
 app.get('/api/calendario/:league/:season', (req, res) => {
-  const axios = require('axios')
-
   const config = {
     method: 'get',
     url: `https://v3.football.api-sports.io/fixtures?league=${req.params.league}&season=${req.params.season}`,
@@ -53,8 +57,6 @@ app.get('/api/calendario/:league/:season', (req, res) => {
 })
 
 app.get('/api/standings/:league/:season', (req, res) => {
-  const axios = require('axios')
-
   const config = {
     method: 'get',
     url: `https://v3.football.api-sports.io/standings?league=${req.params.league}&season=${req.params.season}`,
@@ -74,8 +76,6 @@ app.get('/api/standings/:league/:season', (req, res) => {
 })
 
 app.get('/api/estadistica/:fixture', (req, res) => {
-  const axios = require('axios')
-
   const config = {
     method: 'get',
     url: `https://v3.football.api-sports.io/fixtures/statistics?fixture=${req.params.fixture}`,
