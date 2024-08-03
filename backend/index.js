@@ -6,8 +6,8 @@ const PORT = require('./config')
 const axios = require('axios')
 // constantes
 const app = express()
-// app
 
+// app
 app.use(
   cors({
     origin: FRONTEND_URL
