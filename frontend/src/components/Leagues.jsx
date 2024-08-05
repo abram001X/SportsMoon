@@ -21,7 +21,7 @@ export function Leagues({ leagues, handleScroll }) {
   ];
   useEffect(()=>{
     setNum(21)
-  },[country])
+  },[country])a<
   console.log(num);
   
   const ligas = leagues.filter((element) => {
@@ -35,19 +35,18 @@ export function Leagues({ leagues, handleScroll }) {
   const verify = (entries) => {
     
     console.log(entries);
-    
     const entry = entries[0];
     console.log(entry);
     if(entry.isIntersecting){
       setNum(num + 15)
+      observer.disconnect()
     }
   };
   console.log(num);
-
+  const observer = new IntersectionObserver(verify)
     if(elementos){
       const elemento = elementos[elementos.length-5]
       console.log(elemento);
-      const observer = new IntersectionObserver(verify)
       observer.observe(elemento);
       setElementos(null)
     }
