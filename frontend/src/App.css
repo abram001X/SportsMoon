@@ -322,9 +322,10 @@ b {
   position: fixed;
   z-index: 190;
   flex-direction: column;
-  background-color: #444;
+  background-color: #222;
   margin-top: 40px;
   font-size: 18px;
+  text-align: start;
 }
 .bloque-links a{
   color:#fff;
@@ -358,7 +359,7 @@ b {
 }
 .cont-child-header:hover{
   cursor: pointer;
-  background-color: #444;
+  background-color: #222;
 }
 
 .icon-header{ 

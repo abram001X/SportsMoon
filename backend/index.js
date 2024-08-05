@@ -19,7 +19,7 @@ app.get('/api/news', (req, res) => {
     .then(data => res.json(data))
 })
 
-app.get('/api/leagues', (req, res) => {
+/*app.get('/api/leagues', (req, res) => {
   const config = {
     method: 'get',
     url: 'https://v3.football.api-sports.io/leagues',
@@ -90,6 +90,6 @@ app.get('/api/estadistica/:fixture', (req, res) => {
     .catch(function (error) {
       console.log(error)
     })
-})
+})*/
 console.log('http://localhost:3000/api/league')
 app.listen(PORT)

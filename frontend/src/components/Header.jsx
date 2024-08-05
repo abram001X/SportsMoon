@@ -27,6 +27,7 @@ export function Header(){
                         <Link to={`/info/League/Premier%20League/clasificacion/39`}>Clasificacion</Link>
                         <Link to={`/info/League/Premier%20League/resultados/39`}>Resultados</Link>
                         <Link to={`/info/League/Premier%20League/calendario/39`}>Calendario</Link>
+                        <Link to={`/info/leagues/World`}>Ligas</Link>
                     </div>
                     </div>
                     <Link to={`/`} className="cont-child-header row">
