@@ -13,18 +13,20 @@ export function Results({ apiResults, handleActive }) {
     let dateB = new Date(b.fixture.date.slice(0, 10));
     return dateB.getTime() - dateA.getTime();
   };
-
   const verify = (entries)=>{
     const entry = entries[0]
     if(entry.isIntersecting){
         setNum(num+10)
+        observer.disconnect()
     }
   }
-        
+  
+  
+  const observer = new IntersectionObserver(verify)  
   if(elementos){
     const elemento = elementos[elementos.length-2]
-    const observer = new IntersectionObserver(verify)
     observer.observe(elemento)
+    setElementos(null)
 }
 
  

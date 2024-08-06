@@ -36,7 +36,7 @@ function App() {
           alt=""
         />
       </section>
-      <article className="cont_interface ">
+      <article className="cont_interface">
         <AsideLeft leagues={leagues} />
         <Routes>
           <Route path="/" element={<Inicio homeApi={homeApi} />} />

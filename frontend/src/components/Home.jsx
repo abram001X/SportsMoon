@@ -40,7 +40,8 @@ export function Home() {
       .then((data) => {
         setEstadistica(data.response);
       });
-
+    }, [fixture]);
+    useEffect(() => {
     //standings
     fetch(`${URL}/api/standings/${leagueId}/${season}`)
       .then((res) => res.json())
@@ -51,14 +52,18 @@ export function Home() {
           })
         )
       );
+    }, [leagueId, season ])
 
+    useEffect(() => {
     // calendario
     fetch(`${URL}/api/calendario/${leagueId}/${season}`)
       .then((res) => res.json())
       .then((data) => {
         setApiCalendario(data.response);
       });
+    }, [leagueId, season]);
 
+    useEffect(() => {
     //leagues
     fetch(`${URL}/api/leagues`)
       .then((res) => res.json())
@@ -66,7 +71,7 @@ export function Home() {
         setLeagues(data.response);
       });
 
-  }, [leagueId, season, fixture]);
+  }, []);
 
   const orderLeague = (a, b) => {
     let dateA = a.seasons.year;
@@ -86,11 +91,11 @@ export function Home() {
   return (
     <>
       <article className="cont_home_padre white">
-        <section className="league_title h2back">
-          <div className="secciones-home">
+        <section className="league_title h2back flex-column">
+          <div className="secciones-home flex-column">
             <h3
               className="h3-home"
-              style={{ borderRight: '1px solid #777', padding: '0px 10px' }}
+              
             >
               {league}
             </h3>
@@ -120,7 +125,7 @@ export function Home() {
               </p>
             </Link>
           </div>
-          <div className="cont_select-label">
+          <div className="cont_select-label flex-column">
             <label htmlFor="seasons">Año :</label>
             <select
               name="seasons"
@@ -148,7 +153,7 @@ export function Home() {
           goalAway={goalAway}
           goalHome={goalHome}
         />
-
+        <article className='components-render'>
         {(type == 'Cup') & (seccion == 'clasificacion') ? (
           <Groups apiTeamsCopa={apiStandings} />
         ) : null}
@@ -166,6 +171,8 @@ export function Home() {
             handleActive={handleActive}
           />
         ) : null}
+        </article>
+        
       </article>
     </>
   );

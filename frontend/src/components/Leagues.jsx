@@ -7,6 +7,7 @@ export function Leagues({ leagues, handleScroll }) {
   const [num, setNum] = useState();
   const [elementos, setElementos] = useState()
   const { country } = useParams();
+  const [arrayCountry, setArrayCountry]  = useState([])
   const arrayBestLeagues = [
     'England',
     'World',
@@ -21,16 +22,17 @@ export function Leagues({ leagues, handleScroll }) {
   ];
   useEffect(()=>{
     setNum(21)
-  },[country])a<
-  console.log(num);
-  
+  },[country])
   const ligas = leagues.filter((element) => {
     return arrayBestLeagues.includes(element.country.name);
   });
-  const arrayCountry = ligas.filter((element) => {
-    return element.country.name == country;
-  });
-  console.log(arrayCountry);
+  useEffect(()=>{
+  setArrayCountry(ligas.filter((element) => {
+      return element.country.name == country;
+    }))
+  },[country,ligas])
+ 
+  
   
   const verify = (entries) => {
     
@@ -42,10 +44,9 @@ export function Leagues({ leagues, handleScroll }) {
       observer.disconnect()
     }
   };
-  console.log(num);
   const observer = new IntersectionObserver(verify)
     if(elementos){
-      const elemento = elementos[elementos.length-5]
+      const elemento = elementos[elementos.length-6]
       console.log(elemento);
       observer.observe(elemento);
       setElementos(null)
