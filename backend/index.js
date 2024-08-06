@@ -5,7 +5,7 @@ import axios from 'axios'
 import { FRONTEND_URL, PORT } from './config.js'
 // constantes
 const app = express()
-
+// keys 5aecbdbf507fe9edaaed01e42ae5b531
 // app
 app.use(
   cors({
@@ -19,12 +19,12 @@ app.get('/api/news', (req, res) => {
     .then(data => res.json(data))
 })
 
-/*app.get('/api/leagues', (req, res) => {
+app.get('/api/leagues', (req, res) => {
   const config = {
     method: 'get',
     url: 'https://v3.football.api-sports.io/leagues',
     headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
+      'x-rapidapi-key': '96a9c0458e1b116a2eebc8147e305103',
       'x-rapidapi-host': 'v3.football.api-sports.io'
     }
   }
@@ -42,7 +42,7 @@ app.get('/api/calendario/:league/:season', (req, res) => {
     method: 'get',
     url: `https://v3.football.api-sports.io/fixtures?league=${req.params.league}&season=${req.params.season}`,
     headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
+      'x-rapidapi-key': '96a9c0458e1b116a2eebc8147e305103',
       'x-rapidapi-host': 'v3.football.api-sports.io'
     }
   }
@@ -60,7 +60,7 @@ app.get('/api/standings/:league/:season', (req, res) => {
     method: 'get',
     url: `https://v3.football.api-sports.io/standings?league=${req.params.league}&season=${req.params.season}`,
     headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
+      'x-rapidapi-key': '96a9c0458e1b116a2eebc8147e305103',
       'x-rapidapi-host': 'v3.football.api-sports.io'
     }
   }
@@ -79,7 +79,7 @@ app.get('/api/estadistica/:fixture', (req, res) => {
     method: 'get',
     url: `https://v3.football.api-sports.io/fixtures/statistics?fixture=${req.params.fixture}`,
     headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
+      'x-rapidapi-key': '96a9c0458e1b116a2eebc8147e305103',
       'x-rapidapi-host': 'v3.football.api-sports.io'
     }
   }
@@ -90,6 +90,6 @@ app.get('/api/estadistica/:fixture', (req, res) => {
     .catch(function (error) {
       console.log(error)
     })
-})*/
+})
 console.log('http://localhost:3000/api/league')
 app.listen(PORT)

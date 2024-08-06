@@ -253,7 +253,9 @@ body {
   z-index: 40;
 }
 
-
+.h1-año{
+  color: #fff;
+}
 .img-child-menugames {
   width: 15px;
   height: 15px;
@@ -330,6 +332,9 @@ b {
 }
 .bloque-links a{
   color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-decoration: none;
   padding: 10px 10px;
   border-bottom: 1px solid #07f;
@@ -560,7 +565,7 @@ b {
   display: flex;
   flex-direction: column;
   padding: 10px 20px;
-  margin: 10px 50px;
+  margin: 10px 20px;
   border: 1px solid #000;
 }
 .table-teams{
@@ -979,18 +984,31 @@ b {
   .cont_asideright-padre{
     display: none;
   }
+  .cont_teams-padre{
+    margin: 0;
+  }
+  .cont_league_padre{
+    transform: none;
+  }
+  .cont_links-leagues{
+    font-size: 13px;
+  }
   .cont_asideleft_padre{
     width: 25%;
   }
   .cont_inicio_padre{
       width: 70%;
   }
+  
   .cont_home_padre{
     width: 73.2%;
     font-size: 15px;
   }
 }
 @media screen and (max-width: 955px){
+  .cont_league_padre{
+    width: 100%;
+  }
   .cont_asideleft_padre{
     display: none;
   }
@@ -1000,15 +1018,53 @@ b {
 .cont_home_padre{
   width: 100%;
 }
+.a-child-leagues{
+  padding: 0;
+}
 
 }
 @media screen and (max-width: 600px) {
+  .a-child-leagues{
+    padding: 0;
+    text-align: start;
+  }
+  .p-child-table-groups{
+    font-size: 10px;
+  }
+  .ul-child-table-groups{
+    font-size: 10px;
+  }
+  .h3-style-global{
+    font-size: 18px;
+  }
+  .ul-leagues-child{
+    width: 87%;
+  }
+  .cont_league_padre{
+    flex-wrap: wrap;
+  }
   .league_title{
     height: 100%;
     width: 20%;
     align-items: start;
     padding: 0;
     text-align: start;
+    border-right: 1px solid #333;
+    border-bottom: none;
+  }
+  .cont_links-leagues{
+    height: 100%;
+    width: 15%;
+    flex-direction: column;
+  }
+  .cont_select-label{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
+  .select_home{
+    width: 60px;
+    margin: 0;
   }
   .h3-home{
     margin-bottom: 30px;
@@ -1024,6 +1080,7 @@ b {
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: start;
   }
   .cont_home_padre{
     width: 100%;
@@ -1031,9 +1088,8 @@ b {
     padding: 0;
   }
   .secciones-home{
-    height: 100%;
     padding: 0px 5px;
-    border-right: 1px solid #333;
+    
   }
   .components-render{
     width: 80%;
@@ -1046,6 +1102,9 @@ b {
     padding: 0;
     height: 25px;
   }
+  .h1-año{
+    font-size: 23px;
+  }
   .cont_asideleft_padre{
     display: none;
   }
@@ -1069,6 +1128,24 @@ b {
 .cont-child-header p{
   font-size: 15px;
 }
+}
+@media screen and  (max-width: 500px) {
+  .secciones-home a{
+    font-size: 12px;
+  }
+  .h3-home{
+    font-size: 15px;
+  }
+  .h1-año{
+    font-size: 16px;
+  }
+  .a-child-leagues{
+    font-size: 12px;
+  }
+  .ul_league{
+    font-size: 15px;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 350px) {
   .input-header_padre{
@@ -1077,6 +1154,9 @@ b {
     padding: 0;
     height: 25px;
   }
+  .a-child-leagues{
+    font-size: 10px;
+  }
   .cont_asideleft_padre{
     display: none;
   }
@@ -1091,6 +1171,17 @@ b {
     font-size: 20px;
     margin: none;
   }
+  .h1-año{
+    font-size: 14px;
+    text-align: end;
+  }
+  .secciones-home{
+    padding: 0;
+    
+  }
+  .secciones-home a{
+    font-size: 9px;
+  }
   .search-button{
     display: none;
   }
@@ -1099,6 +1190,9 @@ b {
 }
 .cont-child-header p{
   font-size: 15px;
+}
+.league_title{
+  border: none;
 }
 .bloque-links{
   display: flex;
@@ -1110,5 +1204,5 @@ b {
 .icon_menu{
   font-size: 15px;
   margin-left: 5px;
-  color: #888;
+  color: #ddd;
 }

@@ -6,19 +6,21 @@ import { useEffect, useState } from 'react';
 import { Results } from './components_home/Results.jsx';
 import { Calendario } from './components_home/Calendario.jsx';
 import { Estadisticas } from './components_home/Estadisticas.jsx';
+
+
 const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
 export function Home() {
   const [apiStandings, setapiStandings] = useState([]);
   const [apiCalendario, setApiCalendario] = useState([]);
-  const [season, setSeason] = useState(2024);
+  const [season, setSeason] = useState();
   const [active, setActive] = useState(false);
   const [estadistica, setEstadistica] = useState([]);
   const [goalHome, setGoalHome] = useState();
   const [goalAway, setGoalAway] = useState();
   const [fixture, setFixture] = useState();
   const [leagues, setLeagues] = useState([]);
-  const [bool, setBool] = useState(false)
+  //const [bool, setBool] = useState(false)
   const handleActive = (
     bolean,
     fixtureId = null,
@@ -41,6 +43,7 @@ export function Home() {
         setEstadistica(data.response);
       });
     }, [fixture]);
+
     useEffect(() => {
     //standings
     fetch(`${URL}/api/standings/${leagueId}/${season}`)
@@ -52,17 +55,17 @@ export function Home() {
           })
         )
       );
+      // calendario
+    fetch(`${URL}/api/calendario/${leagueId}/${season}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setApiCalendario(data.response);
+    });
     }, [leagueId, season ])
 
-    useEffect(() => {
-    // calendario
-    fetch(`${URL}/api/calendario/${leagueId}/${season}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setApiCalendario(data.response);
-      });
-    }, [leagueId, season]);
-
+    useEffect(()=>{
+      setActive(false)
+    },[leagueId])
     useEffect(() => {
     //leagues
     fetch(`${URL}/api/leagues`)
@@ -88,6 +91,7 @@ export function Home() {
       })
     }
   });
+  
   return (
     <>
       <article className="cont_home_padre white">
@@ -125,14 +129,13 @@ export function Home() {
               </p>
             </Link>
           </div>
-          <div className="cont_select-label flex-column">
+          <div className="cont_select-label">
             <label htmlFor="seasons">Año :</label>
             <select
               name="seasons"
-              value={bool ? season : dates[dates.length-1]}
+              value={ season }
               className="select_home"
               onChange={(e) => {
-                setBool(true);
                 setSeason(e.target.value);
               }}
             >
@@ -154,6 +157,7 @@ export function Home() {
           goalHome={goalHome}
         />
         <article className='components-render'>
+        {active ?{}: <><br /> <h1 className='h1-año'>Elige el año de la temporada</h1></>}
         {(type == 'Cup') & (seccion == 'clasificacion') ? (
           <Groups apiTeamsCopa={apiStandings} />
         ) : null}
@@ -171,6 +175,8 @@ export function Home() {
             handleActive={handleActive}
           />
         ) : null}
+        
+        
         </article>
         
       </article>

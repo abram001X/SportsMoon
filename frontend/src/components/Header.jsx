@@ -4,7 +4,12 @@ import { Link} from 'react-router-dom';
 import { GoSearch } from "react-icons/go";
 import { FaFutbol } from "react-icons/fa";
 import { HiMoon } from "react-icons/hi2";
-import { FaExternalLinkAlt } from "react-icons/fa";
+
+import { FaTableList } from "react-icons/fa6";
+import { MdKeyboardCommandKey } from "react-icons/md";
+
+import { BsCalendar2DateFill } from "react-icons/bs";
+import { RxTable } from "react-icons/rx";
 
 
 export function Header(){
@@ -25,13 +30,13 @@ export function Header(){
                     <FaFutbol className="icon-header" /> <p className="none_px">Fútbol</p>
                     </Link >
                     <div className="bloque-links">
-                        <Link to={`/info/League/Premier%20League/clasificacion/39`}>Clasificacion <FaExternalLinkAlt className="icon_menu"/>
+                        <Link to={`/info/League/Premier%20League/clasificacion/39`}>Clasificacion <FaTableList className="icon_menu"/>
                         </Link>
-                        <Link to={`/info/League/Premier%20League/resultados/39`}>Resultados <FaExternalLinkAlt className="icon_menu"/>
+                        <Link to={`/info/League/Premier%20League/resultados/39`}>Resultados <MdKeyboardCommandKey className="icon_menu"/>
                         </Link>
-                        <Link to={`/info/League/Premier%20League/calendario/39`}>Calendario <FaExternalLinkAlt className="icon_menu"/>
+                        <Link to={`/info/League/Premier%20League/calendario/39`}>Calendario <BsCalendar2DateFill  className="icon_menu"/>
                         </Link>
-                        <Link to={`/info/leagues/World`}>Ligas <FaExternalLinkAlt className="icon_menu"/>
+                        <Link to={`/leagues/World`}>Ligas <RxTable className="icon_menu"/>
                         </Link>
                     </div>
                     </div>

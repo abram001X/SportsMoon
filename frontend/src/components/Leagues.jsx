@@ -7,7 +7,6 @@ export function Leagues({ leagues, handleScroll }) {
   const [num, setNum] = useState();
   const [elementos, setElementos] = useState()
   const { country } = useParams();
-  const [arrayCountry, setArrayCountry]  = useState([])
   const arrayBestLeagues = [
     'England',
     'World',
@@ -26,11 +25,11 @@ export function Leagues({ leagues, handleScroll }) {
   const ligas = leagues.filter((element) => {
     return arrayBestLeagues.includes(element.country.name);
   });
-  useEffect(()=>{
-  setArrayCountry(ligas.filter((element) => {
+  
+  const arrayCountry = ligas.filter((element) => {
       return element.country.name == country;
-    }))
-  },[country,ligas])
+      })
+ 
  
   
   
@@ -53,7 +52,7 @@ export function Leagues({ leagues, handleScroll }) {
     }
 
   return (
-    <article className="cont_league_padre white" >
+    <article className="cont_league_padre white " >
       <section className="cont_links-leagues">
         {arrayBestLeagues.map((element, j) => {
           return (
@@ -116,7 +115,7 @@ export function Leagues({ leagues, handleScroll }) {
           }
         })}
       </ul>
-      <ul className="ul-leagues-child">
+      <ul className="ul-leagues-child ul_league">
         <h3 className="h3-style-global">Copas</h3>
         {arrayCountry.map((element, j) => {
           if (
