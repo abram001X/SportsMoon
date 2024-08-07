@@ -45,7 +45,7 @@ export function Leagues({ leagues, handleScroll }) {
   };
   const observer = new IntersectionObserver(verify)
     if(elementos){
-      const elemento = elementos[elementos.length-6]
+      const elemento = elementos[elementos.length-10]
       console.log(elemento);
       observer.observe(elemento);
       setElementos(null)
@@ -81,7 +81,7 @@ export function Leagues({ leagues, handleScroll }) {
                   <Link
                     to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
                   >
-                    <img src={element.league.logo} alt="" onLoad={()=> j == num  - 5 ? setElementos(document.querySelectorAll(`.scroll`)) :''}/>
+                    <img src={element.league.logo} alt="" onLoad={()=> j == num  - 10 ? setElementos(document.querySelectorAll(`.scroll`)) :''}/>
                   </Link>
                   <div className="cont_links-info">
                     <Link
