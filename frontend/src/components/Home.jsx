@@ -6,13 +6,14 @@ import { useEffect, useState } from 'react';
 import { Results } from './components_home/Results.jsx';
 import { Calendario } from './components_home/Calendario.jsx';
 import { Estadisticas } from './components_home/Estadisticas.jsx';
-
+import { Loading } from './Loading.jsx';
 const URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
 
 export function Home() {
   const [apiStandings, setapiStandings] = useState([]);
   const [apiCalendario, setApiCalendario] = useState([]);
   const [season, setSeason] = useState();
+  const [isLoad, setIsLoad] = useState(false);
   const [active, setActive] = useState(false);
   const [estadistica, setEstadistica] = useState([]);
   const [goalHome, setGoalHome] = useState();
@@ -44,24 +45,30 @@ export function Home() {
   }, [fixture]);
 
   useEffect(() => {
-    //standings
-    fetch(`${URL}/api/standings/${leagueId}/${season}`)
-      .then((res) => res.json())
-      .then((data) =>
-        setapiStandings(
-          data.response.map((elements) => {
-            return elements.league.standings;
-          })
-        )
+    const fetching = async () => {
+      //standings
+      setIsLoad(true);
+      
+      const response = await fetch(
+        `${URL}/api/standings/${leagueId}/${season}`
       );
-    // calendario
-    fetch(`${URL}/api/calendario/${leagueId}/${season}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setApiCalendario(data.response);
-      });
-  }, [leagueId, season]);
+      const response2 = await fetch(`${URL}/api/calendario/${leagueId}/${season}`)
+      const data = await response.json();
+      const data2 = await response2.json();
 
+      // calendario
+      setapiStandings(
+        data.response.map((elements) => {
+          return elements.league.standings;
+        })
+      );
+      setApiCalendario(data2.response);
+      setIsLoad(false);
+    };
+    fetching();
+  }, [leagueId, season]);
+  console.log(isLoad);
+  
   useEffect(() => {
     //leagues
     fetch(`${URL}/api/leagues`)
@@ -86,6 +93,7 @@ export function Home() {
       });
     }
   });
+  console.log(apiStandings);
 
   return (
     <>
@@ -153,14 +161,16 @@ export function Home() {
           goalHome={goalHome}
         />
         <article className="components-render">
-          {!season && seccion != 'calendario' ? (
+          {isLoad ? (
+            <Loading />
+          ) : !season && seccion != 'calendario' ? (
             <>
               <br /> <h1 className="h1-año">Elige el año de la temporada</h1>
             </>
           ) : (
             ''
           )}
-          
+
           {(type == 'Cup') & (seccion == 'clasificacion') ? (
             <Groups apiTeamsCopa={apiStandings} />
           ) : null}

@@ -11,20 +11,20 @@ const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 function App() {
   const [homeApi, setHomeApi] = useState([]);
   const [leagues, setLeagues] = useState([]);
-
+  const [isLoad, setIsLoad] = useState(false)
   useEffect(() => {
-    fetch(`${URL}/api/news`)
-      .then((res) => res.json())
-      .then((data) => {
-        setHomeApi(data.results);
-      });
-
-    fetch(`${URL}/api/leagues`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLeagues(data.response);
-      });
-  }, []);
+    const fetching = async ()=>{
+      setIsLoad(true)
+      const response = await fetch(`${URL}/api/leagues`)   
+      const response2 = await fetch(`${URL}/api/news`)
+      const data  = await response.json();
+      const data2 = await response2.json()
+      setLeagues(data.response);
+      setHomeApi(data2.results)
+      setIsLoad(false)
+    }
+    fetching()
+  },[]);
   
   
   return (
@@ -37,12 +37,13 @@ function App() {
         />
       </section>
       <article className="cont_interface">
-        <AsideLeft leagues={leagues} />
+        <div className='aviso'><p className='p_aviso'>¡Aviso! Algunos campeonatos no muestran información, la api que utilizo me limita las peticiones. Lo siento :(</p></div>
+      <AsideLeft leagues={leagues} isLoad={isLoad}/>
         <Routes>
-          <Route path="/" element={<Inicio homeApi={homeApi} />} />
+          <Route path="/" element={<Inicio homeApi={homeApi}  isLoad={isLoad}/>} />
           <Route
             path="/leagues/:country"
-            element={<Leagues leagues={leagues} />}
+            element={<Leagues leagues={leagues} isLoad={isLoad}/>}
           />
           <Route
             path="/info/:type/:league/:seccion/:leagueId"

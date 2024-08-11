@@ -1,9 +1,10 @@
 
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Loading } from './Loading';
 
 /* eslint-disable react/prop-types */
-export function Leagues({ leagues, handleScroll }) {
+export function Leagues({ leagues, handleScroll, isLoad }) {
   const [num, setNum] = useState();
   const [elementos, setElementos] = useState()
   const { country } = useParams();
@@ -69,51 +70,53 @@ export function Leagues({ leagues, handleScroll }) {
       </section>
       <ul className="ul-leagues-child ul_league">
         <h3 className="h3-style-global">Ligas</h3>
-        {arrayCountry.map((element, j) => {
-          if (
-            (element.country.name === country) &
-            (element.league.type === 'League') &
-            (j <= num)
-          ) {
-            return (
-              <li key={j} className={`li-child-leagues scroll`}>
-                <section className="links-child-leagues">
-                  <Link
-                    to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
-                  >
-                    <img src={element.league.logo} alt="" onLoad={()=> j == num  - 10 ? setElementos(document.querySelectorAll(`.scroll`)) :''}/>
-                  </Link>
-                  <div className="cont_links-info">
+        {isLoad ? <Loading/> : arrayCountry.map((element, j) => {
+            if (
+              (element.country.name === country) &
+              (element.league.type === 'League') &
+              (j <= num)
+            ) {
+              return (
+                <li key={j} className={`li-child-leagues scroll`}>
+                  <section className="links-child-leagues">
                     <Link
-                      className="p-link"
                       to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
                     >
-                      <p>{element.league.name}</p>
+                      <img src={element.league.logo} alt="" onLoad={()=> j == num  - 10 ? setElementos(document.querySelectorAll(`.scroll`)) :''}/>
                     </Link>
-                    <Link
-                      className="a-child-info"
-                      to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
-                    >
-                      Clasificacion
-                    </Link>
-                    <Link
-                      className="a-child-info"
-                      to={`/info/${element.league.type}/${element.league.name}/resultados/${element.league.id}`}
-                    >
-                      Resultados
-                    </Link>
-                    <Link
-                      className="a-child-info"
-                      to={`/info/${element.league.type}/${element.league.name}/calendario/${element.league.id}`}
-                    >
-                      Calendario
-                    </Link>
-                  </div>
-                </section>
-              </li>
-            );
-          }
-        })}
+                    <div className="cont_links-info">
+                      <Link
+                        className="p-link"
+                        to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
+                      >
+                        <p>{element.league.name}</p>
+                      </Link>
+                      <Link
+                        className="a-child-info"
+                        to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
+                      >
+                        Clasificacion
+                      </Link>
+                      <Link
+                        className="a-child-info"
+                        to={`/info/${element.league.type}/${element.league.name}/resultados/${element.league.id}`}
+                      >
+                        Resultados
+                      </Link>
+                      <Link
+                        className="a-child-info"
+                        to={`/info/${element.league.type}/${element.league.name}/calendario/${element.league.id}`}
+                      >
+                        Calendario
+                      </Link>
+                    </div>
+                  </section>
+                </li>
+              );
+            }
+          })
+        }
+        
       </ul>
       <ul className="ul-leagues-child ul_league">
         <h3 className="h3-style-global">Copas</h3>
