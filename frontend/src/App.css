@@ -7,6 +7,9 @@ body {
 
 
 /*Estilos globales*/
+.icon_de{
+  color: #fff;
+}
 .loading{
   margin: auto;
 }
@@ -537,10 +540,6 @@ b {
   padding: 10px;
 }
 
-.scroll-results{
-  height: 650px;
-  overflow-y:scroll;
-}
 .scroll-results::-webkit-scrollbar-thumb{
   background-color: #000;
 }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 /* eslint-disable react/prop-types */
 export function Results({ apiResults, handleActive }) {
-  const [num, setNum] = useState(10);
+  const [num, setNum] = useState(15);
   const [elementos, setElementos] = useState();
   
   useEffect(() => {
@@ -21,7 +21,10 @@ export function Results({ apiResults, handleActive }) {
       observer.disconnect();
     }
   };
-
+  
+  
+  console.log(num);
+  
   const observer = new IntersectionObserver(verify);
   if (elementos) {
     const elemento = elementos[elementos.length - 2];
@@ -30,21 +33,22 @@ export function Results({ apiResults, handleActive }) {
   }
 
   const arrayCopa = apiResults;
-  
+  console.log(arrayCopa);
   return (
     <>
       <h2 className="h3-style-global">Resultados</h2>
-      <section className="cont_teamsresults-padre white scroll-results">
+      <section className="cont_teamsresults-padre white">
         
         <br />
         <br />
         {arrayCopa.map((elements, j) => {
           if ((elements.fixture.status.long == 'Match Finished') & (j <= num)) {
+            
             let fecha = new Date(elements.fixture.date);
             fecha = fecha + '';
             fecha = fecha.slice(0, 15);
             return (
-              <>
+              
                 <section
                   key={j}
                   className="cont_teams_results-child results plate"
@@ -89,7 +93,6 @@ export function Results({ apiResults, handleActive }) {
                     </p>
                   </div>
                 </section>
-              </>
             );
           }
         })}

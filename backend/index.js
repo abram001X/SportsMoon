@@ -3,9 +3,10 @@ import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
 import { FRONTEND_URL, PORT } from './config.js'
+
 // constantes
 const app = express()
-// keys 5aecbdbf507fe9edaaed01e42ae5b531
+
 // app
 app.use(
   cors({
@@ -13,12 +14,14 @@ app.use(
   })
 )
 
+// noticias
 app.get('/api/news', (req, res) => {
   fetch('https://newsdata.io/api/1/latest?country=ve&category=sports&apikey=pub_4787349d17bdef1a8a8f2e332f0dd038c6ce0')
     .then(response => response.json())
     .then(data => res.json(data))
 })
 
+// Leagues
 app.get('/api/leagues', (req, res) => {
   const config = {
     method: 'get',
@@ -37,6 +40,7 @@ app.get('/api/leagues', (req, res) => {
     })
 })
 
+// Calendario
 app.get('/api/calendario/:league/:season', (req, res) => {
   const config = {
     method: 'get',
@@ -55,6 +59,7 @@ app.get('/api/calendario/:league/:season', (req, res) => {
     })
 })
 
+// clasificación
 app.get('/api/standings/:league/:season', (req, res) => {
   const config = {
     method: 'get',
@@ -74,6 +79,7 @@ app.get('/api/standings/:league/:season', (req, res) => {
     })
 })
 
+// estadisticas
 app.get('/api/estadistica/:fixture', (req, res) => {
   const config = {
     method: 'get',
@@ -91,5 +97,6 @@ app.get('/api/estadistica/:fixture', (req, res) => {
       console.log(error)
     })
 })
-console.log('http://localhost:3000/api/league')
+
+console.log('http://localhost:3000/api/leagues')
 app.listen(PORT)

@@ -20,31 +20,18 @@ export function Home() {
   const [goalAway, setGoalAway] = useState();
   const [fixture, setFixture] = useState();
   const [leagues, setLeagues] = useState([]);
-  //const [bool, setBool] = useState(false)
-  const handleActive = (
-    bolean,
-    fixtureId = null,
-    homeGoal = null,
-    awayGoal = null
-  ) => {
-    if (bolean) {
-      setFixture(fixtureId);
-    }
-    setActive(bolean);
-    setGoalHome(homeGoal);
-    setGoalAway(awayGoal);
-  };
   const { leagueId, type, league, seccion } = useParams();
+
   useEffect(() => {
     /*Estadisitica*/
     fetch(`${URL}/api/estadistica/${fixture}`)
-      .then((res) => res.json())
-      .then((data) => {
+    .then((res) => res.json())
+    .then((data) => {
         setEstadistica(data.response);
       });
   }, [fixture]);
 
-  useEffect(() => {
+useEffect(() => {
     const fetching = async () => {
       //standings
       setIsLoad(true);
@@ -66,17 +53,33 @@ export function Home() {
       setIsLoad(false);
     };
     fetching();
-  }, [leagueId, season]);
-  console.log(isLoad);
+}, [season,leagueId]);
+  
   
   useEffect(() => {
     //leagues
     fetch(`${URL}/api/leagues`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLeagues(data.response);
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      setLeagues(data.response);
+    });
   }, []);
+
+  //const [bool, setBool] = useState(false)
+  const handleActive = (
+    bolean,
+    fixtureId = null,
+    homeGoal = null,
+    awayGoal = null
+  ) => {
+    if (bolean) {
+      setFixture(fixtureId);
+    }
+    setActive(bolean);
+    setGoalHome(homeGoal);
+    setGoalAway(awayGoal);
+  };
+
 
   const orderLeague = (a, b) => {
     let dateA = a.seasons.year;
@@ -130,12 +133,11 @@ export function Home() {
           <div className="cont_select-label">
             <label
               htmlFor="seasons"
-              style={seccion == 'calendario' ? { display: 'none' } : {}}
             >
               Año :
             </label>
             <select
-              style={seccion == 'calendario' ? { display: 'none' } : {}}
+              
               name="seasons"
               value={season}
               className="select_home"
@@ -161,16 +163,6 @@ export function Home() {
           goalHome={goalHome}
         />
         <article className="components-render">
-          {isLoad ? (
-            <Loading />
-          ) : !season && seccion != 'calendario' ? (
-            <>
-              <br /> <h1 className="h1-año">Elige el año de la temporada</h1>
-            </>
-          ) : (
-            ''
-          )}
-
           {(type == 'Cup') & (seccion == 'clasificacion') ? (
             <Groups apiTeamsCopa={apiStandings} />
           ) : null}
@@ -184,10 +176,18 @@ export function Home() {
           {seccion == 'calendario' ? (
             <Calendario
               apiResults={apiCalendario}
-              season={season}
               handleActive={handleActive}
             />
           ) : null}
+          {isLoad ? (
+            <Loading />
+          ) : !season && seccion != 'calendario' ? (
+            <>
+              <br /> <h1 className="h1-año">Elige el año de la temporada</h1>
+            </>
+          ) : (
+            ''
+          )}
         </article>
       </article>
     </>
