@@ -35,10 +35,7 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
   
   
   const verify = (entries) => {
-    
-    console.log(entries);
     const entry = entries[0];
-    console.log(entry);
     if(entry.isIntersecting){
       setNum(num + 15)
       observer.disconnect()
@@ -47,7 +44,6 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
   const observer = new IntersectionObserver(verify)
     if(elementos){
       const elemento = elementos[elementos.length-10]
-      console.log(elemento);
       observer.observe(elemento);
       setElementos(null)
     }
