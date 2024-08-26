@@ -4,8 +4,6 @@ import cors from 'cors'
 import axios from 'axios'
 import { FRONTEND_URL, PORT } from './config.js'
 import { apiDb } from './database/leaguesSelect.js'
-import { addLeagueDb } from './database/standingsInsert.js'
-import { apiStandingDb } from './database/standingsSelect.js'
 
 // constantes
 const app = express()
@@ -17,11 +15,6 @@ app.use(
     origin: FRONTEND_URL
   })
 )
-
-// Pruebas
-app.get('/pruebas', (req, res) => {
-  res.send(apiStandingDb)
-})
 
 // noticias
 app.get('/api/news', (req, res) => {

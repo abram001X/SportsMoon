@@ -4,16 +4,18 @@ import { useEffect, useState } from 'react';
 export function Results({ apiResults, handleActive }) {
   const [num, setNum] = useState(15);
   const [elementos, setElementos] = useState();
-  
-  useEffect(() => {
-    apiResults.sort(ordenDate);
-  }, [apiResults]);
-
   const ordenDate = (a, b) => {
     let dateA = new Date(a.fixture.date.slice(0, 10));
     let dateB = new Date(b.fixture.date.slice(0, 10));
     return dateB.getTime() - dateA.getTime();
   };
+  useEffect(()=>{
+    apiResults.sort(ordenDate);
+  },[apiResults])
+  
+  const arrayCopa = apiResults;
+  console.log(apiResults);
+  
   const verify = (entries) => {
     const entry = entries[0];
     if (entry.isIntersecting) {
@@ -28,7 +30,6 @@ export function Results({ apiResults, handleActive }) {
     setElementos(null);
   }
 
-  const arrayCopa = apiResults;
   return (
     <>
       <h2 className="h3-style-global">Resultados</h2>

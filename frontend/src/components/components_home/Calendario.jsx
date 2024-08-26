@@ -2,16 +2,16 @@ import { useEffect, useState } from 'react';
 
 /* eslint-disable react/prop-types */
 export function Calendario({ apiResults, handleActive }) {
-  const [dateToday, setDateToday] = useState();
+  const [dateToday, setDateToday] = useState('Not Started');
   const [elementos, setElementos] = useState();
-  const [num, setNum] = useState(15);
+  const [num, setNum] = useState();
   useEffect(()=>{
-    setDateToday('Not Started')
-  },[])
+    setNum(apiResults.filter((obj)=>{return obj.fixture.status.long !== 'Not Started'}).length +10)
+  },[apiResults])
   let today = new Date(dateToday);
   today = today + '';
-  today = today.slice(0, 15);
-
+  today = today.slice(0, 15)
+  
   const ordenDate = (a, b) => {
     let dateA = new Date(a.fixture.date);
     let dateB = new Date(b.fixture.date);
@@ -43,9 +43,9 @@ export function Calendario({ apiResults, handleActive }) {
         type="date"
         min="1924-01-01"
         max="2025-01-01"
-        onChange={(e) => {
-          if (e.target.value == '') {
-            return setDateToday('Not Started');
+        onChange={(e) => { 
+          if (e.target.value == ''){
+            setDateToday('Not Started')
           }
           setDateToday(
             `${e.target.value.slice(0, 4)}-${parseInt(
@@ -59,7 +59,6 @@ export function Calendario({ apiResults, handleActive }) {
           let fecha = new Date(elements.fixture.date);
           fecha = fecha + '';
           fecha = fecha.slice(0, 15);
-
           if (elements.fixture.status.long == dateToday || fecha == today) {
             if (j <= num) {
               return (
