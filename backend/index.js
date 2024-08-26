@@ -3,16 +3,25 @@ import express from 'express'
 import cors from 'cors'
 import axios from 'axios'
 import { FRONTEND_URL, PORT } from './config.js'
+import { apiDb } from './database/leaguesSelect.js'
+import { addLeagueDb } from './database/standingsInsert.js'
+import { apiStandingDb } from './database/standingsSelect.js'
 
 // constantes
 const app = express()
 
 // app
+app.use(express.json())
 app.use(
   cors({
     origin: FRONTEND_URL
   })
 )
+
+// Pruebas
+app.get('/pruebas', (req, res) => {
+  res.send(apiStandingDb)
+})
 
 // noticias
 app.get('/api/news', (req, res) => {
@@ -23,21 +32,7 @@ app.get('/api/news', (req, res) => {
 
 // Leagues
 app.get('/api/leagues', (req, res) => {
-  const config = {
-    method: 'get',
-    url: 'https://v3.football.api-sports.io/leagues',
-    headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
-      'x-rapidapi-host': 'v3.football.api-sports.io'
-    }
-  }
-  axios(config)
-    .then(function (response) {
-      res.json(response.data)
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
+  res.send(apiDb)
 })
 
 // Calendario
@@ -69,7 +64,6 @@ app.get('/api/standings/:league/:season', (req, res) => {
       'x-rapidapi-host': 'v3.football.api-sports.io'
     }
   }
-
   axios(config)
     .then(function (response) {
       res.json(response.data)

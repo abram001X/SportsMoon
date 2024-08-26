@@ -21,10 +21,6 @@ export function Results({ apiResults, handleActive }) {
       observer.disconnect();
     }
   };
-  
-  
-  console.log(num);
-  
   const observer = new IntersectionObserver(verify);
   if (elementos) {
     const elemento = elementos[elementos.length - 2];
@@ -33,7 +29,6 @@ export function Results({ apiResults, handleActive }) {
   }
 
   const arrayCopa = apiResults;
-  console.log(arrayCopa);
   return (
     <>
       <h2 className="h3-style-global">Resultados</h2>

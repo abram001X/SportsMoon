@@ -30,7 +30,7 @@ export function Home() {
         setEstadistica(data.response);
       });
   }, [fixture]);
-
+  
 useEffect(() => {
     const fetching = async () => {
       //standings
@@ -80,7 +80,6 @@ useEffect(() => {
     setGoalAway(awayGoal);
   };
 
-
   const orderLeague = (a, b) => {
     let dateA = a.seasons.year;
     let dateB = b.seasons.year;
@@ -96,7 +95,6 @@ useEffect(() => {
       });
     }
   });
-  console.log(apiStandings);
 
   return (
     <>

@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* eslint-disable react/prop-types */
 export function Calendario({ apiResults, handleActive }) {
-  const [dateToday, setDateToday] = useState('Not Started');
+  const [dateToday, setDateToday] = useState();
   const [elementos, setElementos] = useState();
   const [num, setNum] = useState(15);
+  useEffect(()=>{
+    setDateToday('Not Started')
+  },[])
   let today = new Date(dateToday);
   today = today + '';
   today = today.slice(0, 15);

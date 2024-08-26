@@ -12,6 +12,7 @@ function App() {
   const [homeApi, setHomeApi] = useState([]);
   const [leagues, setLeagues] = useState([]);
   const [isLoad, setIsLoad] = useState(false)
+
   useEffect(() => {
     const fetching = async ()=>{
       setIsLoad(true)
