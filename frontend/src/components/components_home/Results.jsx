@@ -14,11 +14,11 @@ export function Results({ apiResults, handleActive }) {
   },[apiResults])
   
   const arrayCopa = apiResults;
-  console.log(apiResults);
   
   const verify = (entries) => {
     const entry = entries[0];
     if (entry.isIntersecting) {
+      console.log(num);
       setNum(num + 10);
       observer.disconnect();
     }
@@ -38,8 +38,7 @@ export function Results({ apiResults, handleActive }) {
         <br />
         <br />
         {arrayCopa.map((elements, j) => {
-          if ((elements.fixture.status.long == 'Match Finished') & (j <= num)) {
-            
+          if (elements.fixture.status.long == 'Match Finished' && j <= num) {
             let fecha = new Date(elements.fixture.date);
             fecha = fecha + '';
             fecha = fecha.slice(0, 15);
@@ -57,7 +56,7 @@ export function Results({ apiResults, handleActive }) {
                     )
                   }
                 >
-                  <section className="cont_teams-child results">
+                  <section className="cont_teams-child results imgLoad">
                     <div className="teams_results-child">
                       <div className="results-p-img">
                         <img src={elements.teams.home.logo} alt="" />
@@ -70,12 +69,12 @@ export function Results({ apiResults, handleActive }) {
                         <img
                           src={elements.teams.away.logo}
                           alt=""
-                          onLoad={() =>
+                          onLoad={() =>{
                             j == num - 2
                               ? setElementos(
-                                  document.querySelectorAll('.cont_teams-child')
+                                  document.querySelectorAll('.imgLoad')
                                 )
-                              : ''
+                              : '';}
                           }
                         />
                         <p>{elements.teams.away.name}</p>

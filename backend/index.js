@@ -1,10 +1,16 @@
 // importando independencias y modulos
 import express from 'express'
 import cors from 'cors'
-import axios from 'axios'
 import { FRONTEND_URL, PORT } from './config.js'
 import { apiDb } from './database/leaguesSelect.js'
+import { createClient } from '@libsql/client'
+import dotenv from 'dotenv'
 
+dotenv.config()
+const db = createClient({
+  url: process.env.DB_URL,
+  authToken: process.env.DB_TOKEN
+})
 // constantes
 const app = express()
 
@@ -28,61 +34,9 @@ app.get('/api/leagues', (req, res) => {
   res.send(apiDb)
 })
 
-// Calendario
-app.get('/api/calendario/:league/:season', (req, res) => {
-  const config = {
-    method: 'get',
-    url: `https://v3.football.api-sports.io/fixtures?league=${req.params.league}&season=${req.params.season}`,
-    headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
-      'x-rapidapi-host': 'v3.football.api-sports.io'
-    }
-  }
-  axios(config)
-    .then(function (response) {
-      res.json(response.data)
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
-})
-
-// clasificación
-app.get('/api/standings/:league/:season', (req, res) => {
-  const config = {
-    method: 'get',
-    url: `https://v3.football.api-sports.io/standings?league=${req.params.league}&season=${req.params.season}`,
-    headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
-      'x-rapidapi-host': 'v3.football.api-sports.io'
-    }
-  }
-  axios(config)
-    .then(function (response) {
-      res.json(response.data)
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
-})
-
-// estadisticas
-app.get('/api/estadistica/:fixture', (req, res) => {
-  const config = {
-    method: 'get',
-    url: `https://v3.football.api-sports.io/fixtures/statistics?fixture=${req.params.fixture}`,
-    headers: {
-      'x-rapidapi-key': '5aecbdbf507fe9edaaed01e42ae5b531',
-      'x-rapidapi-host': 'v3.football.api-sports.io'
-    }
-  }
-  axios(config)
-    .then(function (response) {
-      res.json(response.data)
-    })
-    .catch(function (error) {
-      console.log(error)
-    })
+app.get('/search/leagues/:league', async (req, res) => {
+  const result = await db.execute(`SELECT id,name,type,logo FROM league WHERE name LIKE "${req.params.league}%";`)
+  res.send(result.rows)
 })
 
 console.log('http://localhost:3000/api/leagues')

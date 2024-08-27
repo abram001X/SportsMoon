@@ -16,12 +16,14 @@ function App() {
   useEffect(() => {
     const fetching = async ()=>{
       setIsLoad(true)
-      const response = await fetch(`${URL}/api/leagues`)   
-      const response2 = await fetch(`${URL}/api/news`)
-      const data  = await response.json();
-      const data2 = await response2.json()
-      setLeagues(data.response);
-      setHomeApi(data2.results)
+      const resLe = await fetch(`${URL}/api/leagues`)
+      const dataLe = await resLe.json();
+      
+      const resNe = await  fetch('https://newsdata.io/api/1/latest?country=ve&category=sports&apikey=pub_4787349d17bdef1a8a8f2e332f0dd038c6ce0')
+      const dataNe = await resNe.json()
+
+      setLeagues(dataLe.response)
+      setHomeApi(dataNe.results)
       setIsLoad(false)
     }
     fetching()

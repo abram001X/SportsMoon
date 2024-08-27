@@ -8,7 +8,7 @@ import { Calendario } from './components_home/Calendario.jsx';
 import { Estadisticas } from './components_home/Estadisticas.jsx';
 import { Loading } from './Loading.jsx';
 const URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
-
+const API_KEY = import.meta.env.VITE_API_KEY;
 export function Home() {
   const [apiStandings, setapiStandings] = useState([]);
   const [apiCalendario, setApiCalendario] = useState([]);
@@ -24,45 +24,73 @@ export function Home() {
 
   useEffect(() => {
     /*Estadisitica*/
-    fetch(`${URL}/api/estadistica/${fixture}`)
-    .then((res) => res.json())
-    .then((data) => {
-        setEstadistica(data.response);
-      });
+    const fetchStats = async () => {
+      const res = await fetch(
+        `https://v3.football.api-sports.io/fixtures/statistics?fixture=${fixture}`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-host': 'v3.football.api-sports.io',
+            'x-rapidapi-key': `${API_KEY}`
+          }
+        }
+      );
+      const data = await res.json();
+      setEstadistica(data.response);
+    };
+    if (fixture) {
+      fetchStats();
+    }
   }, [fixture]);
-  
-useEffect(() => {
+
+  useEffect(() => {
     const fetching = async () => {
       //standings
       setIsLoad(true);
-      
-      const response = await fetch(
-        `${URL}/api/standings/${leagueId}/${season}`
+      const resStan = await fetch(
+        `https://v3.football.api-sports.io/standings?league=${leagueId}&season=${season}`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-host': 'v3.football.api-sports.io',
+            'x-rapidapi-key': `${API_KEY}`
+          }
+        }
       );
-      const response2 = await fetch(`${URL}/api/calendario/${leagueId}/${season}`)
-      const data = await response.json();
-      const data2 = await response2.json();
+      const resCa = await fetch(
+        `https://v3.football.api-sports.io/fixtures?league=${leagueId}&season=${season}`,
+        {
+          method: 'GET',
+          headers: {
+            'x-rapidapi-host': 'v3.football.api-sports.io',
+            'x-rapidapi-key': `${API_KEY}`
+          }
+        }
+      );
+      const dataStan = await resStan.json();
+      const dataCa = await resCa.json();
 
       // calendario
       setapiStandings(
-        data.response.map((elements) => {
+        dataStan.response.map((elements) => {
           return elements.league.standings;
         })
       );
-      setApiCalendario(data2.response);
+      setApiCalendario(dataCa.response);
       setIsLoad(false);
     };
-    fetching();
-}, [season,leagueId]);
-  
-  
+    if (leagueId && season) {
+      fetching();
+    }
+  }, [season, leagueId]);
+
   useEffect(() => {
     //leagues
     fetch(`${URL}/api/leagues`)
-    .then((res) => res.json())
-    .then((data) => {
-      setLeagues(data.response);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        setLeagues(data.response);
+      });
   }, []);
 
   //const [bool, setBool] = useState(false)
@@ -129,13 +157,8 @@ useEffect(() => {
             </Link>
           </div>
           <div className="cont_select-label">
-            <label
-              htmlFor="seasons"
-            >
-              Año :
-            </label>
+            <label htmlFor="seasons">Año :</label>
             <select
-              
               name="seasons"
               value={season}
               className="select_home"

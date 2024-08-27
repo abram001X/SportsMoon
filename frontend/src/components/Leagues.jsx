@@ -1,12 +1,12 @@
-
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Loading } from './Loading';
+import { Search } from './Search';
 
 /* eslint-disable react/prop-types */
 export function Leagues({ leagues, handleScroll, isLoad }) {
   const [num, setNum] = useState();
-  const [elementos, setElementos] = useState()
+  const [elementos, setElementos] = useState();
   const { country } = useParams();
   const arrayBestLeagues = [
     'England',
@@ -20,53 +20,54 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
     'Argentina',
     'Venezuela'
   ];
-  useEffect(()=>{
-    setNum(21)
-  },[country])
+  useEffect(() => {
+    setNum(21);
+  }, [country]);
   const ligas = leagues.filter((element) => {
     return arrayBestLeagues.includes(element.country.name);
   });
-  
+
   const arrayCountry = ligas.filter((element) => {
-      return element.country.name == country;
-      })
- 
- 
-  
-  
+    return element.country.name == country;
+  });
+
   const verify = (entries) => {
     const entry = entries[0];
-    if(entry.isIntersecting){
-      setNum(num + 15)
-      observer.disconnect()
+    if (entry.isIntersecting) {
+      setNum(num + 15);
+      observer.disconnect();
     }
   };
-  const observer = new IntersectionObserver(verify)
-    if(elementos){
-      const elemento = elementos[elementos.length-10]
-      observer.observe(elemento);
-      setElementos(null)
-    }
+  const observer = new IntersectionObserver(verify);
+  if (elementos) {
+    const elemento = elementos[elementos.length - 10];
+    observer.observe(elemento);
+    setElementos(null);
+  }
 
   return (
-    <article className="cont_league_padre white " >
+    <article className="cont_league_padre white ">
       <section className="cont_links-leagues">
         {arrayBestLeagues.map((element, j) => {
           return (
             <Link
               key={j}
-              className={`a-child-leagues ${element == country ? 'press': ''}`}
+              className={`a-child-leagues ${element == country ? 'press' : ''}`}
               to={`/leagues/${element}`}
-              
             >
               {element}
             </Link>
           );
         })}
       </section>
+      <br />
+      <Search />
       <ul className="ul-leagues-child ul_league">
         <h3 className="h3-style-global">Ligas</h3>
-        {isLoad ? <Loading/> : arrayCountry.map((element, j) => {
+        {isLoad ? (
+          <Loading />
+        ) : (
+          arrayCountry.map((element, j) => {
             if (
               (element.country.name === country) &
               (element.league.type === 'League') &
@@ -78,7 +79,15 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
                     <Link
                       to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
                     >
-                      <img src={element.league.logo} alt="" onLoad={()=> j == num  - 10 ? setElementos(document.querySelectorAll(`.scroll`)) :''}/>
+                      <img
+                        src={element.league.logo}
+                        alt=""
+                        onLoad={() =>
+                          j == num - 10
+                            ? setElementos(document.querySelectorAll(`.scroll`))
+                            : ''
+                        }
+                      />
                     </Link>
                     <div className="cont_links-info">
                       <Link
@@ -111,8 +120,7 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
               );
             }
           })
-        }
-        
+        )}
       </ul>
       <ul className="ul-leagues-child ul_league">
         <h3 className="h3-style-global">Copas</h3>
@@ -124,13 +132,21 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
           ) {
             return (
               <li key={j} className={`li-child-leagues  scroll`}>
-                <div className='links-child-leagues'>
-                <Link
-                  to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
-                  className="links-child-leagues"
-                >
-                  <img src={element.league.logo} alt="" onLoad={()=> {j == num  - 5  ? setElementos(document.querySelectorAll(`.scroll`)): ''}}/>
-                </Link>
+                <div className="links-child-leagues">
+                  <Link
+                    to={`/info/${element.league.type}/${element.league.name}/clasificacion/${element.league.id}`}
+                    className="links-child-leagues"
+                  >
+                    <img
+                      src={element.league.logo}
+                      alt=""
+                      onLoad={() => {
+                        j == num - 5
+                          ? setElementos(document.querySelectorAll(`.scroll`))
+                          : '';
+                      }}
+                    />
+                  </Link>
                   <div className="cont_links-info">
                     <Link
                       className="p-link"
@@ -166,7 +182,7 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
                       Calendario
                     </Link>
                   </div>
-                  </div>
+                </div>
               </li>
             );
           }

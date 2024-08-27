@@ -583,7 +583,9 @@ b {
 .fecha_results-child{
   width: 19%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  font-size: 17px;
   justify-content: center;
   padding: 10px;
   height: 100%;
@@ -844,7 +846,7 @@ b {
   height: 670px;
   top:680px;
   z-index: 200;
-  background-color: #fff;
+  background-color: #333;
 }
 .portada{
   display: flex;
@@ -862,7 +864,6 @@ b {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #eee;
 }
 .h3-home{
   border-right:1px solid  #333;

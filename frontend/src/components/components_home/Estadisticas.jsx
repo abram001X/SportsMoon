@@ -10,7 +10,6 @@ export function Estadisticas({active,handleActive,estadistica,goalAway, goalHome
                 </div>
                 <section className="cont_estadistica ">
                     {estadistica.map((element,j)=>{
-                        console.log(element);
                         if(element == estadistica[0]){
                             return(
                         <>

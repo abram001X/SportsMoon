@@ -20,15 +20,15 @@ export function Calendario({ apiResults, handleActive }) {
   apiResults.sort(ordenDate);
 
   const arrayCopa = apiResults;
-
+  
   const verify = (entries) => {
     const entry = entries[0];
+        
     if (entry.isIntersecting) {
       setNum(num + 10);
       observer.disconnect();
     }
   };
-
   const observer = new IntersectionObserver(verify);
   if (elementos) {
     const elemento = elementos[elementos.length - 2];
@@ -45,7 +45,7 @@ export function Calendario({ apiResults, handleActive }) {
         max="2025-01-01"
         onChange={(e) => { 
           if (e.target.value == ''){
-            setDateToday('Not Started')
+            return setDateToday('Not Started')
           }
           setDateToday(
             `${e.target.value.slice(0, 4)}-${parseInt(
@@ -57,6 +57,10 @@ export function Calendario({ apiResults, handleActive }) {
       <section className="cont_teamsresults-padre white">
         {arrayCopa.map((elements, j) => {
           let fecha = new Date(elements.fixture.date);
+          
+          const minutes = fecha.getMinutes() +''
+          let hour = fecha.getHours() +''
+          hour = hour + ':' + minutes
           fecha = fecha + '';
           fecha = fecha.slice(0, 15);
           if (elements.fixture.status.long == dateToday || fecha == today) {
@@ -104,6 +108,7 @@ export function Calendario({ apiResults, handleActive }) {
                     <p>
                       {fecha.slice(11)}/{fecha.slice(8, 10)} {fecha.slice(0, 8)}
                     </p>
+                    <p>{hour}</p>
                   </div>
                 </article>
               );

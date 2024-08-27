@@ -6,6 +6,59 @@
   
 }
 
+.search-padre{
+  text-align: start;
+  padding: 10px;
+}
+.search{
+  outline: none;
+}
+.searching-child{
+  width: 206px;
+  display: flex;
+  flex-direction: column;
+  background-color: #345;
+  position: fixed;
+  z-index: 100;
+}
+.searching-child img{
+  width: 40px;
+  height: 40px;
+}
+.search_link-search{
+  margin: 5px 0px;
+  padding: 5px;
+  text-decoration: none;
+}
+.search_link-search:hover{
+  background-color: #234;
+}
+.cont_logo_name-search{
+  display: flex;
+  align-items: center;
+}
+.cont_logo_name-search p{
+  margin-left: 10px;
+  color: #ddd;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 350px){
+  .search-padre input{
+    width: 150px;
+  }
+  .searching-child{
+    width: 150px;
+  }
+  .cont_logo_name-search p{
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .cont_logo_name-search img{
+    width: 30px;
+    height: 30px;
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
