@@ -11,7 +11,7 @@ const resultCountry = await db.execute('SELECT name, code, flag FROM country ORD
 const resultSeasons = await db.execute('SELECT seasons FROM season ORDER BY id ASC;')
 const arraySea = resultSeasons.rows.map((obj, j) => {
   return obj.seasons.split(',').map((ele) => {
-    return { year: ele }
+    return ele
   })
 })
 export const apiDb = {

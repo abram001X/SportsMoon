@@ -5,13 +5,18 @@ export function Calendario({ apiResults, handleActive }) {
   const [dateToday, setDateToday] = useState('Not Started');
   const [elementos, setElementos] = useState();
   const [num, setNum] = useState();
-  useEffect(()=>{
-    setNum(apiResults.filter((obj)=>{return obj.fixture.status.long !== 'Not Started'}).length +10)
-  },[apiResults])
+  useEffect(() => {
+    setNum(
+      apiResults.filter((obj) => {
+        return obj.fixture.status.long == 'Match Finished';
+      }).length + 10
+    );
+  }, [apiResults]);
+
   let today = new Date(dateToday);
   today = today + '';
-  today = today.slice(0, 15)
-  
+  today = today.slice(0, 15);
+
   const ordenDate = (a, b) => {
     let dateA = new Date(a.fixture.date);
     let dateB = new Date(b.fixture.date);
@@ -20,10 +25,10 @@ export function Calendario({ apiResults, handleActive }) {
   apiResults.sort(ordenDate);
 
   const arrayCopa = apiResults;
-  
+
   const verify = (entries) => {
     const entry = entries[0];
-        
+
     if (entry.isIntersecting) {
       setNum(num + 10);
       observer.disconnect();
@@ -35,6 +40,7 @@ export function Calendario({ apiResults, handleActive }) {
     observer.observe(elemento);
     setElementos(null);
   }
+
   return (
     <>
       <h2 className="h3-style-global">Calendario</h2>
@@ -43,9 +49,9 @@ export function Calendario({ apiResults, handleActive }) {
         type="date"
         min="1924-01-01"
         max="2025-01-01"
-        onChange={(e) => { 
-          if (e.target.value == ''){
-            return setDateToday('Not Started')
+        onChange={(e) => {
+          if (e.target.value == '') {
+            return setDateToday('Not Started');
           }
           setDateToday(
             `${e.target.value.slice(0, 4)}-${parseInt(
@@ -57,10 +63,10 @@ export function Calendario({ apiResults, handleActive }) {
       <section className="cont_teamsresults-padre white">
         {arrayCopa.map((elements, j) => {
           let fecha = new Date(elements.fixture.date);
-          
-          const minutes = fecha.getMinutes() +''
-          let hour = fecha.getHours() +''
-          hour = hour + ':' + minutes
+
+          const minutes = fecha.getMinutes() + '';
+          let hour = fecha.getHours() + '';
+          hour = hour + ':' + minutes;
           fecha = fecha + '';
           fecha = fecha.slice(0, 15);
           if (elements.fixture.status.long == dateToday || fecha == today) {
@@ -94,7 +100,7 @@ export function Calendario({ apiResults, handleActive }) {
                           onLoad={() => {
                             j == num - 2
                               ? setElementos(
-                                  document.querySelectorAll('.cont_teams-child')
+                                  document.querySelectorAll('.results-p-img')
                                 )
                               : '';
                           }}

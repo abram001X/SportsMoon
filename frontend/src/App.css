@@ -5,7 +5,16 @@ body {
   
 }
 
-
+.load_result{
+  border-radius: 15px;
+  padding: 6px;
+  border: none;
+  width: 150px;
+  margin: auto;
+}
+.load_result:hover{
+  background-color: #aaa;
+}
 /*Estilos globales*/
 .icon_de{
   color: #fff;
@@ -38,6 +47,10 @@ body {
   padding: 5px 10px;
   font-family: "Patua One", serif;
   font-weight: 500;
+}
+.oc{
+  color: #333;
+  font-size: 15px !important;
 }
 .icon{
   transform: translateY(2px);

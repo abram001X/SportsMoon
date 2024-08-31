@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
+import { FaArrowRight } from "react-icons/fa";
 
 /* eslint-disable react/prop-types */
 export function Results({ apiResults, handleActive }) {
-  const [num, setNum] = useState(15);
-  const [elementos, setElementos] = useState();
+  const [num, setNum] = useState(10);
+  const [ocultar, setOcultar] = useState(true)
   const ordenDate = (a, b) => {
     let dateA = new Date(a.fixture.date.slice(0, 10));
     let dateB = new Date(b.fixture.date.slice(0, 10));
@@ -13,23 +14,7 @@ export function Results({ apiResults, handleActive }) {
     apiResults.sort(ordenDate);
   },[apiResults])
   
-  const arrayCopa = apiResults;
-  
-  const verify = (entries) => {
-    const entry = entries[0];
-    if (entry.isIntersecting) {
-      console.log(num);
-      setNum(num + 10);
-      observer.disconnect();
-    }
-  };
-  const observer = new IntersectionObserver(verify);
-  if (elementos) {
-    const elemento = elementos[elementos.length - 2];
-    observer.observe(elemento);
-    setElementos(null);
-  }
-
+  const arrayCopa = apiResults
   return (
     <>
       <h2 className="h3-style-global">Resultados</h2>
@@ -39,6 +24,7 @@ export function Results({ apiResults, handleActive }) {
         <br />
         {arrayCopa.map((elements, j) => {
           if (elements.fixture.status.long == 'Match Finished' && j <= num) {
+            
             let fecha = new Date(elements.fixture.date);
             fecha = fecha + '';
             fecha = fecha.slice(0, 15);
@@ -69,13 +55,7 @@ export function Results({ apiResults, handleActive }) {
                         <img
                           src={elements.teams.away.logo}
                           alt=""
-                          onLoad={() =>{
-                            j == num - 2
-                              ? setElementos(
-                                  document.querySelectorAll('.imgLoad')
-                                )
-                              : '';}
-                          }
+                          
                         />
                         <p>{elements.teams.away.name}</p>
                       </div>
@@ -89,9 +69,14 @@ export function Results({ apiResults, handleActive }) {
                   </div>
                 </section>
             );
+            
           }
         })}
+        
+        
       </section>
+      {ocultar ?<button className='load_result' onClick={()=>{setNum(arrayCopa.length); setOcultar(false)}}>Más partidos <FaArrowRight className='icon oc'/>
+        </button>:''}
     </>
   );
 }

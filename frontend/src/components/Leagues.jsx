@@ -44,7 +44,8 @@ export function Leagues({ leagues, handleScroll, isLoad }) {
     observer.observe(elemento);
     setElementos(null);
   }
-
+  console.log(leagues);
+  
   return (
     <article className="cont_league_padre white ">
       <section className="cont_links-leagues">

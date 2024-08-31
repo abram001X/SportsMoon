@@ -90,9 +90,18 @@ export function Home() {
       .then((res) => res.json())
       .then((data) => {
         setLeagues(data.response);
+        leagues.map((elements) => {
+          if (elements.league.id == leagueId) {
+            return setSeason(elements.seasons[elements.seasons.length -1])
+          }
+        })
       });
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  console.log(season);
+  
+  
   //const [bool, setBool] = useState(false)
   const handleActive = (
     bolean,
@@ -108,18 +117,11 @@ export function Home() {
     setGoalAway(awayGoal);
   };
 
-  const orderLeague = (a, b) => {
-    let dateA = a.seasons.year;
-    let dateB = b.seasons.year;
-    return dateA - dateB;
-  };
-  const leaguesDate = leagues;
-  leaguesDate.sort(orderLeague);
   const dates = [];
-  leaguesDate.map((elements) => {
+  leagues.map((elements) => {
     if (elements.league.id == leagueId) {
       return elements.seasons.map((element) => {
-        dates.push(element.year);
+        dates.push(element);
       });
     }
   });
