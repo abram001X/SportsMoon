@@ -12,7 +12,7 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 export function Home() {
   const [apiStandings, setapiStandings] = useState([]);
   const [apiCalendario, setApiCalendario] = useState([]);
-  const [season, setSeason] = useState();
+  const [season, setSeason] = useState('Años');
   const [isLoad, setIsLoad] = useState(false);
   const [active, setActive] = useState(false);
   const [estadistica, setEstadistica] = useState([]);
@@ -90,16 +90,9 @@ export function Home() {
       .then((res) => res.json())
       .then((data) => {
         setLeagues(data.response);
-        leagues.map((elements) => {
-          if (elements.league.id == leagueId) {
-            return setSeason(elements.seasons[elements.seasons.length -1])
-          }
-        })
       });
     
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(season);
   
   
   //const [bool, setBool] = useState(false)
@@ -116,8 +109,8 @@ export function Home() {
     setGoalHome(homeGoal);
     setGoalAway(awayGoal);
   };
-
-  const dates = [];
+  
+  const dates = ['Años'];
   leagues.map((elements) => {
     if (elements.league.id == leagueId) {
       return elements.seasons.map((element) => {
@@ -206,7 +199,7 @@ export function Home() {
             <Loading />
           ) : !season && seccion != 'calendario' ? (
             <>
-              <br /> <h1 className="h1-año">Elige el año de la temporada</h1>
+              <br /> <h1 className="h1-año">Elije el año de la temporada</h1>
             </>
           ) : (
             ''
