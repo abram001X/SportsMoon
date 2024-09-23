@@ -61,7 +61,7 @@ export function Calendario({ apiResults, handleActive }) {
         }}
       />
       <section className="cont_teamsresults-padre white">
-        {arrayCopa.map((elements, j) => {
+        {arrayCopa && arrayCopa.map((elements, j) => {
           let fecha = new Date(elements.fixture.date);
 
           const minutes = fecha.getMinutes() + '';

@@ -27,7 +27,7 @@ apiCopa.sort((a,b)=> b.points - a.points)
                       <li>P</li>
                       <li>GF</li>
                       <li>GC</li>
-                      <li>DG</li>
+                      <li>GD</li>
                       <li>PTS</li>
                     </ul>
       </div>
@@ -46,9 +46,9 @@ apiCopa.sort((a,b)=> b.points - a.points)
               <li>{element.all.win}</li>
               <li>{element.all.draw}</li>
               <li>{element.all.lose}</li>
-              <li>{element.goalsDiff}</li>
               <li>{element.all.goals.for}</li>
               <li>{element.all.goals.against}</li>
+              <li>{element.goalsDiff}</li>
               <li>{element.points}</li>
             </ul>
           </div>

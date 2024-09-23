@@ -24,8 +24,8 @@ export function Search() {
             placeholder="Buscar"
             className="search"
             onChange={(e) => {
-              if (e.target.value == ''){
-                return setSearchLeague()
+              if (e.target.value == '') {
+                return setSearchLeague();
               }
               handleSearch(e.target.value);
             }}
@@ -35,12 +35,18 @@ export function Search() {
           {searchLeague
             ? searchLeague.map((obj, i) => {
                 if (i <= 7) {
-                  return <Link key={i} to={`/info/${obj.type}/${obj.name}/clasificacion/${obj.leagueId}`} className='search_link-search'>
-                      <div className='cont_logo_name-search'>
-                      <img src={obj.logo} alt="" />  
-                      <p>{obj.name}</p>                  
+                  return (
+                    <Link
+                      key={i}
+                      to={`/info/${obj.type}/${obj.name}/clasificacion/${obj.leagueId}`}
+                      className="search_link-search"
+                    >
+                      <div className="cont_logo_name-search">
+                        <img src={obj.logo} alt="" />
+                        <p>{obj.name}</p>
                       </div>
-                  </Link>;
+                    </Link>
+                  );
                 }
               })
             : ''}
